@@ -9,7 +9,7 @@ export function CustomControls() {
   return (
     <CustomControlContainer>
       <MacOsIconButton>
-        <AiFillApple size={24} />
+        <AiFillApple size={22} />
       </MacOsIconButton>
       <div>
         <CustomControlButton>Display</CustomControlButton>

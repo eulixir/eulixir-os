@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getCurrentDateAndHour } from '../../../helpers/dateHelper'
-import { DateContainer } from './styles'
+import { SystemHourButton } from './styles'
 
 export function SystemHour() {
   const [currentDateAndHour, setCurrentDateAndHour] = useState(
@@ -22,5 +22,5 @@ export function SystemHour() {
     return () => clearInterval(timer)
   }, [])
 
-  return <DateContainer>{buildSystemHour}</DateContainer>
+  return <SystemHourButton>{buildSystemHour}</SystemHourButton>
 }

@@ -31,9 +31,7 @@ export function MenuBarIcons() {
           <IoIosSwitch size={17} />
         </MenuBarButton>
 
-        <MenuBarButton>
-          <SystemHour />
-        </MenuBarButton>
+        <SystemHour />
       </main>
     </Container>
   )

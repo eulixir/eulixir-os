@@ -25,7 +25,7 @@ export const CustomControlContainer = styled.div`
 
     & > *:nth-child(1) {
       font-weight: 700;
-      margin-left: 0.8rem;
+      margin-left: 0.4rem;
     }
 
     & > * {
