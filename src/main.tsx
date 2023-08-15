@@ -8,7 +8,7 @@ import { lightTheme } from './styles/themes/light'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={darkTheme}>
       <App />
       <GlobalStyle />
     </ThemeProvider>

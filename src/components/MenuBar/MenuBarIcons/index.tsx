@@ -16,7 +16,7 @@ export function MenuBarIcons() {
           <IoIosMoon size={19} />
         </MenuBarButton>
         <MenuBarButton>
-          <IoIosBatteryCharging size={19} />
+          <IoIosBatteryCharging size={24} />
         </MenuBarButton>
 
         <MenuBarButton>
