@@ -50,7 +50,7 @@ export const MenuBarButtonBase = styled.button`
   color: ${({ theme }) => theme.colors.font};
   outline: none;
 
-  border-radius: 6px;
+  border-radius: 4px;
 `
 
 export const CustomControlButton = styled(MenuBarButtonBase)`

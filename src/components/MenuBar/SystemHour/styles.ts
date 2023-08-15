@@ -14,17 +14,15 @@ export const SystemHourButton = styled(MenuBarButtonBase)`
   -ms-user-select: none;
   user-select: none;
 
-  padding-left: 0.2rem;
-
   &:active {
     background: ${({ theme }) => theme.colors.buttonFocus};
-    box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+    box-shadow: 9px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -9px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -webkit-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+    -webkit-box-shadow: 9px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -9px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -moz-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+    -moz-box-shadow: 9px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -9px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
   }
 `

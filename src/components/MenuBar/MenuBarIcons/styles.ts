@@ -13,6 +13,7 @@ export const Container = styled.div`
 
   & > main {
     height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,15 +25,16 @@ export const Container = styled.div`
 `
 
 export const MenuBarButton = styled(MenuBarButtonBase)`
+  padding: 0 4px;
   &:active {
     background: ${({ theme }) => theme.colors.buttonFocus};
-    box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};,
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};;
+    box-shadow: 10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -webkit-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};,
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};;
+    -webkit-box-shadow: 10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -moz-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};,
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};;
+    -moz-box-shadow: 10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
   }
 `
