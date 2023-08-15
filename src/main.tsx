@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { ThemeProvider } from 'styled-components'
 import App from './pages/app/index'
@@ -8,9 +8,6 @@ import { lightTheme } from './styles/themes/light'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ThemeProvider theme={darkTheme}>
-      <App />
-      <GlobalStyle />
-    </ThemeProvider>
+    <App />
   </React.StrictMode>
 )

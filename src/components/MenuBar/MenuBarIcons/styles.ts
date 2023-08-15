@@ -25,7 +25,6 @@ export const Container = styled.div`
 `
 
 export const MenuBarButton = styled(MenuBarButtonBase)`
-  padding: 0 4px;
   &:active {
     background: ${({ theme }) => theme.colors.buttonFocus};
     box-shadow: 10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},

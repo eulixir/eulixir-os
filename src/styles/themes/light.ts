@@ -1,6 +1,7 @@
 import background from '../../assets/images/macOs-ventura-light.jpg'
 
 export const lightTheme = {
+  title: 'light',
   colors: {
     menuBar: '#ffffff6c',
     font: '#000',
