@@ -47,35 +47,35 @@ export const MenuBarButtonBase = styled.button`
 
   background: transparent;
   border: none;
-  color: white;
+  color: ${({ theme }) => theme.colors.font};
   outline: none;
 
   border-radius: 6px;
 `
 
 export const CustomControlButton = styled(MenuBarButtonBase)`
-  &:focus {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 5px 0 0 0 rgba(255, 255, 255, 0.2),
-      -5px 0 0 0 rgba(255, 255, 255, 0.2);
+  &:active {
+    background: ${({ theme }) => theme.colors.buttonFocus};
+    box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -webkit-box-shadow: 5px 0 0 0 rgba(255, 255, 255, 0.2),
-      -5px 0 0 0 rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -moz-box-shadow: 5px 0 0 0 rgba(255, 255, 255, 0.2),
-      -5px 0 0 0 rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
   }
 `
 export const MacOsIconButton = styled(MenuBarButtonBase)`
-  &:focus {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 7px 0 0 0 rgba(255, 255, 255, 0.1),
-      -7px 0 0 0 rgba(255, 255, 255, 0.1);
+  &:active {
+    background: ${({ theme }) => theme.colors.buttonFocus};
+    box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -webkit-box-shadow: 7px 0 0 0 rgba(255, 255, 255, 0.1),
-      -7px 0 0 0 rgba(255, 255, 255, 0.1);
+    -webkit-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -moz-box-shadow: 7px 0 0 0 rgba(255, 255, 255, 0.1),
-      -7px 0 0 0 rgba(255, 255, 255, 0.1);
+    -moz-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
   }
 `

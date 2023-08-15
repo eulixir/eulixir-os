@@ -6,8 +6,7 @@ export const SystemHourButton = styled(MenuBarButtonBase)`
   align-items: center;
   justify-content: space-evenly;
 
-  color: var(--gray-light-100);
-  color: white;
+  color: ${(props) => props.theme.colors.font};
   font-size: 0.88rem;
 
   -webkit-user-select: none;
@@ -18,14 +17,14 @@ export const SystemHourButton = styled(MenuBarButtonBase)`
   padding-left: 0.2rem;
 
   &:active {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 7px 0 0 0 rgba(255, 255, 255, 0.2),
-      -7px 0 0 0 rgba(255, 255, 255, 0.2);
+    background: ${({ theme }) => theme.colors.buttonFocus};
+    box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -webkit-box-shadow: 7px 0 0 0 rgba(255, 255, 255, 0.2),
-      -7px 0 0 0 rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -moz-box-shadow: 7px 0 0 0 rgba(255, 255, 255, 0.2),
-      -7px 0 0 0 rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
   }
 `

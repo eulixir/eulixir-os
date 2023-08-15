@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background: rgba(37, 37, 37, 0.445);
+  background: ${({ theme }) => theme.colors.menuBar};
 
-  backdrop-filter: blur(40px);
-  height: 26px;
+  backdrop-filter: blur(90px);
+  -webkit-backdrop-filter: blur(90px);
+
+  height: 28px;
   width: 100%;
 
   display: flex;
