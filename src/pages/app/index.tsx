@@ -10,16 +10,17 @@ import { lightTheme } from '../../styles/themes/light'
 function App() {
   const [theme, setTheme] = useState(lightTheme)
 
-  function changeTheme() {
+  function changeOsTheme() {
     setTheme(theme.title === 'light' ? darkTheme : lightTheme)
+
+    return
   }
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <div className={styles.homeContainer}>
-          <MenuBar />
-          <button onClick={changeTheme}>Change theme</button>
+          <MenuBar changeOsTheme={changeOsTheme} />
         </div>
         <GlobalStyle />
       </ThemeProvider>

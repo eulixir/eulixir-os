@@ -8,11 +8,15 @@ import {
 } from 'react-icons/io'
 import { Container, MenuBarButton } from './styles'
 
-export function MenuBarIcons() {
+interface MenuBarIconsProps {
+  changeOsTheme: () => void
+}
+
+export function MenuBarIcons({ changeOsTheme }: MenuBarIconsProps) {
   return (
     <Container>
       <main>
-        <MenuBarButton>
+        <MenuBarButton onClick={changeOsTheme}>
           <IoIosMoon size={19} />
         </MenuBarButton>
         <MenuBarButton>
