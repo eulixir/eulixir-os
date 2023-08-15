@@ -1,12 +1,16 @@
 import { AiFillApple } from 'react-icons/ai'
-import { CustomControlButton, CustomControlContainer } from './styles'
+import {
+  CustomControlButton,
+  CustomControlContainer,
+  MacOsIconButton,
+} from './styles'
 
 export function CustomControls() {
   return (
     <CustomControlContainer>
-      <CustomControlButton>
+      <MacOsIconButton>
         <AiFillApple size={24} />
-      </CustomControlButton>
+      </MacOsIconButton>
       <div>
         <CustomControlButton>Display</CustomControlButton>
         <CustomControlButton>File</CustomControlButton>

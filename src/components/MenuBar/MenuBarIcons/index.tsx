@@ -6,21 +6,35 @@ import {
   IoIosSearch,
   IoIosMoon,
 } from 'react-icons/io'
-import { Container } from './styles'
+import { Container, MenuBarButton } from './styles'
 
 export function MenuBarIcons() {
   return (
-    <div>
-      <Container>
-        <main>
+    <Container>
+      <main>
+        <MenuBarButton>
           <IoIosMoon size={19} />
+        </MenuBarButton>
+        <MenuBarButton>
           <IoIosBatteryCharging size={19} />
+        </MenuBarButton>
+
+        <MenuBarButton>
           <IoIosWifi size={19} />
+        </MenuBarButton>
+
+        <MenuBarButton>
           <IoIosSearch size={19} />
+        </MenuBarButton>
+
+        <MenuBarButton>
           <IoIosSwitch size={17} />
+        </MenuBarButton>
+
+        <MenuBarButton>
           <SystemHour />
-        </main>
-      </Container>
-    </div>
+        </MenuBarButton>
+      </main>
+    </Container>
   )
 }

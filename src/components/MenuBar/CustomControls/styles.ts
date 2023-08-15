@@ -38,8 +38,9 @@ export const CustomControlContainer = styled.div`
   }
 `
 
-export const CustomControlButton = styled.button`
+export const MenuBarButtonBase = styled.button`
   height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,16 +51,31 @@ export const CustomControlButton = styled.button`
   outline: none;
 
   border-radius: 6px;
+`
 
+export const CustomControlButton = styled(MenuBarButtonBase)`
+  &:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 0 0 0 rgba(255, 255, 255, 0.2),
+      -5px 0 0 0 rgba(255, 255, 255, 0.2);
+
+    -webkit-box-shadow: 5px 0 0 0 rgba(255, 255, 255, 0.2),
+      -5px 0 0 0 rgba(255, 255, 255, 0.2);
+
+    -moz-box-shadow: 5px 0 0 0 rgba(255, 255, 255, 0.2),
+      -5px 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+`
+export const MacOsIconButton = styled(MenuBarButtonBase)`
   &:focus {
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 5px 0 0 0 rgba(255, 255, 255, 0.1),
-      -5px 0 0 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 7px 0 0 0 rgba(255, 255, 255, 0.1),
+      -7px 0 0 0 rgba(255, 255, 255, 0.1);
 
-    -webkit-box-shadow: 5px 0 0 0 rgba(255, 255, 255, 0.1),
-      -5px 0 0 0 rgba(255, 255, 255, 0.1);
+    -webkit-box-shadow: 7px 0 0 0 rgba(255, 255, 255, 0.1),
+      -7px 0 0 0 rgba(255, 255, 255, 0.1);
 
-    -moz-box-shadow: 5px 0 0 0 rgba(255, 255, 255, 0.1),
-      -5px 0 0 0 rgba(255, 255, 255, 0.1);
+    -moz-box-shadow: 7px 0 0 0 rgba(255, 255, 255, 0.1),
+      -7px 0 0 0 rgba(255, 255, 255, 0.1);
   }
 `

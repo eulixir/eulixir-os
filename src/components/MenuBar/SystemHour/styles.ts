@@ -14,8 +14,6 @@ export const DateContainer = styled.div`
   -ms-user-select: none;
   user-select: none;
 
-  margin-left: 1.2rem;
-
   & > * p:last-child {
     margin-left: 0.5rem;
 
