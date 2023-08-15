@@ -5,6 +5,7 @@
 }
 
 body {
-  background-image: url('../assets/macOs-ventura-light-1480x1480.jpeg');
+  background-image: url('../assets/images/macOs-ventura-light-1480x1480.jpeg');
   background-size: cover;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }

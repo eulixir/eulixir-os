@@ -1,6 +1,6 @@
-import styles from './styles/page.module.css'
+import styles from './page.module.css'
 
-import { MenuBar } from './components/MenuBar/MenuBar'
+import { MenuBar } from '../../components/MenuBar/index'
 
 function App() {
   return (
