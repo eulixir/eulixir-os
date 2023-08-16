@@ -6,18 +6,17 @@ import {
 } from './styles'
 
 export function CustomControls() {
+  const buttons = ['Finder', 'File', 'Edit', 'View', 'Go', 'Window', 'Help']
+
   return (
     <CustomControlContainer>
       <MacOsIconButton>
         <AiFillApple size={22} />
       </MacOsIconButton>
       <div>
-        <CustomControlButton>Display</CustomControlButton>
-        <CustomControlButton>File</CustomControlButton>
-        <CustomControlButton>Edit</CustomControlButton>
-        <CustomControlButton>View</CustomControlButton>
-        <CustomControlButton>Window</CustomControlButton>
-        <CustomControlButton>Help</CustomControlButton>
+        {buttons.map((button) => (
+          <CustomControlButton key={button}>{button}</CustomControlButton>
+        ))}
       </div>
     </CustomControlContainer>
   )

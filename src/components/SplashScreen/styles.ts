@@ -20,7 +20,6 @@ export const SplashScreenContainer = styled.div`
 `
 
 export const ProgressBar = styled.div`
-  background-color: white;
   width: 16vw;
   height: 8px;
   border-radius: 0.5vw;

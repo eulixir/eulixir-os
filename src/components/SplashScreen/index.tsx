@@ -29,6 +29,7 @@ export function SplashScreen({ setSplashHasLoaded }: SplashScreenProps) {
 
     if (filled >= 100) {
       setTimeout(() => {
+        localStorage.setItem('splash-screen', 'true')
         setIsRunning(false)
         setSplashHasLoaded()
       }, 500)
