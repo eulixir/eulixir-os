@@ -1,5 +1,3 @@
-import styles from './page.module.css'
-
 import { MenuBar } from '../../components/MenuBar/index'
 import { useEffect, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
@@ -7,6 +5,7 @@ import { GlobalStyle } from '../../styles/global'
 import { darkTheme } from '../../styles/themes/dark'
 import { lightTheme } from '../../styles/themes/light'
 import { SplashScreen } from '../../components/SplashScreen'
+import { HomeContainer } from './styles'
 
 function App() {
   const [theme, setTheme] = useState(
@@ -54,9 +53,10 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         {!hasLoaded && <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />}
-        <div className={styles.homeContainer}>
+        <HomeContainer>
           <MenuBar changeOsTheme={changeOsTheme} />
-        </div>
+        </HomeContainer>
+
         <GlobalStyle />
       </ThemeProvider>
     </>
