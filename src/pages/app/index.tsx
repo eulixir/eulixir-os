@@ -6,9 +6,12 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from '../../styles/global'
 import { darkTheme } from '../../styles/themes/dark'
 import { lightTheme } from '../../styles/themes/light'
+import { SplashScreen } from '../../components/SplashScreen'
 
 function App() {
-  const [theme, setTheme] = useState(lightTheme)
+  const [theme, setTheme] = useState(darkTheme)
+
+  const [hasLoaded, setHasLoaded] = useState(false)
 
   function changeOsTheme() {
     setTheme(theme.title === 'light' ? darkTheme : lightTheme)
@@ -16,9 +19,14 @@ function App() {
     return
   }
 
+  function setSplashHasLoaded() {
+    setHasLoaded(true)
+  }
+
   return (
     <>
       <ThemeProvider theme={theme}>
+        {!hasLoaded && <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />}
         <div className={styles.homeContainer}>
           <MenuBar changeOsTheme={changeOsTheme} />
         </div>
