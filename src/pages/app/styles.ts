@@ -23,7 +23,6 @@ export const IphoneLine = styled.div`
   position: relative;
 
   border-radius: 60px;
-  box-shadow: 5px 0 5px 5px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 450px) {
     height: 98%;
@@ -31,18 +30,61 @@ export const IphoneLine = styled.div`
   }
 `
 
-interface IphoneCaseLine {
+interface IphoneCaseProps {
   top?: number
   left?: number
   right?: number
   bottom?: number
+  rotate?: number
+  height?: number
+  width?: number
+  iphoneborderradius?: string
 }
 
-export const IphoneCaseLine = styled.div<IphoneCaseLine>`
-  height: 3px;
+export const IphoneButtons = styled.div<IphoneCaseProps>`
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
+
+  position: absolute;
+  background: #878787;
+  border-radius: ${({ iphoneborderradius }) => iphoneborderradius};
+
+  top: ${({ top }) => top}px;
+  left: ${({ left }) => left}px;
+  right: ${({ right }) => right}px;
+  bottom: ${({ bottom }) => bottom}px;
+
+  overflow: hidden;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  & > div {
+    width: 100%;
+    height: 10spx;
+    border-radius: 30%;
+    background: rgb(218, 218, 218);
+    background: linear-gradient(
+      0deg,
+      rgba(218, 218, 218, 0.6927849264705883) 14%,
+      rgba(42, 42, 42, 1) 100%
+    );s
+  }
+  
+  @media (max-width: 450px) {
+    right: calc(10% - 38px);
+  }
+`
+
+export const IphoneCaseLine = styled.div<IphoneCaseProps>`
+  height: 6px;
   width: 2px;
   background: #969696;
   position: absolute;
+  rotate: ${({ rotate }) => rotate}deg;
 
   top: ${({ top }) => top}px;
   left: ${({ left }) => left}px;
@@ -65,7 +107,7 @@ export const IphoneCase = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid white;
+  border: 1.75px solid white;
 
   box-shadow: 0px 0px 0px 2px #969696;
 
