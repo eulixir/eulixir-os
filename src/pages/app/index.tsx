@@ -42,7 +42,7 @@ function App() {
 
     window.addEventListener('resize', handleWindowResize)
 
-    setIsMobile(width < 3800)
+    setIsMobile(width < 800)
 
     return () => {
       window.removeEventListener('resize', handleWindowResize)
