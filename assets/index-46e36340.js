@@ -248,6 +248,11 @@ body {
 
   border-radius: 60px;
   box-shadow: 5px 0 5px 5px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 450px) {
+    height: 98%;
+    width: 98%;
+  }
 `,Kv=ne.div`
   height: 3px;
   width: 2px;
@@ -276,6 +281,11 @@ body {
   border: 2px solid white;
 
   box-shadow: 0px 0px 0px 2px #969696;
+
+  @media (max-width: 450px) {
+    height: 98%;
+    width: 98%;
+  }
 `,Zv=ne.div`
   height: 97%;
   width: 95%;
