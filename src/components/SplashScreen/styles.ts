@@ -27,7 +27,11 @@ export const ProgressBar = styled.div`
   background: ${({ theme }) => theme.splash.loadbar};
 `
 
-export const RunningBar = styled.div<{ progress: number }>`
+interface ProgressProps {
+  progress?: number
+}
+
+export const RunningBar = styled.div<ProgressProps>`
   height: 100%;
   width: ${(props) => props.progress}%;
   background-color: ${({ theme }) => theme.splash.loadbarProgress};
