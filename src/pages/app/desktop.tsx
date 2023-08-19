@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
+import { Dock } from '../../components/Dock'
 import { MenuBar } from '../../components/MenuBar'
 import { SplashScreen } from '../../components/SplashScreen'
+import { CurrentAppContextProvider } from '../../contexts/currentApp'
 
 import { DesktopContainer } from './styles'
 
@@ -23,11 +25,12 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
   }, [])
 
   return (
-    <>
+    <CurrentAppContextProvider>
       <DesktopContainer>
         {!hasLoaded && <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />}
         <MenuBar changeOsTheme={changeOsTheme} />
+        <Dock />
       </DesktopContainer>
-    </>
+    </CurrentAppContextProvider>
   )
 }

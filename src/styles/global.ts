@@ -5,10 +5,21 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
-  background-image: url(${({ theme }) => theme.backgroundUrl});
+  background: url(${({ theme }) => theme.backgroundUrl});
+  background-size: 200px 200px;
+
    
   background-size: cover;
   background-repeat: no-repeat;

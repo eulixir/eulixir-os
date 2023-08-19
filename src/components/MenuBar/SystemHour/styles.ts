@@ -4,7 +4,6 @@ import { MenuBarButtonBase } from '../CustomControls/styles'
 export const SystemHourButton = styled(MenuBarButtonBase)`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
 
   color: ${(props) => props.theme.colors.font};
   font-size: 0.88rem;
