@@ -16,6 +16,7 @@ export const darkTheme = {
       border: '#5252525e',
       internalBoxShadow: 'white',
       boxShadow: 'black',
+      iconLabel: '#ffffff1f',
     },
   },
   splash: {

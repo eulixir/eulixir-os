@@ -16,6 +16,7 @@ export const lightTheme = {
       border: '#bcbcbc5e',
       internalBoxShadow: '#c8c8c89d',
       boxShadow: '#4d4d4d9d',
+      iconLabel: '#ffffff1f',
     },
   },
   splash: {

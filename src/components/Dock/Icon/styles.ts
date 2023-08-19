@@ -1,5 +1,22 @@
 import styled from 'styled-components'
 
+export const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0 4px;
+
+  position: relative;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+`
 interface IconModelProps {
   iconUrl: string
 }
@@ -16,42 +33,74 @@ export const IconModel = styled.button<IconModelProps>`
   justify-content: center;
   flex-direction: column;
 
+  margin-top: 2px;
+
   & > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  &:active {
+  &:active > img {
     filter: brightness(0.4);
   }
+
+  & > span {
+    position: absolute;
+    top: -3900000px;
+  }
+
+  &:hover > span {
+    width: auto;
+    padding: 6px 12px;
+
+    white-space: nowrap;
+
+    background-color: ${({ theme }) => theme.colors.menuBar};
+    color: ${({ theme }) => theme.colors.secondary};
+    position: absolute;
+
+    border: 0.7px solid ${({ theme }) => theme.colors.buttonFocus};
+
+    border-radius: 4px;
+    font-size: 12px;
+    top: -39px;
+  }
 `
-interface IconProps {
+
+interface ActiveBulletProps {
   active?: boolean
 }
 
-export const IconContainer = styled.div<IconProps>`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  margin: 0 4px;
+export const ActiveBullet = styled.div<ActiveBulletProps>`
+  background-color: ${({ theme, active }) =>
+    active ? theme.colors.secondary : 'transparent'};
 
-  &:first-child {
-    margin-left: 0;
-  }
+  position: absolute;
 
-  &:last-child {
-    margin-right: 0;
-  }
+  width: 4px;
+  height: 4px;
 
-  & > div {
-    background-color: ${({ theme, active }) =>
-      active ? theme.colors.secondary : 'transparent'};
+  border-radius: 50%;
+  bottom: 0;
+`
 
-    margin-top: 5px;
-    border-radius: 50%;
-    width: 5px;
-    height: 5px;
-  }
+export const ArrowDiv = styled.div`
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  bottom: -4px;
+
+  background-color: ${({ theme }) => theme.colors.menuBar};
+
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+
+  border-right: 1px solid ${({ theme }) => theme.colors.buttonFocus};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.buttonFocus};
+
+  transform: rotate(45deg);
 `

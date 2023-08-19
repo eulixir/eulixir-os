@@ -1,4 +1,4 @@
-import { IconContainer, IconModel } from './styles'
+import { ActiveBullet, ArrowDiv, IconContainer, IconModel } from './styles'
 
 interface IconProps {
   url: string
@@ -6,13 +6,19 @@ interface IconProps {
   label?: string
 }
 
-export function Icon({ url, active }: IconProps) {
+export function Icon({ url, active, label }: IconProps) {
   return (
-    <IconContainer active={active}>
-      <IconModel iconUrl={url}>
-        <img src={url} alt="Icon" />
-        <div />
-      </IconModel>
-    </IconContainer>
+    <>
+      <IconContainer>
+        <IconModel iconUrl={url}>
+          <span>
+            {label}
+            <ArrowDiv />
+          </span>
+          <img src={url} alt="Icon" />
+          <ActiveBullet active={active} />
+        </IconModel>
+      </IconContainer>
+    </>
   )
 }

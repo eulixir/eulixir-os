@@ -17,7 +17,9 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  background-image: url(${({ theme }) => theme.backgroundUrl});
+  background: url(${({ theme }) => theme.backgroundUrl});
+  background-size: 200px 200px;
+
    
   background-size: cover;
   background-repeat: no-repeat;
