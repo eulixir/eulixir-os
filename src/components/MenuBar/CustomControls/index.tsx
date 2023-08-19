@@ -1,4 +1,6 @@
+import { useContext } from 'react'
 import { AiFillApple } from 'react-icons/ai'
+import { CurrentAppContext } from '../../../contexts/currentApp'
 import {
   CustomControlButton,
   CustomControlContainer,
@@ -6,7 +8,7 @@ import {
 } from './styles'
 
 export function CustomControls() {
-  const buttons = ['Finder', 'File', 'Edit', 'View', 'Go', 'Window', 'Help']
+  const { buttons } = useContext(CurrentAppContext)
 
   return (
     <CustomControlContainer>
