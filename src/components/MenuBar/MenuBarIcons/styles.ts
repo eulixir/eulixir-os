@@ -20,6 +20,10 @@ export const Container = styled.div`
 
     & > * {
       margin: 0 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 `

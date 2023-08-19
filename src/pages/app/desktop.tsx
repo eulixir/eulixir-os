@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Dock } from '../../components/Dock'
 import { MenuBar } from '../../components/MenuBar'
 import { SplashScreen } from '../../components/SplashScreen'
 
@@ -27,6 +28,7 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
       <DesktopContainer>
         {!hasLoaded && <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />}
         <MenuBar changeOsTheme={changeOsTheme} />
+        <Dock />
       </DesktopContainer>
     </>
   )
