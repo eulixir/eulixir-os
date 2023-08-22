@@ -6,18 +6,25 @@ import {
   CustomControlContainer,
   MacOsIconButton,
 } from './styles'
+import { useState } from 'react'
 
 export function CustomControls() {
   const { buttons } = useContext(CurrentAppContext)
+  const [oppenedDropdown, setOppenedDropdown] = useState(false)
 
   return (
-    <CustomControlContainer>
-      <MacOsIconButton>
+    <CustomControlContainer
+      onClick={() => setOppenedDropdown(true)}
+      onMouseLeave={() => setOppenedDropdown(false)}
+    >
+      <MacOsIconButton oppened={oppenedDropdown}>
         <AiFillApple size={22} />
       </MacOsIconButton>
       <div>
         {buttons.map((button) => (
-          <CustomControlButton key={button}>{button}</CustomControlButton>
+          <CustomControlButton key={button} oppened={oppenedDropdown}>
+            {button}
+          </CustomControlButton>
         ))}
       </div>
     </CustomControlContainer>

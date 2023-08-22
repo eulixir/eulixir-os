@@ -38,7 +38,11 @@ export const CustomControlContainer = styled.div`
   }
 `
 
-export const MenuBarButtonBase = styled.button`
+interface MenuBarButtonBaseProps {
+  oppened: boolean
+}
+
+export const MenuBarButtonBase = styled.button<MenuBarButtonBaseProps>`
   height: 100%;
 
   display: flex;
@@ -54,28 +58,43 @@ export const MenuBarButtonBase = styled.button`
 `
 
 export const CustomControlButton = styled(MenuBarButtonBase)`
-  &:active {
-    background: ${({ theme }) => theme.colors.buttonFocus};
-    box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+  &:hover {
+    background: ${({ theme, oppened }) =>
+      oppened ? theme.colors.buttonFocus : 'transparent'};
+    box-shadow: 5px 0 0 0
+        ${({ theme, oppened }) =>
+          oppened ? theme.colors.buttonFocus : 'transparent'},
+      -5px 0 0 0 ${({ theme, oppened }) => (oppened ? theme.colors.buttonFocus : 'transparent')};
 
-    -webkit-box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+    -webkit-box-shadow: 5px 0 0 0
+        ${({ theme, oppened }) =>
+          oppened ? theme.colors.buttonFocus : 'transparent'},
+      -5px 0 0 0 ${({ theme, oppened }) => (oppened ? theme.colors.buttonFocus : 'transparent')};
 
-    -moz-box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+    -moz-box-shadow: 5px 0 0 0
+        ${({ theme, oppened }) =>
+          oppened ? theme.colors.buttonFocus : 'transparent'},
+      -5px 0 0 0 ${({ theme, oppened }) => (oppened ? theme.colors.buttonFocus : 'transparent')};
   }
 `
 export const MacOsIconButton = styled(MenuBarButtonBase)`
-  &:active {
-    background: ${({ theme }) => theme.colors.buttonFocus};
-    box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+  &:hover {
+    background: ${({ theme, oppened }) =>
+      oppened ? theme.colors.buttonFocus : 'transparent'};
 
-    -webkit-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+    box-shadow: 7px 0 0 0
+        ${({ theme, oppened }) =>
+          oppened ? theme.colors.buttonFocus : 'transparent'},
+      -7px 0 0 0 ${({ theme, oppened }) => (oppened ? theme.colors.buttonFocus : 'transparent')};
 
-    -moz-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+    -webkit-box-shadow: 7px 0 0 0
+        ${({ theme, oppened }) =>
+          oppened ? theme.colors.buttonFocus : 'transparent'},
+      -7px 0 0 0 ${({ theme, oppened }) => (oppened ? theme.colors.buttonFocus : 'transparent')};
+
+    -moz-box-shadow: 7px 0 0 0
+        ${({ theme, oppened }) =>
+          oppened ? theme.colors.buttonFocus : 'transparent'},
+      -7px 0 0 0 ${({ theme, oppened }) => (oppened ? theme.colors.buttonFocus : 'transparent')};
   }
 `

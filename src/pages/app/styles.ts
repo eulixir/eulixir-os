@@ -38,7 +38,7 @@ interface IphoneCaseProps {
   rotate?: number
   height?: number
   width?: number
-  iphoneborderradius?: string
+  iphoneBorderRadius?: string
 }
 
 export const IphoneButtons = styled.div<IphoneCaseProps>`
@@ -47,7 +47,7 @@ export const IphoneButtons = styled.div<IphoneCaseProps>`
 
   position: absolute;
   background: #878787;
-  border-radius: ${({ iphoneborderradius }) => iphoneborderradius};
+  border-radius: ${({ iphoneBorderRadius }) => iphoneBorderRadius};
 
   top: ${({ top }) => top}px;
   left: ${({ left }) => left}px;

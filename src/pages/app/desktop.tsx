@@ -16,11 +16,12 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
   function setSplashHasLoaded() {
     setHasLoaded(true)
   }
+
   useEffect(() => {
     const alreadyLoaded = localStorage.getItem('splash-screen')
 
     if (alreadyLoaded) {
-      setSplashHasLoaded()
+      setHasLoaded(true)
     }
   }, [])
 

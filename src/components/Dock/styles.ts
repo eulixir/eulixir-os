@@ -37,7 +37,6 @@ export const DockContainer = styled.div`
 
   &:hover > div {
     transition: 0.2s;
-    /* clean transition */
 
     margin-bottom: 68px;
   }

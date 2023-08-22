@@ -12,10 +12,10 @@ interface Icon {
 }
 
 interface CurrentAppType {
-  setNewAppTitle: (appTitle: string) => void
   buttons: string[]
-  handleActiveIcon: (label: string) => void
   icons: Icon[]
+  setNewAppTitle: (appTitle: string) => void
+  handleActiveIcon: (label: string) => void
 }
 
 export const CurrentAppContext = createContext({} as CurrentAppType)
@@ -99,7 +99,12 @@ export function CurrentAppContextProvider({
 
   return (
     <CurrentAppContext.Provider
-      value={{ setNewAppTitle, buttons, handleActiveIcon, icons }}
+      value={{
+        setNewAppTitle,
+        buttons,
+        handleActiveIcon,
+        icons,
+      }}
     >
       {children}
     </CurrentAppContext.Provider>
