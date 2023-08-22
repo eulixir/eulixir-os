@@ -18,14 +18,14 @@ export function CustomControls() {
       onClick={() => setopenedDropdown(true)}
       onMouseLeave={() => setopenedDropdown(false)}
     >
-      <MacOsIconButton opened={openedDropdown}>
+      <MacOsIconButton opened={openedDropdown.toString()}>
         <AiFillApple size={22} />
       </MacOsIconButton>
       <div>
         {buttons.map((button, length) => (
-          <CustomControlButton key={length} opened={openedDropdown}>
+          <CustomControlButton key={length} opened={openedDropdown.toString()}>
             {button.name}
-            {openedDropdown && <Dropdown items={button.items} />}
+            <Dropdown items={button.items} />
           </CustomControlButton>
         ))}
       </div>

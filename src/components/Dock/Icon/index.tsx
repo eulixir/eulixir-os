@@ -26,7 +26,7 @@ export function Icon({ url, active, label, appName }: IconProps) {
             <ArrowDiv />
           </span>
           <img src={url} alt="Icon" />
-          <ActiveBullet active={active} />
+          <ActiveBullet active={active.toString()} />
         </IconModel>
       </IconContainer>
     </>

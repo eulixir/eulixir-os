@@ -12,9 +12,9 @@ interface MenuBarIconsProps {
   changeOsTheme: () => void
 }
 
-export function MenuBarIcons({ changeOsTheme }: MenuBarIconsProps) {
+export function MenuBarIcons({}: MenuBarIconsProps) {
   return (
-    <Container onClick={() => handleUpdateDropdown(false)}>
+    <Container>
       <main>
         <MenuBarButton>
           <IoIosMoon size={19} />

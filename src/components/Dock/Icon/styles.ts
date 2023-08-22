@@ -69,12 +69,12 @@ export const IconModel = styled.button<IconModelProps>`
 `
 
 interface ActiveBulletProps {
-  active: boolean
+  active: string
 }
 
 export const ActiveBullet = styled.div<ActiveBulletProps>`
   background-color: ${({ theme, active }) =>
-    active ? theme.colors.secondary : 'transparent'};
+    active == 'true' ? theme.colors.secondary : 'transparent'};
 
   position: absolute;
 
