@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { CurrentAppContext } from '../../../contexts/currentApp'
+import { CurrentAppContext } from '../../../contexts/currentAppContext'
 import { ActiveBullet, ArrowDiv, IconContainer, IconModel } from './styles'
 
 interface IconProps {
   url: string
-  active?: boolean
+  active: boolean
   label: string
   appName: string
 }
@@ -20,7 +20,7 @@ export function Icon({ url, active, label, appName }: IconProps) {
   return (
     <>
       <IconContainer onClick={handleOpenApp}>
-        <IconModel iconUrl={url}>
+        <IconModel iconurl={url}>
           <span>
             {label}
             <ArrowDiv />

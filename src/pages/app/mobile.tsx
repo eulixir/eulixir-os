@@ -29,28 +29,28 @@ export function Mobile(props: MobileProps) {
       right: -6,
       width: 4,
       height: 110,
-      iphoneBorderRadius: '0 1px 1px 0',
+      iphoneborderradius: '0 1px 1px 0',
     },
     {
       width: 3.5,
       height: 35,
       top: 170,
       left: -5,
-      iphoneBorderRadius: '1px 0 0 1px',
+      iphoneborderradius: '1px 0 0 1px',
     },
     {
       width: 3.5,
       height: 65,
       top: 245,
       left: -5,
-      iphoneBorderRadius: '1px 0 0 1px',
+      iphoneborderradius: '1px 0 0 1px',
     },
     {
       width: 3.5,
       height: 65,
       top: 330,
       left: -5,
-      iphoneBorderRadius: '1px 0 0 1px',
+      iphoneborderradius: '1px 0 0 1px',
     },
   ]
 

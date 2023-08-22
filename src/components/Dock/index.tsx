@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { CurrentAppContext } from '../../contexts/currentApp'
+import { CurrentAppContext } from '../../contexts/currentAppContext'
 import { Icon } from './Icon'
 import { DockContainer, Separator } from './styles'
 
@@ -9,10 +9,10 @@ export function Dock() {
   return (
     <DockContainer>
       <div>
-        {icons.map((attrs, index) => (
+        {icons.map((attrs) => (
           <>
             {attrs.label == 'Trash' && <Separator />}
-            <Icon key={index} {...attrs} />
+            <Icon key={attrs.url} {...attrs} />
           </>
         ))}
       </div>

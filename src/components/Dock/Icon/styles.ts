@@ -18,7 +18,7 @@ export const IconContainer = styled.div`
   }
 `
 interface IconModelProps {
-  iconUrl: string
+  iconurl: string
 }
 
 export const IconModel = styled.button<IconModelProps>`
@@ -69,7 +69,7 @@ export const IconModel = styled.button<IconModelProps>`
 `
 
 interface ActiveBulletProps {
-  active?: boolean
+  active: boolean
 }
 
 export const ActiveBullet = styled.div<ActiveBulletProps>`

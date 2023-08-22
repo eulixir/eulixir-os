@@ -12,11 +12,16 @@ interface Icon {
 }
 
 interface CurrentAppType {
-  buttons: string[]
+  buttons: FinderDropdown[]
   icons: Icon[]
   setNewAppTitle: (appTitle: string) => void
   handleActiveIcon: (label: string) => void
 }
+
+import {
+  Finder,
+  FinderDropdown,
+} from '../components/MenuBar/itemsDropdown/Finder'
 
 export const CurrentAppContext = createContext({} as CurrentAppType)
 
@@ -24,15 +29,7 @@ export function CurrentAppContextProvider({
   children,
 }: CurrentAppContextProviderProps) {
   const [appTitle, setAppTitle] = useState('Finder')
-  const [buttons, setButtons] = useState([
-    'Finder',
-    'File',
-    'Edit',
-    'View',
-    'Go',
-    'Window',
-    'Help',
-  ])
+  const [buttons, setButtons] = useState(Finder)
 
   const [icons, setIcons] = useState([
     {
@@ -90,7 +87,7 @@ export function CurrentAppContextProvider({
   }
 
   useEffect(() => {
-    setButtons([appTitle, 'File', 'Edit', 'View', 'Go', 'Window', 'Help'])
+    setButtons(Finder)
   }, [appTitle])
 
   function setNewAppTitle(newAppTitle: string) {
