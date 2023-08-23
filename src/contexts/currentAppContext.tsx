@@ -21,7 +21,7 @@ interface CurrentAppType {
 import {
   Finder,
   FinderDropdown,
-} from '../components/MenuBar/itemsDropdown/Finder'
+} from '../components/MenuBar/ItemsDropdown/Finder'
 
 export const CurrentAppContext = createContext({} as CurrentAppType)
 

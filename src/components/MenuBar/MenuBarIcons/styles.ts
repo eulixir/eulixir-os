@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { MenuBarButtonBase } from '../CustomControls/styles'
+import { MenuBarButtonBase } from '../Dropdown/styles'
 
 export const Container = styled.div`
   height: 100%;

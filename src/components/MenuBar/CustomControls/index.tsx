@@ -1,34 +1,29 @@
 import { useContext } from 'react'
-import { AiFillApple } from 'react-icons/ai'
+
 import { CurrentAppContext } from '../../../contexts/currentAppContext'
-import {
-  CustomControlButton,
-  CustomControlContainer,
-  MacOsIconButton,
-} from './styles'
-import { useState } from 'react'
+import { CustomControlContainer } from './styles'
+import * as Menubar from '@radix-ui/react-menubar'
+
 import { Dropdown } from '../Dropdown'
+import { AppleLogo } from '../AppleLogo'
 
 export function CustomControls() {
   const { buttons } = useContext(CurrentAppContext)
-  const [openedDropdown, setopenedDropdown] = useState(false)
 
   return (
-    <CustomControlContainer
-      onClick={() => setopenedDropdown(true)}
-      onMouseLeave={() => setopenedDropdown(false)}
-    >
-      <MacOsIconButton opened={openedDropdown.toString()}>
-        <AiFillApple size={22} />
-      </MacOsIconButton>
-      <div>
-        {buttons.map((button, length) => (
-          <CustomControlButton key={length} opened={openedDropdown.toString()}>
-            {button.name}
-            <Dropdown items={button.items} />
-          </CustomControlButton>
-        ))}
-      </div>
-    </CustomControlContainer>
+    <Menubar.Root>
+      <CustomControlContainer>
+        <AppleLogo />
+        <nav>
+          {buttons.map((button) => (
+            <Dropdown
+              key={button.name}
+              items={button.items}
+              trigger={button.name}
+            />
+          ))}
+        </nav>
+      </CustomControlContainer>
+    </Menubar.Root>
   )
 }
