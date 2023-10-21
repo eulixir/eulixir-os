@@ -14,8 +14,6 @@ export const CustomControlContainer = styled.div`
 
   font-size: 0.8rem;
 
-  margin: 0 1rem;
-
   & > nav {
     height: 100%;
 

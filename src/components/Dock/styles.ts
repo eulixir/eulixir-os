@@ -49,7 +49,7 @@ export const DockContainer = styled.div`
 `
 
 export const Separator = styled.span`
-  width: 1px;
+  width: 1.5px;
   height: 76%;
   background-color: ${({ theme }) => theme.colors.dock.iconLabel};
 `

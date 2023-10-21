@@ -1,21 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import * as Menubar from '@radix-ui/react-menubar'
-
-export const buttonBaseStyles = css`
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: transparent;
-  border: none;
-  color: ${({ theme }) => theme.colors.font};
-  outline: none;
-
-  border-radius: 4px;
-`
+import { buttonBaseStyles } from '../../../styles/globalComponents'
 
 export const MenuBarButtonBase = styled.button`
   ${buttonBaseStyles}
@@ -23,16 +9,24 @@ export const MenuBarButtonBase = styled.button`
 
 export const CustomControlButton = styled(Menubar.Trigger)`
   ${buttonBaseStyles}
+`
 
-  &[data-state='true'], &[aria-expanded='true'] {
-    background: ${({ theme }) => theme.colors.buttonFocus};
-    box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+export const DropdownArea = styled(Menubar.Content)`
+  background: ${({ theme }) => theme.colors.menuBar};
+  color: ${({ theme }) => theme.colors.font};
 
-    -webkit-box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+  width: 200px;
 
-    -moz-box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
-  }
+  border-radius: 4px;
+  font-size: 0.9rem;
+
+  backdrop-filter: blur(10px);
+`
+
+export const Section = styled(Menubar.Separator)`
+  width: 100%;
+  background: ${({ theme }) => theme.colors.menubar.separator};
+  margin: 7px 0;
+
+  height: 1px;
 `

@@ -1,19 +1,39 @@
 import styled from 'styled-components'
 import * as Menubar from '@radix-ui/react-menubar'
-import { buttonBaseStyles } from '../Dropdown/styles'
+import { buttonBaseStyles } from '../../../styles/globalComponents'
 
 export const MacOsIconButton = styled(Menubar.Trigger)`
   ${buttonBaseStyles}
 
-  &[data-state='true'], &[aria-expanded='true'] {
-    background: ${({ theme }) => theme.colors.buttonFocus};
-    box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+  width: 40px;
+  margin-left: 0.5rem;
+`
 
-    -webkit-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+export const DropdownArea = styled(Menubar.Content)`
+  background: ${({ theme }) => theme.colors.menuBar};
+  color: ${({ theme }) => theme.colors.font};
 
-    -moz-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
+  width: 270px;
+  padding: 10px;
+
+  position: absolute;
+  left: 0;
+
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  backdrop-filter: blur(10px);
+`
+
+export const MenubarItem = styled(Menubar.Item)`
+  & > span {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.3rem 0;
+
+    .shortcut {
+      color: ${({ theme }) => theme.colors.menubar.disabled};
+    }
   }
 `

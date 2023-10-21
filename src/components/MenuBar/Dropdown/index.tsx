@@ -12,11 +12,11 @@ export function Dropdown({ items, trigger }: DropdownProps) {
       <S.CustomControlButton>{trigger}</S.CustomControlButton>
 
       <Menubar.Portal>
-        <Menubar.Content>
+        <S.DropdownArea>
           {items.map((item, length) => (
             <Menubar.Item key={length}>{item}</Menubar.Item>
           ))}
-        </Menubar.Content>
+        </S.DropdownArea>
       </Menubar.Portal>
     </Menubar.Menu>
   )
