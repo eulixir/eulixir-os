@@ -30,3 +30,15 @@ export const Section = styled(Menubar.Separator)`
 
   height: 1px;
 `
+
+export const MenubarItem = styled(Menubar.Item)`
+  & > span {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.3rem 0;
+
+    .shortcut {
+      color: ${({ theme }) => theme.colors.menubar.disabled};
+    }
+  }
+`
