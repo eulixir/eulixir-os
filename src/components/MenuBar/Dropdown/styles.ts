@@ -11,17 +11,6 @@ export const CustomControlButton = styled(Menubar.Trigger)`
   ${buttonBaseStyles}
 `
 
-export const DropdownArea = styled(Menubar.Content)`
-  background: ${({ theme }) => theme.colors.menuBar};
-  color: ${({ theme }) => theme.colors.font};
-
-  width: 200px;
-
-  border-radius: 4px;
-  font-size: 0.9rem;
-
-  backdrop-filter: blur(10px);
-`
 
 export const Section = styled(Menubar.Separator)`
   width: 100%;
@@ -29,6 +18,23 @@ export const Section = styled(Menubar.Separator)`
   margin: 7px 0;
 
   height: 1px;
+`
+
+export const DropdownArea = styled(Menubar.Content)`
+  background: ${({ theme }) => theme.colors.menuBar};
+  color: ${({ theme }) => theme.colors.font};
+
+  width: 270px;
+  padding: 10px;
+
+  position: absolute;
+  left: 0;
+
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  backdrop-filter: blur(10px);
 `
 
 export const MenubarItem = styled(Menubar.Item)`

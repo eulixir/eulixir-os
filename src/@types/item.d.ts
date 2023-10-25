@@ -1,6 +1,6 @@
 export interface Item {
   name: string
-  handleButtonFunction: () => void
+  handleButtonFunction?: () => void
   hasSection?: boolean
   shortcut?: string
   hasShortcut?: boolean

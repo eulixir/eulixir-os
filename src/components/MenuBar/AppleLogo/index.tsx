@@ -8,16 +8,15 @@ export function AppleLogo() {
     {
       name: 'About This Mac',
       handleButtonFunction: () => console.log('About This Mac'),
-      hasSection: true,
     },
     {
       name: 'System Settings...',
+      hasSection: true,
       handleButtonFunction: () => console.log('System Settings...'),
     },
     {
       name: 'App Store',
       handleButtonFunction: () => console.log('App Store'),
-      hasSection: true,
     },
     {
       name: 'Recent Items',
@@ -34,9 +33,9 @@ export function AppleLogo() {
     {
       name: 'Force Quit...',
       handleButtonFunction: () => console.log('Force Quit...'),
+      hasSection: true,
       hasShortcut: true,
       shortcut: '⌥ ⌘ Esc',
-      hasSection: true,
     },
     {
       name: 'Sleep',
@@ -49,11 +48,11 @@ export function AppleLogo() {
     {
       name: 'Shut Down...',
       handleButtonFunction: () => console.log('Shut Down...'),
-      hasSection: true,
     },
     {
       name: 'Lock Screen',
       handleButtonFunction: () => console.log('Lock Screen'),
+      hasSection: true,
       hasShortcut: true,
       shortcut: '^ ⌘ Q',
     },

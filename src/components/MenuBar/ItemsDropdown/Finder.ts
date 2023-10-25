@@ -1,4 +1,4 @@
-import { Item } from "../../../@types/item"
+import { Item } from '../../../@types/item'
 
 export interface FinderDropdown {
   name: string
@@ -12,7 +12,6 @@ export const Finder: FinderDropdown[] = [
       {
         name: 'About Finder',
         handleButtonFunction: () => console.log('About This Mac'),
-        hasSection: true,
       },
       {
         name: 'Settings',
@@ -21,17 +20,20 @@ export const Finder: FinderDropdown[] = [
         hasShortcut: true,
         shortcut: '⌘ ,',
         hasDropMenu: true,
-      }, {
+      },
+      {
         name: 'Empty Trash',
         handleButtonFunction: () => console.log('About This Mac'),
         hasSection: true,
         hasShortcut: true,
-        shortcut: '⌘ backspace',
-      }, {
+        shortcut: '⌘ ⌫',
+      },
+      {
         name: 'Services',
         handleButtonFunction: () => console.log('About This Mac'),
         hasSection: true,
-      }, {
+      },
+      {
         name: 'Hide Finder',
         handleButtonFunction: () => console.log('About This Mac'),
         hasSection: true,
@@ -44,7 +46,7 @@ export const Finder: FinderDropdown[] = [
       {
         name: 'Show All',
         handleButtonFunction: () => console.log('About This Mac'),
-        enabled: false
+        enabled: false,
       },
     ],
   },
@@ -164,7 +166,7 @@ export const Finder: FinderDropdown[] = [
       {
         name: 'Move to Trash',
         handleButtonFunction: () => console.log('About This Mac'),
-        shortcut: '⌘ Backspace',
+        shortcut: '⌘⌫',
         enabled: false,
         hasShortcut: true,
       },
@@ -261,70 +263,306 @@ export const Finder: FinderDropdown[] = [
       },
     ],
   },
-  // {
-  //   name: 'View',
-  //   items: [
-  //     'as Icons',
-  //     'as List',
-  //     'as Columns',
-  //     'Use Stacks',
-  //     'Sort By',
-  //     'as Gallery',
-  //     'Clean Up',
-  //     'Clean Up By',
-  //     'Hide Sidebar',
-  //     'Hide Preview',
-  //     'Hide Toolbar',
-  //     'Show All Tabs',
-  //     'Hite Tab Bar',
-  //     'Hide Path Bar',
-  //     'Hide Status Bar',
-  //     'Customize Toolbar...',
-  //     'Show View Options',
-  //     'Show Path Bar',
-  //     'Enter Full Screen',
-  //   ],
-  // },
-  // {
-  //   name: 'Go',
-  //   items: [
-  //     'Back',
-  //     'Forward',
-  //     'Enclosing Folder',
-  //     'Recents',
-  //     'Documents',
-  //     'Desktop',
-  //     'Downloads',
-  //     'Home',
-  //     'Computer',
-  //     'AirDrop',
-  //     'Network',
-  //     'iCloud Drive',
-  //     'Shared',
-  //     'Applications',
-  //     'Utilities',
-  //     'Recents Folders',
-  //     'Go to Folder...',
-  //     'Connect to Server...',
-  //   ],
-  // },
-  // {
-  //   name: 'Window',
-  //   items: [
-  //     'Minimize',
-  //     'Zoom',
-  //     'Cycle Through Windows',
-  //     'Bring All to Front',
-  //     'All',
-  //     'None',
-  //     'Minimize All',
-  //     'Arrange in Front',
-  //     'Move Tab to New Window',
-  //     'Merge All Windows',
-  //   ],
-  // },
   {
-    name: 'Help', items: [
+    name: 'View',
+    items: [
+      {
+        name: 'as Icons',
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '⌘ 1',
+      },
+      {
+        name: 'as List',
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '⌘ 2',
+      },
+      {
+        name: 'as Columns',
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '⌘ 3',
+      },
+      {
+        name: 'as Gallery',
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '⌘ 4',
+      },
+      {
+        name: 'Use Stacks',
+        handleButtonFunction: () => console.log('About This Mac'),
+        hasSection: true,
+        hasShortcut: true,
+        shortcut: '^ ⌘ O',
+      },
+      {
+        name: 'Sort By',
+        hasDropMenu: true,
+      },
+      {
+        name: 'Clean Up',
+        handleButtonFunction: () => console.log('..'),
+      },
+      {
+        name: 'Clean Up By',
+        hasDropMenu: true,
+      },
+      {
+        name: 'Hide Tab Bar',
+        hasSection: true,
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '⇧ ⌘ T',
+      },
+      {
+        name: 'Show All Tabs',
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '⇧ ⌘ |',
+      },
+      {
+        name: 'Hide SideBar',
+        hasSection: true,
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '^ ⌘ S',
+      },
+      {
+        name: 'Hide Preview',
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '⇧ ⌘ P',
+      },
+      {
+        name: 'Hide Tollbar',
+        hasSection: true,
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '⌥ ⌘ T',
+      },
+      {
+        name: 'Hide Path Bar',
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '⌥ ⌘ T',
+      },
+      {
+        name: 'Hide Status Bar',
+        enabled: false,
+        hasShortcut: true,
+        shortcut: '⌘ /',
+      },
+      {
+        name: 'Customize Tollbar...',
+        hasSection: true,
+        enabled: false,
+      },
+      {
+        name: 'Show View Options',
+        hasSection: true,
+        hasShortcut: true,
+        shortcut: '⌘ J',
+      },
+      {
+        name: 'Show Preview Options',
+        enabled: false,
+      },
+      {
+        name: 'Entire Fullscreen',
+        enabled: false,
+        hasShortcut: true,
+        shortcut: 'Global F',
+      },
+    ],
+  },
+  {
+    name: 'Go',
+    items: [
+      {
+        name: 'Back',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⌘ [',
+        enabled: false,
+        hasShortcut: true,
+      },
+      {
+        name: 'Forward',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⌘ ]',
+        enabled: false,
+        hasShortcut: true,
+      },
+      {
+        name: 'Enclosing Folder',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⌘ Arrow Up',
+        enabled: false,
+        hasShortcut: true,
+        hasSection: true,
+      },
+      {
+        name: 'Recents',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ F',
+        hasShortcut: true,
+      },
+      {
+        name: 'Documents',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ O',
+        hasShortcut: true,
+      },
+      {
+        name: 'Desktop',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ D',
+        hasShortcut: true,
+      },
+      {
+        name: 'Downloads',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ L',
+        hasShortcut: true,
+      },
+      {
+        name: 'Home',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ H',
+        hasShortcut: true,
+      },
+      {
+        name: 'Computer',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ C',
+        hasShortcut: true,
+      },
+      {
+        name: 'Air Drop',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ R',
+        hasShortcut: true,
+      },
+      {
+        name: 'Network',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ K',
+        hasShortcut: true,
+      },
+      {
+        name: 'iCloud Drive',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ I',
+        hasShortcut: true,
+      },
+      {
+        name: 'Shared',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ I',
+        hasShortcut: true,
+      },
+      {
+        name: 'Applications',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ A',
+        hasShortcut: true,
+      },
+      {
+        name: 'Utilities',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⇧ ⌘ U',
+        hasShortcut: true,
+      },
+      {
+        name: 'Recent Folders',
+        handleButtonFunction: () => console.log('About This Mac'),
+        hasSection: true,
+        hasDropMenu: true,
+      },
+      {
+        name: 'Go to Folder...',
+        handleButtonFunction: () => console.log('About This Mac'),
+        hasSection: true,
+        shortcut: '⇧ ⌘ G',
+        hasShortcut: true,
+      },
+      {
+        name: 'Connect to Server',
+        handleButtonFunction: () => console.log('About This Mac'),
+        shortcut: '⌘ K',
+        hasShortcut: true,
+      },
+    ],
+  },
+  {
+    name: 'Window',
+    items: [
+      {
+        name: 'Minimize',
+        shortcut: '⌘ M',
+        enabled: false,
+      },
+      {
+        name: 'Zoom',
+        enabled: false,
+      },
+      {
+        name: 'Move Window to Left Side of Screen',
+        enabled: false,
+      },
+      {
+        name: 'Move Window to Right Side of Screen',
+        enabled: false,
+        hasShortcut: true,
+      },
+      {
+        name: 'Replace Tiled Window',
+        enabled: false,
+        hasShortcut: true,
+      },
+      {
+        name: 'Remove Window from Set',
+        hasSection: true,
+        enabled: false,
+        hasShortcut: true,
+      },
+      {
+        name: 'Cycle Through Windows',
+        enabled: false,
+        shortcut: '⌘ `',
+        hasShortcut: true,
+      },
+      {
+        name: 'Show Progress Window',
+        enabled: false,
+      },
+      {
+        name: 'Show Previous Tab',
+        hasSection: true,
+        enabled: false,
+        shortcut: '^ ⇧ arr right',
+        hasShortcut: true,
+      },
+      {
+        name: 'Show Next Tab',
+        enabled: false,
+        shortcut: '^ arr right',
+        hasShortcut: true,
+      },
+      {
+        name: 'Merge All Windows',
+        enabled: false,
+      },
+      {
+        name: 'Bring All to Front',
+        hasSection: true,
+      },
+    ],
+  },
+  {
+    name: 'Help',
+    items: [
       {
         name: 'Tips for Your Mac',
         handleButtonFunction: () => console.log('About This Mac'),
@@ -334,7 +572,7 @@ export const Finder: FinderDropdown[] = [
         handleButtonFunction: () => console.log('About This Mac'),
         shortcut: '⌘ ?',
         hasShortcut: true,
-      }
-    ]
+      },
+    ],
   },
 ]
