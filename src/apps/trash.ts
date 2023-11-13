@@ -4,7 +4,7 @@ export const trash: App = {
   id: 2,
   dropdownItems: [
     {
-      name: 'Help',
+      name: 'Trash',
       items: [{ name: 'Just testing', enabled: true, shortcut: 'A a a' }],
     },
   ],

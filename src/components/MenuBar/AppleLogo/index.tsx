@@ -2,7 +2,7 @@ import { AiFillApple } from 'react-icons/ai'
 import { DropdownArea, MacOsIconButton, MenubarItem } from './styles'
 import * as Menubar from '@radix-ui/react-menubar'
 import { Section } from '../Dropdown/styles'
-import React from 'react'
+import { Fragment } from 'react'
 
 export function AppleLogo() {
   const items = [
@@ -73,7 +73,7 @@ export function AppleLogo() {
         <Menubar.Portal>
           <DropdownArea>
             {items.map((item) => (
-              <React.Fragment key={item.name}>
+              <Fragment key={item.name}>
                 {item.hasSection && <Section key={item.name} />}
                 <MenubarItem key={item.name}>
                   <span>
@@ -83,7 +83,7 @@ export function AppleLogo() {
                     )}
                   </span>
                 </MenubarItem>
-              </React.Fragment>
+              </Fragment>
             ))}
           </DropdownArea>
         </Menubar.Portal>

@@ -1,20 +1,13 @@
 import { useContext } from 'react'
 import { CurrentAppContext } from '../../../contexts/currentAppContext'
 import { ActiveBullet, ArrowDiv, IconContainer, IconModel } from './styles'
+import { App } from '../../../@types/app'
 
-interface IconProps {
-  url: string
-  active: boolean
-  label: string
-  appName: string
-}
-
-export function Icon({ url, active, label, appName }: IconProps) {
-  const { setNewAppTitle, handleActiveIcon } = useContext(CurrentAppContext)
+export function Icon({ url, active, label, id }: App) {
+  const { setNewCurrentApp } = useContext(CurrentAppContext)
 
   function handleOpenApp() {
-    handleActiveIcon(label)
-    setNewAppTitle(appName)
+    setNewCurrentApp(id)
   }
 
   return (

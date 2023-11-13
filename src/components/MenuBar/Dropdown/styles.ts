@@ -26,6 +26,7 @@ export const DropdownArea = styled(Menubar.Content)`
   width: 270px;
 
   position: absolute;
+  padding: 0 5px;
   left: 0;
 
   border-radius: 4px;
