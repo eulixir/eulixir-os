@@ -14,9 +14,7 @@ export const CustomControlContainer = styled.div`
 
   font-size: 0.8rem;
 
-  margin: 0 1rem;
-
-  & > div {
+  & > nav {
     height: 100%;
 
     display: flex;
@@ -35,47 +33,5 @@ export const CustomControlContainer = styled.div`
 
   & > *:hover {
     cursor: default;
-  }
-`
-
-export const MenuBarButtonBase = styled.button`
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: transparent;
-  border: none;
-  color: ${({ theme }) => theme.colors.font};
-  outline: none;
-
-  border-radius: 4px;
-`
-
-export const CustomControlButton = styled(MenuBarButtonBase)`
-  &:active {
-    background: ${({ theme }) => theme.colors.buttonFocus};
-    box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
-
-    -webkit-box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
-
-    -moz-box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
-  }
-`
-export const MacOsIconButton = styled(MenuBarButtonBase)`
-  &:active {
-    background: ${({ theme }) => theme.colors.buttonFocus};
-    box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
-
-    -webkit-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
-
-    -moz-box-shadow: 7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
-      -7px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
   }
 `

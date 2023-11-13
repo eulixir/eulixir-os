@@ -9,16 +9,13 @@ export function SystemHour() {
 
   const { weekDay, month, hour, day, minute } = currentDateAndHour
 
-  function setTimestamps() {
-    setCurrentDateAndHour(getCurrentDateAndHour())
-
-    return
-  }
-
   const buildSystemHour = `${weekDay} ${day} ${month} ${hour}:${minute}`
 
   useEffect(() => {
-    const timer = setInterval(() => setTimestamps(), 1000)
+    const timer = setInterval(
+      () => setCurrentDateAndHour(getCurrentDateAndHour()),
+      1000
+    )
     return () => clearInterval(timer)
   }, [])
 

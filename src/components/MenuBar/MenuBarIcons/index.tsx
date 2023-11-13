@@ -16,8 +16,8 @@ export function MenuBarIcons({ changeOsTheme }: MenuBarIconsProps) {
   return (
     <Container>
       <main>
-        <MenuBarButton onClick={changeOsTheme}>
-          <IoIosMoon size={19} />
+        <MenuBarButton>
+          <IoIosMoon size={19} onClick={changeOsTheme} />
         </MenuBarButton>
         <MenuBarButton>
           <IoIosBatteryCharging size={24} />

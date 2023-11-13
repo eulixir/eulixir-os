@@ -14,18 +14,23 @@ export const GlobalStyle = createGlobalStyle`
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  
 }
 
 body {
   background: url(${({ theme }) => theme.backgroundUrl});
   background-size: 200px 200px;
-
-   
+  
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  
 }
 `

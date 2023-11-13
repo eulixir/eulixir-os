@@ -28,7 +28,7 @@ export const ProgressBar = styled.div`
 `
 
 interface ProgressProps {
-  progress?: number
+  progress: number
 }
 
 export const RunningBar = styled.div<ProgressProps>`

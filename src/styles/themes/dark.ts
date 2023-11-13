@@ -11,6 +11,10 @@ export const darkTheme = {
     font: '#ffffff',
     mobileBackground: '#282828',
     mobileBackgroundImg: mobileBackground,
+    menubar: {
+      disabled: '#b5b5b5c2',
+      separator: '#c1c1c12d',
+    },
     dock: {
       background: '#ffffff10',
       border: '#5252525e',

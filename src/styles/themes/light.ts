@@ -11,6 +11,10 @@ export const lightTheme = {
     buttonFocus: '#1c1c1c2d',
     mobileBackground: '#282828',
     mobileBackgroundImg: mobileBackground,
+    menubar: {
+      disabled: '#ffffff1f',
+      separator: '#ffffff1f',
+    },
     dock: {
       background: '#c1c1c152',
       border: '#bcbcbc5e',

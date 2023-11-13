@@ -71,9 +71,9 @@ export const IphoneButtons = styled.div<IphoneCaseProps>`
       0deg,
       rgba(218, 218, 218, 0.6927849264705883) 14%,
       rgba(42, 42, 42, 1) 100%
-    );s
+    );
   }
-  
+
   @media (max-width: 450px) {
     right: calc(10% - 38px);
   }
