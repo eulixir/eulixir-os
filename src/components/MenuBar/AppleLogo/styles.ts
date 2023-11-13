@@ -27,10 +27,20 @@ export const DropdownArea = styled(Menubar.Content)`
 `
 
 export const MenubarItem = styled(Menubar.Item)`
+  &:hover {
+    background: green;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+  }
+
   & > span {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     margin: 0.3rem 0;
+    margin-left: 12px;
+    padding: 3px 2px;
 
     .shortcut {
       color: ${({ theme }) => theme.colors.menubar.disabled};

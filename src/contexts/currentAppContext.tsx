@@ -1,5 +1,10 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 
+import {
+  Finder,
+  FinderDropdown,
+} from '../components/MenuBar/ItemsDropdown/Finder'
+
 interface CurrentAppContextProviderProps {
   children: ReactNode
 }
@@ -17,11 +22,6 @@ interface CurrentAppType {
   setNewAppTitle: (appTitle: string) => void
   handleActiveIcon: (label: string) => void
 }
-
-import {
-  Finder,
-  FinderDropdown,
-} from '../components/MenuBar/ItemsDropdown/Finder'
 
 export const CurrentAppContext = createContext({} as CurrentAppType)
 
