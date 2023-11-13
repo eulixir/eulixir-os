@@ -8,14 +8,16 @@ import { Dropdown } from '../Dropdown'
 import { AppleLogo } from '../AppleLogo'
 
 export function CustomControls() {
-  const { buttons } = useContext(CurrentAppContext)
+  const {
+    currentApp: { dropdownItems },
+  } = useContext(CurrentAppContext)
 
   return (
     <Menubar.Root>
       <CustomControlContainer>
         <AppleLogo />
         <nav>
-          {buttons.map((button) => (
+          {dropdownItems.map((button) => (
             <Dropdown
               key={button.name}
               items={button.items}

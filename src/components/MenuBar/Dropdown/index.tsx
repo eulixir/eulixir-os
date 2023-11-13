@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Item } from '../../../@types/item'
 import * as S from './styles'
 import * as Menubar from '@radix-ui/react-menubar'
@@ -14,10 +15,10 @@ export function Dropdown({ items, trigger }: DropdownProps) {
 
       <Menubar.Portal>
         <S.DropdownArea>
-          {items.map((item, index) => (
-            <>
+          {items.map((item) => (
+            <Fragment key={item.name}>
               {item.hasSection && <S.Section />}
-              <S.MenubarItem key={index}>
+              <S.MenubarItem key={item.name}>
                 <span>
                   {item.name}
                   {item.hasShortcut && (
@@ -25,7 +26,7 @@ export function Dropdown({ items, trigger }: DropdownProps) {
                   )}
                 </span>
               </S.MenubarItem>
-            </>
+            </Fragment>
           ))}
         </S.DropdownArea>
       </Menubar.Portal>
