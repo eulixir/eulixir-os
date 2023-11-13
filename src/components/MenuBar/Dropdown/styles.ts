@@ -24,7 +24,6 @@ export const DropdownArea = styled(Menubar.Content)`
   color: ${({ theme }) => theme.colors.font};
 
   width: 270px;
-  padding: 5px;
 
   position: absolute;
   left: 0;
