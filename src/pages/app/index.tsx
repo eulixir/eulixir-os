@@ -4,14 +4,14 @@ import { GlobalStyle } from '../../styles/global'
 import { darkTheme } from '../../styles/themes/dark'
 import { lightTheme } from '../../styles/themes/light'
 
-import { Desktop } from './desktop'
+import { Desktop } from './desktop/desktop'
 import { Mobile } from './mobile'
 
 function App() {
   const [width, setWindowWidth] = useState<number>(window.innerWidth)
   const [isMobile, setIsMobile] = useState(false)
   const [theme, setTheme] = useState(
-    getOsTheme() === 'dark' ? darkTheme : lightTheme
+    getOsTheme() === 'dark' ? darkTheme : lightTheme,
   )
 
   function getOsTheme() {

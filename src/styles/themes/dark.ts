@@ -30,4 +30,10 @@ export const darkTheme = {
     loadbarProgress: 'rgba(215, 213, 213, 0.876)',
   },
   backgroundUrl: background,
+  windowControls: {
+    closeButton: '#FF6157',
+    minimizeButton: '#FFC12F',
+    maximizeButton: '#2ACB42',
+    titleColor: 'rgba(255, 255, 255, 0.55)',
+  },
 }
