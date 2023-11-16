@@ -7,7 +7,7 @@ export const darkTheme = {
     primary: '#000',
     secondary: 'rgba(215, 213, 213, 0.876)',
     buttonFocus: 'rgba(255, 255, 255, 0.2)',
-    menuBar: '#0000006b',
+    menuBar: '#0000006c',
     font: '#ffffff',
     mobileBackground: '#282828',
     mobileBackgroundImg: mobileBackground,

@@ -37,7 +37,7 @@ export const DropdownArea = styled(Menubar.Content)`
   font-size: 0.8rem;
   font-weight: 600;
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(40px);
 `
 
 export const MenubarItem = styled(Menubar.Item)`
