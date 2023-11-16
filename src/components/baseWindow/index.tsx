@@ -3,14 +3,20 @@ import * as S from './styles'
 import { WindowControls } from './windowControls'
 import { motion, useDragControls } from 'framer-motion'
 
-type BaseWindowType = {
-  children: ReactNode
+export enum WindowStyle {
+  FullSized = 'full-sized',
+  Sidebar = 'sidebar',
+}
+
+export type BaseWindowType = {
+  children?: ReactNode
   windowControlsFullSize: boolean
   appName: string
+  windowStyle: WindowStyle
 }
 
 export function BaseWindow(props: BaseWindowType) {
-  const { children, appName } = props
+  const { children, appName, windowStyle } = props
 
   const dragControls = useDragControls()
 
@@ -24,15 +30,20 @@ export function BaseWindow(props: BaseWindowType) {
       dragControls={dragControls}
       dragListener={false}
     >
-      <S.ControlContainer
-        onPointerDown={(e) => {
-          dragControls.start(e)
-        }}
-        {...props}
-      >
+      {windowStyle === WindowStyle.FullSized ? (
+        <S.ControlContainer
+          onPointerDown={(e) => {
+            dragControls.start(e)
+          }}
+          {...props}
+        >
+          <WindowControls />
+          <p>{appName}</p>
+        </S.ControlContainer>
+      ) : (
         <WindowControls />
-        <p>{appName}</p>
-      </S.ControlContainer>
+      )}
+
       {children}
     </S.AppContainer>
   )
