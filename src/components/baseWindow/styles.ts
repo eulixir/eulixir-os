@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-export const AppContainer = styled.div`
+export const AppContainer = styled(motion.div)`
   position: absolute;
 
   width: 80vw;

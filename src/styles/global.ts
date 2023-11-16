@@ -21,6 +21,7 @@ body {
   background: url(${({ theme }) => theme.backgroundUrl});
   background-size: 200px 200px;
   
+  overflow: none;
   
   background-size: cover;
   background-repeat: no-repeat;
