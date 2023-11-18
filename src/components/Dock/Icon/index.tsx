@@ -1,13 +1,16 @@
 import { useContext } from 'react'
 import { CurrentAppContext } from '../../../contexts/currentAppContext'
+import { AppWindowContext } from '../../../contexts/appWindowContext'
 import { ActiveBullet, ArrowDiv, IconContainer, IconModel } from './styles'
 import { App } from '../../../@types/app'
 
 export function Icon({ url, active, label, id }: App) {
   const { setNewCurrentApp } = useContext(CurrentAppContext)
+  const { addNewAppToStack } = useContext(AppWindowContext)
 
   function handleOpenApp() {
     setNewCurrentApp(id)
+    addNewAppToStack(id)
   }
 
   return (

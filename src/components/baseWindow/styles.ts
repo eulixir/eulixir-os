@@ -24,6 +24,15 @@ interface ControlContainerProps {
   windowControlsFullSize: boolean
 }
 
+export const DragContainer = styled(motion.div)`
+  position: absolute;
+
+  border-radius: 18px 18px 0 0;
+
+  width: 100%;
+  height: 30px;
+`
+
 export const ControlContainer = styled.div<ControlContainerProps>`
   background-color: ${({ theme, windowControlsFullSize }) =>
     windowControlsFullSize === true ? 'transparent' : theme.colors.dock.border};

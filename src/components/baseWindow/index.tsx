@@ -41,7 +41,13 @@ export function BaseWindow(props: BaseWindowType) {
           <p>{appName}</p>
         </S.ControlContainer>
       ) : (
-        <WindowControls />
+        <S.DragContainer
+          onPointerDown={(e) => {
+            dragControls.start(e)
+          }}
+        >
+          <WindowControls />
+        </S.DragContainer>
       )}
 
       {children}

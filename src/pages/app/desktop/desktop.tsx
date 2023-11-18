@@ -5,7 +5,9 @@ import { SplashScreen } from '../../../components/SplashScreen'
 import { CurrentAppContextProvider } from '../../../contexts/currentAppContext'
 
 import { DesktopContainer } from '../styles'
-import { FinderApp } from './finder'
+
+import { WeatherApp } from './weather'
+import { AppWindowContextProvider } from '../../../contexts/appWindowContext'
 
 interface DesktopProps {
   changeOsTheme: () => void
@@ -28,12 +30,16 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
 
   return (
     <CurrentAppContextProvider>
-      <DesktopContainer>
-        {!hasLoaded && <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />}
-        <MenuBar changeOsTheme={changeOsTheme} />
-        <FinderApp />
-        <Dock />
-      </DesktopContainer>
+      <AppWindowContextProvider>
+        <DesktopContainer>
+          {!hasLoaded && (
+            <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />
+          )}
+          <MenuBar changeOsTheme={changeOsTheme} />
+          <WeatherApp />
+          <Dock />
+        </DesktopContainer>
+      </AppWindowContextProvider>
     </CurrentAppContextProvider>
   )
 }

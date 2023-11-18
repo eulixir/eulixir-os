@@ -2,7 +2,7 @@ import { App } from '../@types/app'
 import WeatherLogo from '../assets/icons/weather.png'
 
 export const weather: App = {
-  id: 2,
+  id: 3,
   dropdownItems: [
     {
       name: 'Weather',

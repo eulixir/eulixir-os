@@ -21,6 +21,17 @@ export function CurrentAppContextProvider({
 }: CurrentAppContextProviderProps) {
   const [currentApp, setCurrentApp] = useState(apps[0])
 
+  // [{
+  //   name: currentApp.id,
+  //   pos: {
+  //     x: 2,
+  //     y: 3,
+  //   }
+
+  // }, 'weather', ....]
+
+  // //
+
   const [icons, setIcons] = useState(apps)
 
   //   [
