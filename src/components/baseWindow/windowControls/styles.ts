@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 export const WindowControlsContainer = styled.div`
+  z-index: 999;
   position: absolute;
 
-  left: 8px;
+  left: 14px;
+  top: 12px;
 
   display: flex;
   align-items: center;

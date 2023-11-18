@@ -1,14 +1,15 @@
 import {
+  WindowStyle,
   BaseWindow,
   BaseWindowType,
-  WindowStyle,
-} from '../../../components/baseWindow'
+} from '../../../../components/baseWindow'
 
 export function FinderApp() {
   const configs: BaseWindowType = {
     windowControlsFullSize: true,
     appName: 'Finder',
     windowStyle: WindowStyle.FullSized,
+    appId: 1,
   }
 
   return (

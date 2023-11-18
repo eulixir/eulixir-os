@@ -6,7 +6,7 @@ import { CurrentAppContextProvider } from '../../../contexts/currentAppContext'
 
 import { DesktopContainer } from '../styles'
 
-import { WeatherApp } from './weather'
+import { WeatherApp } from './Weather/index'
 import { AppWindowContextProvider } from '../../../contexts/appWindowContext'
 
 interface DesktopProps {
