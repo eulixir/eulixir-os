@@ -20,6 +20,8 @@ export const Section = styled(Menubar.Separator)`
 `
 
 export const DropdownArea = styled(Menubar.Content)`
+  font-weight: 300px;
+  z-index: 999;
   background: ${({ theme }) => theme.colors.menuBar};
   color: ${({ theme }) => theme.colors.font};
 
@@ -37,7 +39,7 @@ export const DropdownArea = styled(Menubar.Content)`
   font-size: 0.8rem;
   font-weight: 600;
 
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(30px);
 `
 
 export const MenubarItem = styled(Menubar.Item)`

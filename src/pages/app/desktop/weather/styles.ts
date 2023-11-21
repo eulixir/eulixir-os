@@ -29,22 +29,30 @@ export const SideBarContainer = styled.div`
   max-width: 292px;
   min-width: 130px;
 
-  background-color: blue;
+  background-color: ${({ theme }) =>
+    theme.apps.weather.cloudy.sideBarBackground};
 
   border-radius: 12px 0 0 12px;
 
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+
+  padding-top: 55px;
 `
 
 export const LocationsContainer = styled.div`
-  background: blue;
+  width: 100%;
+  padding: 0 18px;
 `
 
 export const ResizeContainer = styled.div`
   height: 100%;
   width: 1px;
+  position: absolute;
+  right: 0;
 
   &:hover {
     cursor: col-resize;
