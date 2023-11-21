@@ -8,7 +8,7 @@ export const WeatherContainer = styled.section`
 
   top: 15%;
 
-  background: ${({ theme }) => theme.colors.mobileBackground};
+  background: ${({ theme }) => theme.apps.weather.mostlyCloudly.mainBackground};
   border: 0.01px solid ${({ theme }) => theme.colors.menubar.disabled};
 
   -webkit-box-shadow: inset 0px 0px 0px 1px
@@ -30,7 +30,7 @@ export const SideBarContainer = styled.div`
   min-width: 130px;
 
   background-color: ${({ theme }) =>
-    theme.apps.weather.cloudy.sideBarBackground};
+    theme.apps.weather.mostlyCloudly.sideBarBackground};
 
   border-radius: 12px 0 0 12px;
 

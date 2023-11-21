@@ -11,7 +11,7 @@ export const SplashScreenContainer = styled.div`
   flex-direction: column;
   padding-top: 15vh;
 
-  z-index: 2;
+  z-index: 50;
 
   & > * {
     margin-bottom: 9vh;

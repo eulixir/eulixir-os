@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 interface LocationCard {
-  active: boolean
+  active: string
 }
 
 export function LocationCard({ active }: LocationCard) {

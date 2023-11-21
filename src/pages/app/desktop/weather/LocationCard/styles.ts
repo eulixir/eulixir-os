@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 
 interface LocationCardProps {
-  active: boolean
+  active?: string
 }
 
 export const LocationCardContainer = styled.div<LocationCardProps>`

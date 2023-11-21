@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const WindowControlsContainer = styled.div`
-  z-index: 999;
+  z-index: 40;
   position: absolute;
 
   left: 14px;

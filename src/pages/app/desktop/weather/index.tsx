@@ -22,7 +22,25 @@ export function WeatherApp() {
   // }
   const [isResizing, setIsResizing] = useState(false)
   const [resizeStartX, setResizeStartX] = useState(0)
-  const [sidebarWidth, setSidebarWidth] = useState(292) // Initial width in pixels
+  const [sidebarWidth, setSidebarWidth] = useState(292)
+  const [location, setLocation] = useState({})
+
+  useEffect(() => {
+    if (!navigator.geolocation) {
+      console.log('Geolocation is not supported by your browser')
+      return
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords
+        setLocation({ latitude, longitude })
+      },
+      (err) => {
+        console.log(`Error getting location: ${err.message}`)
+      },
+    )
+  }, [])
 
   const sidebarRef = useRef(null)
 
@@ -78,7 +96,7 @@ export function WeatherApp() {
         <S.SideBarContainer ref={sidebarRef} style={{ width: sidebarWidth }}>
           <S.LocationsContainer>
             {locations.map((location) => (
-              <LocationCard key={location} active={true} />
+              <LocationCard key={location} active={'true'} />
             ))}
           </S.LocationsContainer>
           <S.ResizeContainer onMouseDown={handleMouseDown} />
