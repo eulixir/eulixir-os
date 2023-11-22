@@ -7,7 +7,6 @@ interface LocationCardProps {
 
 export const LocationCardContainer = styled.div<LocationCardProps>`
   width: 100%;
-  background: red;
   margin-bottom: 2px;
   display: flex;
   align-items: center;

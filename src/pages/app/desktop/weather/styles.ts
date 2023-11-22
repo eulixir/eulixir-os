@@ -8,7 +8,10 @@ export const WeatherContainer = styled.section`
 
   top: 15%;
 
-  background: ${({ theme }) => theme.apps.weather.mostlyCloudly.mainBackground};
+  background-image: url('https://c1.wallpaperflare.com/preview/804/778/325/sky-background-nature-blue.jpg');
+  background-size: cover;
+  background-position: center;
+
   border: 0.01px solid ${({ theme }) => theme.colors.menubar.disabled};
 
   -webkit-box-shadow: inset 0px 0px 0px 1px
@@ -16,7 +19,7 @@ export const WeatherContainer = styled.section`
   -moz-box-shadow: inset 0px 0px 0px 1px
     ${({ theme }) => theme.splash.background};
   box-shadow: inset 0px 0px 0px 1px ${({ theme }) => theme.splash.background};
-  border-radius: 18px;
+  border-radius: 9px;
 
   display: flex;
   align-items: center;
@@ -57,4 +60,13 @@ export const ResizeContainer = styled.div`
   &:hover {
     cursor: col-resize;
   }
+`
+
+export const WeatherInfoContainer = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

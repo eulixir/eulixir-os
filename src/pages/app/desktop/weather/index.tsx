@@ -13,6 +13,8 @@ import { AppWindowContext } from '../../../../contexts/appWindowContext'
 import { DragContainer } from '../../../../components/baseWindow/DragContainer'
 import { WindowControls } from '../../../../components/baseWindow/windowControls'
 import { LocationCard } from './LocationCard'
+import { WeatherContext } from '../../../../contexts/weatherContext'
+import { SearchInput } from './searchInput'
 
 export function WeatherApp() {
   // const [sidebarActive, setSidebarActive] = useState(false)
@@ -20,27 +22,14 @@ export function WeatherApp() {
   // const toggleSidebar = () => {
   //   setSidebarActive(!sidebarActive)
   // }
+
+  const { location } = useContext(WeatherContext)
+
+  console.log(location)
+
   const [isResizing, setIsResizing] = useState(false)
   const [resizeStartX, setResizeStartX] = useState(0)
   const [sidebarWidth, setSidebarWidth] = useState(292)
-  const [location, setLocation] = useState({})
-
-  useEffect(() => {
-    if (!navigator.geolocation) {
-      console.log('Geolocation is not supported by your browser')
-      return
-    }
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords
-        setLocation({ latitude, longitude })
-      },
-      (err) => {
-        console.log(`Error getting location: ${err.message}`)
-      },
-    )
-  }, [])
 
   const sidebarRef = useRef(null)
 
@@ -93,6 +82,7 @@ export function WeatherApp() {
         onClick={() => addNewAppToStack(1)}
       >
         <WindowControls />
+        <SearchInput />
         <S.SideBarContainer ref={sidebarRef} style={{ width: sidebarWidth }}>
           <S.LocationsContainer>
             {locations.map((location) => (
@@ -102,6 +92,8 @@ export function WeatherApp() {
           <S.ResizeContainer onMouseDown={handleMouseDown} />
         </S.SideBarContainer>
         <DragContainer dragControls={dragControls} />
+
+        <S.WeatherInfoContainer>aaa</S.WeatherInfoContainer>
       </S.WeatherContainer>
     </>
   )
