@@ -33,6 +33,8 @@ export const LocationInfoContainer = styled.div<LocationCardProps>`
     flex-direction: column;
 
     & > h4 {
+      line-break: loose;
+      white-space: nowrap;
       font-size: 0.8rem;
       color: ${({ theme }) => theme.apps.weather.fonts.white};
     }
@@ -71,7 +73,12 @@ export const StatusAndPositionContainer = styled.div<LocationCardProps>`
       : theme.apps.weather.fonts.foreground};
 
   & > div {
-    width: 25%;
+    
+    & > :first-child{
+      padding-left: 4px;
+      padding-right: 4px;
+      
+    }
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -30,7 +30,7 @@ export const SearchInputContainer = styled.div`
   justify-content: center;
 
   &:hover {
-    outline: 4px solid green;
+    outline: 4px solid #3be814;
   }
 
   & > div:first-child {

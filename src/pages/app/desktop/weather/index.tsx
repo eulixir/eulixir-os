@@ -16,6 +16,8 @@ import { LocationCard } from './LocationCard'
 import { WeatherContext } from '../../../../contexts/weatherContext'
 import { SearchInput } from './searchInput'
 
+import Wallpaper from '../../../../assets/images/Weather/cloud_wallpaper.jpg'
+
 export function WeatherApp() {
   // const [sidebarActive, setSidebarActive] = useState(false)
 
@@ -23,9 +25,7 @@ export function WeatherApp() {
   //   setSidebarActive(!sidebarActive)
   // }
 
-  const { location } = useContext(WeatherContext)
-
-  console.log(location)
+  // const { location } = useContext(WeatherContext)
 
   const [isResizing, setIsResizing] = useState(false)
   const [resizeStartX, setResizeStartX] = useState(0)
@@ -77,6 +77,7 @@ export function WeatherApp() {
         dragConstraints={{ top: -153, left: -1800, right: 1800, bottom: 1000 }}
         dragElastic={false}
         dragMomentum={false}
+        style={{ backgroundImage: `url(${Wallpaper})` }}
         dragControls={dragControls}
         dragListener={false}
         onClick={() => addNewAppToStack(1)}
@@ -86,7 +87,11 @@ export function WeatherApp() {
         <S.SideBarContainer ref={sidebarRef} style={{ width: sidebarWidth }}>
           <S.LocationsContainer>
             {locations.map((location) => (
-              <LocationCard key={location} active={'true'} />
+              <LocationCard
+                key={location}
+                active={'true'}
+                sidebardWidth={sidebarWidth}
+              />
             ))}
           </S.LocationsContainer>
           <S.ResizeContainer onMouseDown={handleMouseDown} />

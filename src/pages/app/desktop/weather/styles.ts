@@ -8,7 +8,6 @@ export const WeatherContainer = styled.section`
 
   top: 15%;
 
-  background-image: url('https://c1.wallpaperflare.com/preview/775/742/415/blue-sky-background-clouds.jpg');
   background-size: cover;
 
   border: 0.01px solid ${({ theme }) => theme.colors.menubar.disabled};
@@ -24,6 +23,10 @@ export const WeatherContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+
+  box-shadow: 1px 7px 25px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 7px 25px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 7px 25px 0px rgba(0, 0, 0, 0.75);
 `
 
 export const SideBarContainer = styled.div`
@@ -34,7 +37,7 @@ export const SideBarContainer = styled.div`
   background-color: ${({ theme }) =>
     theme.apps.weather.mostlyCloudly.sideBarBackground};
 
-  border-radius: 12px 0 0 12px;
+  border-radius: 9px 0 0 9px;
 
   display: flex;
   align-items: flex-start;
