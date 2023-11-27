@@ -29,7 +29,7 @@ export const DropdownArea = styled(Menubar.Content)`
 
   width: 270px;
 
-  border: 0.5px solid ${({ theme }) => theme.colors.menubar.disabled};
+  border: 0.5px solid ${({ theme }) => theme.colors.menubar.border};
 
   position: absolute;
   padding: 0 5px;
@@ -39,7 +39,7 @@ export const DropdownArea = styled(Menubar.Content)`
   font-size: 0.8rem;
   font-weight: 600;
 
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(40px);
 `
 

@@ -15,6 +15,7 @@ export const lightTheme = {
     mobileBackgroundImg: mobileBackground,
     menubar: {
       disabled: '#ffffff1f',
+      border: '#c1c1c12d',
       separator: '#ffffff1f',
     },
     dock: {

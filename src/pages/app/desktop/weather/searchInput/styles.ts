@@ -8,6 +8,7 @@ export const SearchInputContainer = styled.div`
   justify-content: space-between;
 
   border-radius: 5px;
+  border: none;
 
   background: ${({ theme }) => theme.apps.weather.fonts.transluscent};
 
@@ -23,6 +24,10 @@ export const SearchInputContainer = styled.div`
   right: 10px;
 
   z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     outline: 4px solid green;
@@ -46,10 +51,13 @@ export const SearchInputContainer = styled.div`
 export const SearchIconContainer = styled.div``
 
 export const SearchInput = styled.input`
+  padding-left: 4px;
+  font-weight: 600;
   background: none;
   border: none;
   width: 100%;
   outline: none;
+  color: ${({ theme }) => theme.apps.weather.fonts.white100};
 
   &::placeholder {
     color: ${({ theme }) => theme.apps.weather.fonts.white100};
@@ -60,6 +68,8 @@ export const SearchInput = styled.input`
   }
 
   &:focus {
+    caret-color: black;
+
     color: ${({ theme }) => theme.apps.weather.fonts.white};
   }
 `

@@ -8,9 +8,8 @@ export const WeatherContainer = styled.section`
 
   top: 15%;
 
-  background-image: url('https://c1.wallpaperflare.com/preview/804/778/325/sky-background-nature-blue.jpg');
+  background-image: url('https://c1.wallpaperflare.com/preview/775/742/415/blue-sky-background-clouds.jpg');
   background-size: cover;
-  background-position: center;
 
   border: 0.01px solid ${({ theme }) => theme.colors.menubar.disabled};
 
@@ -65,6 +64,24 @@ export const ResizeContainer = styled.div`
 export const WeatherInfoContainer = styled.div`
   width: 100%;
   height: 100%;
+
+  background: rgb(71, 167, 216);
+  background: linear-gradient(
+    0deg,
+    rgba(71, 167, 216, 1) 9%,
+    rgba(71, 167, 216, 1) 11%,
+    rgba(71, 167, 216, 1) 16%,
+    rgba(71, 167, 216, 1) 21%,
+    rgba(71, 167, 216, 0.7833508403361344) 28%,
+    rgba(71, 167, 216, 0.6909138655462185) 32%,
+    rgba(71, 167, 216, 0.5564600840336135) 38%,
+    rgba(71, 167, 216, 0.4248074229691877) 46%,
+    rgba(71, 167, 216, 0.3379726890756303) 57%,
+    rgba(71, 167, 216, 0.2091211484593838) 68%,
+    rgba(71, 167, 216, 0.10828081232492992) 76%,
+    rgba(71, 167, 216, 0) 86%,
+    rgba(71, 167, 216, 0) 93%
+  );
 
   display: flex;
   align-items: center;
