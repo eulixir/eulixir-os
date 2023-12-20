@@ -35,7 +35,7 @@ export const SideBarContainer = styled.div`
   min-width: 130px;
 
   background-color: ${({ theme }) =>
-    theme.apps.weather.mostlyCloudly.sideBarBackground};
+    theme.apps.weather.mostlyCloudy.sideBarBackground};
 
   border-radius: 9px 0 0 9px;
 

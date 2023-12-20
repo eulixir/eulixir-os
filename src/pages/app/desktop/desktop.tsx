@@ -6,8 +6,8 @@ import { CurrentAppContextProvider } from '../../../contexts/currentAppContext'
 
 import { DesktopContainer } from '../styles'
 
-import { WeatherApp } from './Weather/index'
 import { AppWindowContextProvider } from '../../../contexts/appWindowContext'
+import { WeatherApp } from './weather'
 
 interface DesktopProps {
   changeOsTheme: () => void

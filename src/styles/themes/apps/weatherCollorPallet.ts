@@ -12,7 +12,7 @@ export const weatherColorPallet = {
     sideBarBackground: '#1B1E28',
     mainBackground: '#20262F',
   },
-  mostlyCloudly: {
+  mostlyCloudy: {
     sideBarBackground: '#31669C',
     mainBackground: '#2062B4',
   },
