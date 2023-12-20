@@ -4,9 +4,9 @@ import { GlobalStyle } from '../../styles/global'
 import { darkTheme } from '../../styles/themes/dark'
 import { lightTheme } from '../../styles/themes/light'
 
-import { Desktop } from './Desktop/desktop'
 import { Mobile } from './mobile'
 import { getOsTheme } from '../../hooks/getOsTheme'
+import { Desktop } from './desktop/desktop'
 
 function App() {
   const [width, setWindowWidth] = useState<number>(window.innerWidth)

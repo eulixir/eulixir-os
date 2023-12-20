@@ -6,7 +6,7 @@ export const Container = styled.div`
   backdrop-filter: blur(90px);
   -webkit-backdrop-filter: blur(90px);
 
-  height: 28px;
+  height: 40px;
   width: 100%;
 
   display: flex;
