@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 
 export const buttonBaseStyles = css`
-  height: 100%;
+  height: 70%;
 
   display: flex;
   align-items: center;
@@ -17,13 +17,16 @@ export const buttonBaseStyles = css`
   &[data-state='true'],
   &[aria-expanded='true'] {
     background: ${({ theme }) => theme.colors.buttonFocus};
-    box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+    box-shadow:
+      5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
       -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -webkit-box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+    -webkit-box-shadow:
+      5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
       -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -moz-box-shadow: 5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+    -moz-box-shadow:
+      5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
       -5px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
   }
 `
