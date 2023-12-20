@@ -30,6 +30,7 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
       <DesktopContainer>
         {!hasLoaded && <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />}
         <MenuBar changeOsTheme={changeOsTheme} />
+
         <Dock />
       </DesktopContainer>
     </CurrentAppContextProvider>
