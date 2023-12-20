@@ -11,7 +11,7 @@ function App() {
   const [width, setWindowWidth] = useState<number>(window.innerWidth)
   const [isMobile, setIsMobile] = useState(false)
   const [theme, setTheme] = useState(
-    getOsTheme() === 'dark' ? darkTheme : lightTheme
+    getOsTheme() === 'dark' ? darkTheme : lightTheme,
   )
 
   function getOsTheme() {
@@ -47,7 +47,7 @@ function App() {
     return () => {
       window.removeEventListener('resize', handleWindowResize)
     }
-  })
+  }, [width])
 
   return (
     <>
