@@ -1,22 +1,16 @@
-import {
-  MouseEvent,
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
 
 import * as S from './styles'
-import { motion, useDragControls } from 'framer-motion'
-import { AppWindowContext } from '../../../../contexts/appWindowContext'
-import { DragContainer } from '../../../../components/baseWindow/DragContainer'
-import { WindowControls } from '../../../../components/baseWindow/windowControls'
+
 import { LocationCard } from './LocationCard'
-// import { WeatherContext } from '../../../../contexts/weatherContext'
 import { SearchInput } from './searchInput'
 
-import Wallpaper from '../../../../assets/images/Weather/cloud_wallpaper.jpg'
+// import Wallpaper from '../../../../assets/images/Weather/cloud_wallpaper.jpg'
+import {
+  BaseWindow,
+  BaseWindowType,
+  WindowStyle,
+} from '../../../../components/baseWindow'
 
 export function WeatherApp() {
   // const [sidebarActive, setSidebarActive] = useState(false)
@@ -63,26 +57,20 @@ export function WeatherApp() {
     }
   }, [handleMouseMove])
 
-  const { addNewAppToStack } = useContext(AppWindowContext)
-
-  const dragControls = useDragControls()
+  // const dragControls = useDragControls()
 
   const locations = ['Brasilia']
 
+  const configs: BaseWindowType = {
+    windowcontrolsfullsize: 'true',
+    appname: 'Weather',
+    windowstyle: WindowStyle.Sidebar,
+    appid: 3,
+  }
+
   return (
     <>
-      <S.WeatherContainer
-        drag
-        as={motion.div}
-        dragConstraints={{ top: -153, left: -1800, right: 1800, bottom: 1000 }}
-        dragElastic={false}
-        dragMomentum={false}
-        style={{ backgroundImage: `url(${Wallpaper})` }}
-        dragControls={dragControls}
-        dragListener={false}
-        onClick={() => addNewAppToStack(1)}
-      >
-        <WindowControls />
+      <BaseWindow {...configs} key={configs.appid}>
         <SearchInput />
         <S.SideBarContainer ref={sidebarRef} style={{ width: sidebarWidth }}>
           <S.LocationsContainer>
@@ -96,10 +84,9 @@ export function WeatherApp() {
           </S.LocationsContainer>
           <S.ResizeContainer onMouseDown={handleMouseDown} />
         </S.SideBarContainer>
-        <DragContainer dragControls={dragControls} />
 
-        <S.WeatherInfoContainer>aaa</S.WeatherInfoContainer>
-      </S.WeatherContainer>
+        {/* <S.WeatherInfoContainer>aaa</S.WeatherInfoContainer> */}
+      </BaseWindow>
     </>
   )
 }

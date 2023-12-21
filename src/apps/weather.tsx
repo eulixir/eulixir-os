@@ -1,9 +1,9 @@
-import { App } from '../@types/app'
+import { App, ItemDropdown } from '../@types/app'
 import WeatherLogo from '../assets/icons/weather.png'
+import { WeatherApp } from '../pages/app/desktop/weather'
 
-export const weather: App = {
-  id: 3,
-  dropdownItems: [
+export const weatherDropdownItems = (): ItemDropdown[] => {
+  const items = [
     {
       name: 'Weather',
       items: [{ name: 'Just testing', enabled: true, shortcut: 'A a a' }],
@@ -24,9 +24,17 @@ export const weather: App = {
       name: 'Help',
       items: [{ name: 'Just testing', enabled: true, shortcut: 'A a a' }],
     },
-  ],
+  ]
+
+  return items
+}
+
+export const weather: App = {
+  id: 3,
+  dropdownItems: weatherDropdownItems(),
   url: WeatherLogo,
-  active: false,
   label: 'Weather',
+  active: true,
   appName: 'Weather',
+  component: <WeatherApp />,
 }

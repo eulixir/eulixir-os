@@ -12,21 +12,21 @@ export enum WindowStyle {
 
 export type BaseWindowType = {
   children?: ReactNode
-  windowControlsFullSize: boolean
-  appName: string
-  windowStyle: WindowStyle
-  appId: number
+  windowcontrolsfullsize: string
+  appname: string
+  windowstyle: WindowStyle
+  appid: number
 }
 
 export function BaseWindow(props: BaseWindowType) {
-  const { children, appName, windowStyle, appId } = props
+  const { children, appname, windowstyle, appid } = props
   const [currentZIndex, setCurrentZIndex] = useState(0)
 
   const { addNewProcess, getZIndex, processStack } =
     useContext(AppWindowContext)
 
   const process: Process = {
-    pid: appId,
+    pid: appid,
     status: 'open',
   }
 
@@ -51,10 +51,10 @@ export function BaseWindow(props: BaseWindowType) {
       style={{ zIndex: currentZIndex }}
     >
       <DragContainer dragControls={dragControls} />
-      {windowStyle === WindowStyle.FullSized ? (
+      {windowstyle === WindowStyle.FullSized ? (
         <S.ControlContainer {...props}>
           <WindowControls />
-          <p>{appName}</p>
+          <p>{appname}</p>
         </S.ControlContainer>
       ) : (
         <WindowControls />

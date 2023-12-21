@@ -13,13 +13,4 @@ export interface App {
   active: boolean
   appName: string
   component: ReactNode
-  // page: {
-  //   component: () => Jsx
-  //   attrs: {
-  //     windowControlsFullSize: boolean
-  //     appName: string
-  //     windowStyle: WindowStyle.FullSized
-  //     appId: number
-  //   }
-  // }
 }

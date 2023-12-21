@@ -23,12 +23,14 @@ export const AppContainer = styled(motion.div)`
 `
 
 interface ControlContainerProps {
-  windowControlsFullSize: boolean
+  windowcontrolsfullsize: string
 }
 
 export const ControlContainer = styled.div<ControlContainerProps>`
-  background-color: ${({ theme, windowControlsFullSize }) =>
-    windowControlsFullSize === true ? 'transparent' : theme.colors.dock.border};
+  background-color: ${({ theme, windowcontrolsfullsize }) =>
+    windowcontrolsfullsize === 'true'
+      ? 'transparent'
+      : theme.colors.dock.border};
 
   height: 30px;
   border-radius: 18px 18px 0 0;
