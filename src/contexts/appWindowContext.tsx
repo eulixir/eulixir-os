@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useState } from 'react'
-// import { apps } from '../apps/appService'
 
 interface AppWindowContextProviderProps {
   children: ReactNode
@@ -8,6 +7,7 @@ interface AppWindowContextProviderProps {
 interface AppWindowContextProviderType {
   addNewAppToStack: (id: number) => void
   getZIndex: (id: number) => number
+  appStack: number[]
 }
 
 export const AppWindowContext = createContext(
@@ -38,23 +38,15 @@ export function AppWindowContextProvider({
   function getZIndex(id: number) {
     const index = appStack.findIndex((appId) => appId === id)
 
-    const zIndex = (appStack.length - index) * 10
+    const zIndex = (appStack.length + index) * 10
+
     return zIndex
   }
 
-  // [{
-  //   name: currentApp.id,
-  //   pos: {
-  //     x: 2,
-  //     y: 3,
-  //   }
-
-  // }, 'weather', ....]
-
-  // //
-
   return (
-    <AppWindowContext.Provider value={{ addNewAppToStack, getZIndex }}>
+    <AppWindowContext.Provider
+      value={{ addNewAppToStack, getZIndex, appStack }}
+    >
       {children}
     </AppWindowContext.Provider>
   )

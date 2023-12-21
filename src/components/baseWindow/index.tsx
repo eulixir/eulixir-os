@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { ReactNode, useContext } from 'react'
+import { ReactNode, useContext, useEffect, useState } from 'react'
 import { WindowControls } from './windowControls'
 import { DragContainer } from './DragContainer'
 import { motion, useDragControls } from 'framer-motion'
@@ -20,10 +20,15 @@ export type BaseWindowType = {
 
 export function BaseWindow(props: BaseWindowType) {
   const { children, appName, windowStyle, appId } = props
+  const [currentZIndex, setCurrentZIndex] = useState(0)
 
-  const { addNewAppToStack, getZIndex } = useContext(AppWindowContext)
+  const { addNewAppToStack, getZIndex, appStack } = useContext(AppWindowContext)
 
   const zIndex = getZIndex(appId)
+
+  useEffect(() => {
+    setCurrentZIndex(zIndex)
+  }, [appStack, zIndex])
 
   const dragControls = useDragControls()
 
@@ -37,7 +42,7 @@ export function BaseWindow(props: BaseWindowType) {
       dragControls={dragControls}
       dragListener={false}
       onClick={() => addNewAppToStack(appId)}
-      style={{ zIndex }}
+      style={{ zIndex: currentZIndex }}
     >
       <DragContainer dragControls={dragControls} />
       {windowStyle === WindowStyle.FullSized ? (

@@ -48,7 +48,7 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
             windowControlsFullSize={true}
             appName="Weather"
             windowStyle={WindowStyle.FullSized}
-            appId={2}
+            appId={3}
           />
           <Dock />
         </DesktopContainer>
