@@ -12,4 +12,14 @@ export interface App {
   label: string
   active: boolean
   appName: string
+  component: ReactNode
+  // page: {
+  //   component: () => Jsx
+  //   attrs: {
+  //     windowControlsFullSize: boolean
+  //     appName: string
+  //     windowStyle: WindowStyle.FullSized
+  //     appId: number
+  //   }
+  // }
 }

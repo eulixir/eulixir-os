@@ -4,7 +4,7 @@ import {
   BaseWindowType,
 } from '../../../../components/baseWindow'
 
-export function FinderApp() {
+export const FinderApp: React.FC = () => {
   const configs: BaseWindowType = {
     windowControlsFullSize: true,
     appName: 'Finder',

@@ -1,24 +1,16 @@
 import { useContext } from 'react'
-import { BaseWindow, WindowStyle } from '../../../components/baseWindow'
+
 import { AppWindowContext } from '../../../contexts/appWindowContext'
+import { apps } from '../../../apps/appService'
 
 export function AppWindowManagement() {
-  useContext(AppWindowContext)
+  const { processStack } = useContext(AppWindowContext)
 
   return (
     <>
-      <BaseWindow
-        windowControlsFullSize={true}
-        appName="Finder"
-        windowStyle={WindowStyle.FullSized}
-        appId={1}
-      />
-      <BaseWindow
-        windowControlsFullSize={true}
-        appName="Weather"
-        windowStyle={WindowStyle.FullSized}
-        appId={3}
-      />
+      {processStack.map(
+        (process) => apps.find(({ id }) => process.pid === id)?.component,
+      )}
     </>
   )
 }
