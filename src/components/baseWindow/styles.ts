@@ -5,11 +5,13 @@ export const AppContainer = styled(motion.div)`
   position: absolute;
 
   width: 80vw;
+
   height: 70vh;
 
   top: 15%;
 
   background: ${({ theme }) => theme.colors.mobileBackground};
+
   border: 0.01px solid ${({ theme }) => theme.colors.menubar.disabled};
 
   -webkit-box-shadow: inset 0px 0px 0px 1px

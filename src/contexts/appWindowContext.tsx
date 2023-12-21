@@ -7,6 +7,7 @@ interface AppWindowContextProviderProps {
 
 interface AppWindowContextProviderType {
   addNewAppToStack: (id: number) => void
+  getZIndex: (id: number) => number
 }
 
 export const AppWindowContext = createContext(
@@ -19,17 +20,26 @@ export function AppWindowContextProvider({
   const [appStack, setAppStack] = useState<number[]>([])
 
   function addNewAppToStack(id: number) {
-    if (appStack.length === 0) {
+    const appStackLength = appStack.length
+
+    if (appStackLength === 0) {
       return setAppStack([id])
     }
 
-    if (appStack[appStack.length - 1] === id) {
+    if (appStack[appStackLength - 1] === id) {
       return
     }
 
     const updatedApps = appStack.filter((appId) => appId !== id)
 
     setAppStack([...updatedApps, id])
+  }
+
+  function getZIndex(id: number) {
+    const index = appStack.findIndex((appId) => appId === id)
+
+    const zIndex = (appStack.length - index) * 10
+    return zIndex
   }
 
   // [{
@@ -44,7 +54,7 @@ export function AppWindowContextProvider({
   // //
 
   return (
-    <AppWindowContext.Provider value={{ addNewAppToStack }}>
+    <AppWindowContext.Provider value={{ addNewAppToStack, getZIndex }}>
       {children}
     </AppWindowContext.Provider>
   )

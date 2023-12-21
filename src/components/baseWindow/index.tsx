@@ -1,8 +1,9 @@
-import { ReactNode } from 'react'
 import * as S from './styles'
+import { ReactNode, useContext } from 'react'
 import { WindowControls } from './windowControls'
 import { DragContainer } from './DragContainer'
 import { motion, useDragControls } from 'framer-motion'
+import { AppWindowContext } from '../../contexts/appWindowContext'
 
 export enum WindowStyle {
   FullSized = 'full-sized',
@@ -14,10 +15,15 @@ export type BaseWindowType = {
   windowControlsFullSize: boolean
   appName: string
   windowStyle: WindowStyle
+  appId: number
 }
 
 export function BaseWindow(props: BaseWindowType) {
-  const { children, appName, windowStyle } = props
+  const { children, appName, windowStyle, appId } = props
+
+  const { addNewAppToStack, getZIndex } = useContext(AppWindowContext)
+
+  const zIndex = getZIndex(appId)
 
   const dragControls = useDragControls()
 
@@ -25,11 +31,13 @@ export function BaseWindow(props: BaseWindowType) {
     <S.AppContainer
       drag
       as={motion.div}
-      dragConstraints={{ top: -153, left: -1800, right: 1800, bottom: 1000 }}
+      dragConstraints={{ top: -104, left: -1800, right: 1800, bottom: 1000 }}
       dragElastic={false}
       dragMomentum={false}
       dragControls={dragControls}
       dragListener={false}
+      onClick={() => addNewAppToStack(appId)}
+      style={{ zIndex }}
     >
       <DragContainer dragControls={dragControls} />
       {windowStyle === WindowStyle.FullSized ? (

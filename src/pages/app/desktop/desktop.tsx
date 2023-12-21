@@ -42,6 +42,13 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
             windowControlsFullSize={true}
             appName="Finder"
             windowStyle={WindowStyle.FullSized}
+            appId={1}
+          />
+          <BaseWindow
+            windowControlsFullSize={true}
+            appName="Weather"
+            windowStyle={WindowStyle.FullSized}
+            appId={2}
           />
           <Dock />
         </DesktopContainer>
