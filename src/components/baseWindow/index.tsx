@@ -1,6 +1,8 @@
 import { ReactNode } from 'react'
 import * as S from './styles'
 import { WindowControls } from './windowControls'
+import { DragContainer } from './DragContainer'
+import { motion, useDragControls } from 'framer-motion'
 
 export enum WindowStyle {
   FullSized = 'full-sized',
@@ -17,8 +19,19 @@ export type BaseWindowType = {
 export function BaseWindow(props: BaseWindowType) {
   const { children, appName, windowStyle } = props
 
+  const dragControls = useDragControls()
+
   return (
-    <S.AppContainer>
+    <S.AppContainer
+      drag
+      as={motion.div}
+      dragConstraints={{ top: -153, left: -1800, right: 1800, bottom: 1000 }}
+      dragElastic={false}
+      dragMomentum={false}
+      dragControls={dragControls}
+      dragListener={false}
+    >
+      <DragContainer dragControls={dragControls} />
       {windowStyle === WindowStyle.FullSized ? (
         <S.ControlContainer {...props}>
           <WindowControls />

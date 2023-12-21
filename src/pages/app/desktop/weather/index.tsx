@@ -13,7 +13,7 @@ import { AppWindowContext } from '../../../../contexts/appWindowContext'
 import { DragContainer } from '../../../../components/baseWindow/DragContainer'
 import { WindowControls } from '../../../../components/baseWindow/windowControls'
 import { LocationCard } from './LocationCard'
-import { WeatherContext } from '../../../../contexts/weatherContext'
+// import { WeatherContext } from '../../../../contexts/weatherContext'
 import { SearchInput } from './searchInput'
 
 import Wallpaper from '../../../../assets/images/Weather/cloud_wallpaper.jpg'
