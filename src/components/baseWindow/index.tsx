@@ -3,7 +3,7 @@ import { ReactNode, useContext, useEffect, useState } from 'react'
 import { WindowControls } from './windowControls'
 import { DragContainer } from './DragContainer'
 import { motion, useDragControls } from 'framer-motion'
-import { AppWindowContext } from '../../contexts/appWindowContext'
+import { AppWindowContext, Process } from '../../contexts/appWindowContext'
 
 export enum WindowStyle {
   FullSized = 'full-sized',
@@ -22,13 +22,19 @@ export function BaseWindow(props: BaseWindowType) {
   const { children, appName, windowStyle, appId } = props
   const [currentZIndex, setCurrentZIndex] = useState(0)
 
-  const { addNewAppToStack, getZIndex, appStack } = useContext(AppWindowContext)
+  const { addNewProcess, getZIndex, processStack } =
+    useContext(AppWindowContext)
 
-  const zIndex = getZIndex(appId)
+  const process: Process = {
+    pid: appId,
+    status: 'open',
+  }
+
+  const zIndex = getZIndex(process)
 
   useEffect(() => {
     setCurrentZIndex(zIndex)
-  }, [appStack, zIndex])
+  }, [processStack, zIndex])
 
   const dragControls = useDragControls()
 
@@ -41,7 +47,7 @@ export function BaseWindow(props: BaseWindowType) {
       dragMomentum={false}
       dragControls={dragControls}
       dragListener={false}
-      onClick={() => addNewAppToStack(appId)}
+      onClick={() => addNewProcess(process)}
       style={{ zIndex: currentZIndex }}
     >
       <DragContainer dragControls={dragControls} />

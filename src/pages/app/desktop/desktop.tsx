@@ -7,7 +7,8 @@ import { CurrentAppContextProvider } from '../../../contexts/currentAppContext'
 import { DesktopContainer } from '../styles'
 
 import { AppWindowContextProvider } from '../../../contexts/appWindowContext'
-import { BaseWindow, WindowStyle } from '../../../components/baseWindow'
+
+import { AppWindowManagement } from './appWindowManagement'
 // import { WeatherApp } from './weather'
 
 interface DesktopProps {
@@ -38,18 +39,7 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
           )}
           <MenuBar changeOsTheme={changeOsTheme} />
           {/* <WeatherApp /> */}
-          <BaseWindow
-            windowControlsFullSize={true}
-            appName="Finder"
-            windowStyle={WindowStyle.FullSized}
-            appId={1}
-          />
-          <BaseWindow
-            windowControlsFullSize={true}
-            appName="Weather"
-            windowStyle={WindowStyle.FullSized}
-            appId={3}
-          />
+          <AppWindowManagement />
           <Dock />
         </DesktopContainer>
       </AppWindowContextProvider>

@@ -4,10 +4,16 @@ interface AppWindowContextProviderProps {
   children: ReactNode
 }
 
+export interface Process {
+  pid: number
+  status: string
+  // component: FC
+}
+
 interface AppWindowContextProviderType {
-  addNewAppToStack: (id: number) => void
-  getZIndex: (id: number) => number
-  appStack: number[]
+  addNewProcess: (process: Process) => void
+  getZIndex: (process: Process) => number
+  processStack: Process[]
 }
 
 export const AppWindowContext = createContext(
@@ -17,35 +23,37 @@ export const AppWindowContext = createContext(
 export function AppWindowContextProvider({
   children,
 }: AppWindowContextProviderProps) {
-  const [appStack, setAppStack] = useState<number[]>([])
+  const [processStack, setProcessStack] = useState<Process[]>([])
 
-  function addNewAppToStack(id: number) {
-    const appStackLength = appStack.length
+  function addNewProcess(process: Process) {
+    const processStackLength = processStack.length
 
-    if (appStackLength === 0) {
-      return setAppStack([id])
+    if (processStackLength === 0) {
+      return setProcessStack([process])
     }
 
-    if (appStack[appStackLength - 1] === id) {
-      return
-    }
+    // if (process[processStackLength - 1] === process.pid) {
+    //   return
+    // }
 
-    const updatedApps = appStack.filter((appId) => appId !== id)
+    const updatedProcessStack = processStack.filter(
+      ({ pid }) => pid !== process.pid,
+    )
 
-    setAppStack([...updatedApps, id])
+    setProcessStack([...updatedProcessStack, process])
   }
 
-  function getZIndex(id: number) {
-    const index = appStack.findIndex((appId) => appId === id)
+  function getZIndex(process: Process) {
+    const index = processStack.findIndex(({ pid }) => pid === process.pid)
 
-    const zIndex = (appStack.length + index) * 10
+    const zIndex = (processStack.length + index) * 10
 
     return zIndex
   }
 
   return (
     <AppWindowContext.Provider
-      value={{ addNewAppToStack, getZIndex, appStack }}
+      value={{ addNewProcess, getZIndex, processStack }}
     >
       {children}
     </AppWindowContext.Provider>
