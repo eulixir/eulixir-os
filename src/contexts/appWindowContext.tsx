@@ -1,12 +1,9 @@
-import { createContext, ReactNode, useState } from 'react'
+import { createContext, ReactNode, useEffect, useState } from 'react'
+import { Process } from '../@types/process'
+import { saveProcessLocalStorage } from '../services/process/saveLocalStorage'
 
 interface AppWindowContextProviderProps {
   children: ReactNode
-}
-
-export interface Process {
-  pid: number
-  status: string
 }
 
 interface AppWindowContextProviderType {
@@ -25,6 +22,10 @@ export function AppWindowContextProvider({
 }: AppWindowContextProviderProps) {
   const [processStack, setProcessStack] = useState<Process[]>([])
 
+  useEffect(() => {
+    saveProcessLocalStorage(processStack)
+  }, [processStack])
+
   function addNewProcess(process: Process) {
     const updatedProcessStack = processStack.filter(
       ({ pid }) => pid !== process.pid,
@@ -37,8 +38,6 @@ export function AppWindowContextProvider({
     const updatedProcessStack = processStack.filter(
       ({ pid }) => pid !== processPid,
     )
-
-    console.log(updatedProcessStack)
 
     setProcessStack(updatedProcessStack)
   }

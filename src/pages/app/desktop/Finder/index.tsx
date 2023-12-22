@@ -4,12 +4,10 @@ import {
   BaseWindow,
   BaseWindowType,
 } from '../../../../components/baseWindow'
-import {
-  AppWindowContext,
-  Process,
-} from '../../../../contexts/appWindowContext'
+import { AppWindowContext } from '../../../../contexts/appWindowContext'
 
 import * as S from './styles'
+import { Process } from '../../../../@types/process'
 
 export function FinderApp() {
   const configs: BaseWindowType = {

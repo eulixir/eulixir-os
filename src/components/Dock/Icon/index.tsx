@@ -1,8 +1,9 @@
 import { useContext } from 'react'
 import { CurrentAppContext } from '../../../contexts/currentAppContext'
-import { AppWindowContext, Process } from '../../../contexts/appWindowContext'
+import { AppWindowContext } from '../../../contexts/appWindowContext'
 import { ActiveBullet, ArrowDiv, IconContainer, IconModel } from './styles'
 import { App } from '../../../@types/app'
+import { Process } from '../../../@types/process'
 
 export function Icon({ url, active, label, id }: App) {
   const { setNewCurrentApp } = useContext(CurrentAppContext)
