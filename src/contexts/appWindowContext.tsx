@@ -7,12 +7,12 @@ interface AppWindowContextProviderProps {
 export interface Process {
   pid: number
   status: string
-  // component: FC
 }
 
 interface AppWindowContextProviderType {
   addNewProcess: (process: Process) => void
   getZIndex: (process: Process) => number
+  closeProcess: (processPid: number) => void
   processStack: Process[]
 }
 
@@ -26,16 +26,6 @@ export function AppWindowContextProvider({
   const [processStack, setProcessStack] = useState<Process[]>([])
 
   function addNewProcess(process: Process) {
-    const processStackLength = processStack.length
-
-    if (processStackLength === 0) {
-      return setProcessStack([process])
-    }
-
-    // if (process[processStackLength - 1] === process.pid) {
-    //   return
-    // }
-
     const updatedProcessStack = processStack.filter(
       ({ pid }) => pid !== process.pid,
     )
@@ -43,6 +33,15 @@ export function AppWindowContextProvider({
     setProcessStack([...updatedProcessStack, process])
   }
 
+  function closeProcess(processPid: number) {
+    const updatedProcessStack = processStack.filter(
+      ({ pid }) => pid !== processPid,
+    )
+
+    console.log(updatedProcessStack)
+
+    setProcessStack(updatedProcessStack)
+  }
   function getZIndex(process: Process) {
     const index = processStack.findIndex(({ pid }) => pid === process.pid)
 
@@ -53,7 +52,7 @@ export function AppWindowContextProvider({
 
   return (
     <AppWindowContext.Provider
-      value={{ addNewProcess, getZIndex, processStack }}
+      value={{ addNewProcess, getZIndex, processStack, closeProcess }}
     >
       {children}
     </AppWindowContext.Provider>

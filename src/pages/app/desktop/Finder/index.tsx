@@ -1,8 +1,15 @@
+import { useContext } from 'react'
 import {
   WindowStyle,
   BaseWindow,
   BaseWindowType,
 } from '../../../../components/baseWindow'
+import {
+  AppWindowContext,
+  Process,
+} from '../../../../contexts/appWindowContext'
+
+import * as S from './styles'
 
 export function FinderApp() {
   const configs: BaseWindowType = {
@@ -12,12 +19,19 @@ export function FinderApp() {
     appid: 1,
   }
 
+  const { addNewProcess } = useContext(AppWindowContext)
+
+  const process: Process = {
+    pid: 1,
+    status: 'open',
+  }
+
   return (
     <>
       <BaseWindow {...configs} key={configs.appid}>
-        <div>
+        <S.FinderContainer onClick={() => addNewProcess(process)}>
           <p>aa</p>Finder
-        </div>
+        </S.FinderContainer>
       </BaseWindow>
     </>
   )

@@ -13,14 +13,6 @@ import {
 } from '../../../../components/baseWindow'
 
 export function WeatherApp() {
-  // const [sidebarActive, setSidebarActive] = useState(false)
-
-  // const toggleSidebar = () => {
-  //   setSidebarActive(!sidebarActive)
-  // }
-
-  // const { location } = useContext(WeatherContext)
-
   const [isResizing, setIsResizing] = useState(false)
   const [resizeStartX, setResizeStartX] = useState(0)
   const [sidebarWidth, setSidebarWidth] = useState(292)
@@ -56,8 +48,6 @@ export function WeatherApp() {
       document.removeEventListener('mouseup', handleMouseUp)
     }
   }, [handleMouseMove])
-
-  // const dragControls = useDragControls()
 
   const locations = ['Brasilia']
 

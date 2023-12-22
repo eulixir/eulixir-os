@@ -1,9 +1,18 @@
+import { useContext } from 'react'
 import * as S from './styles'
+import { AppWindowContext } from '../../../contexts/appWindowContext'
 
-export function WindowControls() {
+interface WindowControlsProps {
+  pid: number
+  zIndex: number
+}
+
+export function WindowControls({ pid, zIndex }: WindowControlsProps) {
+  const { closeProcess } = useContext(AppWindowContext)
+
   return (
-    <S.WindowControlsContainer>
-      <S.Close></S.Close>
+    <S.WindowControlsContainer style={{ zIndex }}>
+      <S.Close onClick={() => closeProcess(pid)}></S.Close>
 
       <S.Minimize></S.Minimize>
 

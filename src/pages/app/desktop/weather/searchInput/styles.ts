@@ -23,8 +23,6 @@ export const SearchInputContainer = styled.div`
   top: 10px;
   right: 10px;
 
-  z-index: 2;
-
   display: flex;
   align-items: center;
   justify-content: center;

@@ -22,8 +22,7 @@ export function BaseWindow(props: BaseWindowType) {
   const { children, appname, windowstyle, appid } = props
   const [currentZIndex, setCurrentZIndex] = useState(0)
 
-  const { addNewProcess, getZIndex, processStack } =
-    useContext(AppWindowContext)
+  const { getZIndex, processStack } = useContext(AppWindowContext)
 
   const process: Process = {
     pid: appid,
@@ -47,17 +46,19 @@ export function BaseWindow(props: BaseWindowType) {
       dragMomentum={false}
       dragControls={dragControls}
       dragListener={false}
-      onClick={() => addNewProcess(process)}
-      style={{ zIndex: currentZIndex }}
     >
-      <DragContainer dragControls={dragControls} />
+      <DragContainer
+        process={process}
+        dragControls={dragControls}
+        zIndex={currentZIndex + 1}
+      />
       {windowstyle === WindowStyle.FullSized ? (
         <S.ControlContainer {...props}>
-          <WindowControls />
+          <WindowControls zIndex={zIndex + 2} pid={process.pid} />
           <p>{appname}</p>
         </S.ControlContainer>
       ) : (
-        <WindowControls />
+        <WindowControls pid={process.pid} zIndex={zIndex + 2} />
       )}
 
       {children}
