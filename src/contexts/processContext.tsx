@@ -2,24 +2,22 @@ import { createContext, ReactNode, useEffect, useState } from 'react'
 import { Process } from '../@types/process'
 import { saveProcessLocalStorage } from '../services/process/saveLocalStorage'
 
-interface AppWindowContextProviderProps {
+interface ProcessContextProviderProps {
   children: ReactNode
 }
 
-interface AppWindowContextProviderType {
+interface ProcessContextProviderType {
   addNewProcess: (process: Process) => void
   getZIndex: (process: Process) => number
   closeProcess: (processPid: number) => void
   processStack: Process[]
 }
 
-export const AppWindowContext = createContext(
-  {} as AppWindowContextProviderType,
-)
+export const ProcessContext = createContext({} as ProcessContextProviderType)
 
-export function AppWindowContextProvider({
+export function ProcessContextProvider({
   children,
-}: AppWindowContextProviderProps) {
+}: ProcessContextProviderProps) {
   const [processStack, setProcessStack] = useState<Process[]>([])
 
   useEffect(() => {
@@ -50,10 +48,10 @@ export function AppWindowContextProvider({
   }
 
   return (
-    <AppWindowContext.Provider
+    <ProcessContext.Provider
       value={{ addNewProcess, getZIndex, processStack, closeProcess }}
     >
       {children}
-    </AppWindowContext.Provider>
+    </ProcessContext.Provider>
   )
 }

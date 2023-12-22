@@ -3,7 +3,8 @@ import { ReactNode, useContext, useEffect, useState } from 'react'
 import { WindowControls } from './windowControls'
 import { DragContainer } from './DragContainer'
 import { motion, useDragControls } from 'framer-motion'
-import { AppWindowContext, Process } from '../../contexts/appWindowContext'
+import { Process } from '../../@types/process'
+import { ProcessContext } from '../../contexts/processContext'
 
 export enum WindowStyle {
   FullSized = 'full-sized',
@@ -22,7 +23,7 @@ export function BaseWindow(props: BaseWindowType) {
   const { children, appname, windowstyle, appid } = props
   const [currentZIndex, setCurrentZIndex] = useState(0)
 
-  const { getZIndex, processStack } = useContext(AppWindowContext)
+  const { getZIndex, processStack } = useContext(ProcessContext)
 
   const process: Process = {
     pid: appid,

@@ -6,7 +6,7 @@ import { CurrentAppContextProvider } from '../../../contexts/currentAppContext'
 
 import { DesktopContainer } from '../styles'
 
-import { AppWindowContextProvider } from '../../../contexts/appWindowContext'
+import { ProcessContextProvider } from '../../../contexts/processContext'
 
 import { AppWindowManagement } from './appWindowManagement'
 // import { WeatherApp } from './weather'
@@ -32,7 +32,7 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
 
   return (
     <CurrentAppContextProvider>
-      <AppWindowContextProvider>
+      <ProcessContextProvider>
         <DesktopContainer>
           {!hasLoaded && (
             <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />
@@ -42,7 +42,7 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
           <AppWindowManagement />
           <Dock />
         </DesktopContainer>
-      </AppWindowContextProvider>
+      </ProcessContextProvider>
     </CurrentAppContextProvider>
   )
 }

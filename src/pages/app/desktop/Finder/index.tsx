@@ -4,7 +4,7 @@ import {
   BaseWindow,
   BaseWindowType,
 } from '../../../../components/baseWindow'
-import { AppWindowContext } from '../../../../contexts/appWindowContext'
+import { ProcessContext } from '../../../../contexts/processContext'
 
 import * as S from './styles'
 import { Process } from '../../../../@types/process'
@@ -17,7 +17,7 @@ export function FinderApp() {
     appid: 1,
   }
 
-  const { addNewProcess } = useContext(AppWindowContext)
+  const { addNewProcess } = useContext(ProcessContext)
 
   const process: Process = {
     pid: 1,

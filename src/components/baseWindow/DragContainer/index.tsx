@@ -1,7 +1,9 @@
 import { useContext } from 'react'
-import { AppWindowContext, Process } from '../../../contexts/appWindowContext'
+
 import * as S from './styles'
 import { DragControls } from 'framer-motion'
+import { Process } from '../../../@types/process'
+import { ProcessContext } from '../../../contexts/processContext'
 
 interface DragContainerProps {
   dragControls: DragControls
@@ -14,7 +16,7 @@ export function DragContainer({
   dragControls,
   zIndex,
 }: DragContainerProps) {
-  const { addNewProcess } = useContext(AppWindowContext)
+  const { addNewProcess } = useContext(ProcessContext)
 
   return (
     <S.DragContainer

@@ -1,13 +1,13 @@
 import { useContext } from 'react'
 import { CurrentAppContext } from '../../../contexts/currentAppContext'
-import { AppWindowContext } from '../../../contexts/appWindowContext'
+import { ProcessContext } from '../../../contexts/processContext'
 import { ActiveBullet, ArrowDiv, IconContainer, IconModel } from './styles'
 import { App } from '../../../@types/app'
 import { Process } from '../../../@types/process'
 
 export function Icon({ url, active, label, id }: App) {
   const { setNewCurrentApp } = useContext(CurrentAppContext)
-  const { addNewProcess } = useContext(AppWindowContext)
+  const { addNewProcess } = useContext(ProcessContext)
 
   const process: Process = {
     pid: id,
