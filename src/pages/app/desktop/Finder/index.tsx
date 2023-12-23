@@ -7,22 +7,22 @@ import {
 import { ProcessContext } from '../../../../contexts/processContext'
 
 import * as S from './styles'
-import { Process } from '../../../../@types/process'
+
+import { getProcess } from '../../../../services/processes/getProcess'
+
+const pid = 1
 
 export function FinderApp() {
   const configs: BaseWindowType = {
     windowcontrolsfullsize: 'true',
     appname: 'Finder',
     windowstyle: WindowStyle.FullSized,
-    appid: 1,
+    appid: pid,
   }
+
+  const process = getProcess(pid)!
 
   const { addNewProcess } = useContext(ProcessContext)
-
-  const process: Process = {
-    pid: 1,
-    status: 'open',
-  }
 
   return (
     <>

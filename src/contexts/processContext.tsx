@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import { Process } from '../@types/process'
-import { saveProcessLocalStorage } from '../services/process/saveLocalStorage'
+import { saveProcessLocalStorage } from '../services/processes/saveLocalStorage'
 
 interface ProcessContextProviderProps {
   children: ReactNode
@@ -8,7 +8,7 @@ interface ProcessContextProviderProps {
 
 interface ProcessContextProviderType {
   addNewProcess: (process: Process) => void
-  getZIndex: (process: Process) => number
+  getZIndex: (pid: number) => number
   closeProcess: (processPid: number) => void
   processStack: Process[]
 }
@@ -39,8 +39,10 @@ export function ProcessContextProvider({
 
     setProcessStack(updatedProcessStack)
   }
-  function getZIndex(process: Process) {
-    const index = processStack.findIndex(({ pid }) => pid === process.pid)
+  function getZIndex(pid: number) {
+    const index = processStack.findIndex(
+      ({ pid: processPid }) => processPid === pid,
+    )
 
     const zIndex = (processStack.length + index) * 10
 

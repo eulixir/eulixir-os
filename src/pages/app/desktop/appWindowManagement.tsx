@@ -1,13 +1,15 @@
 import { useContext, useEffect, useState } from 'react'
 
-import { ProcessContext } from '../../../contexts/processContext'
 import { apps } from '../../../apps/appService'
 import { Process } from '../../../@types/process'
+import { getAllProcesses } from '../../../services/processes/getAll'
+import { ProcessContext } from '../../../contexts/processContext'
 
 export function AppWindowManagement() {
   const { processStack } = useContext(ProcessContext)
 
-  const [runningProcess, setRunningProcess] = useState<Process[]>([])
+  const processes = getAllProcesses()
+  const [runningProcess, setRunningProcess] = useState<Process[]>(processes)
 
   useEffect(() => {
     setRunningProcess(processStack)
