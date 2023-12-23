@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import { Process } from '../@types/process'
 import { saveProcessLocalStorage } from '../services/processes/saveLocalStorage'
+import { getAllProcesses } from '../services/processes/getAll'
 
 interface ProcessContextProviderProps {
   children: ReactNode
@@ -18,7 +19,13 @@ export const ProcessContext = createContext({} as ProcessContextProviderType)
 export function ProcessContextProvider({
   children,
 }: ProcessContextProviderProps) {
+  const storageProcess = getAllProcesses()
   const [processStack, setProcessStack] = useState<Process[]>([])
+
+  useEffect(() => {
+    setProcessStack(storageProcess)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     saveProcessLocalStorage(processStack)

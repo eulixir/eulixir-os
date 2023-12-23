@@ -9,6 +9,7 @@ export function AppWindowManagement() {
   const { processStack } = useContext(ProcessContext)
 
   const processes = getAllProcesses()
+
   const [runningProcess, setRunningProcess] = useState<Process[]>(processes)
 
   useEffect(() => {

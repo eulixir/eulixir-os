@@ -21,7 +21,7 @@ export type BaseWindowType = {
   appid: number
 }
 
-const INITIAL_POSITION = { x: 408, y: 134 }
+const INITIAL_POSITION = { x: 800, y: -800 }
 
 export function BaseWindow(props: BaseWindowType) {
   const { children, appname, windowstyle, appid } = props
