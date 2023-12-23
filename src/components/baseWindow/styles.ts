@@ -8,8 +8,6 @@ export const AppContainer = styled(motion.div)`
 
   height: 70vh;
 
-  top: 15%;
-
   background: ${({ theme }) => theme.colors.mobileBackground};
 
   border: 0.01px solid ${({ theme }) => theme.colors.menubar.disabled};

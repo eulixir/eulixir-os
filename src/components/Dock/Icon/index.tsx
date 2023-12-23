@@ -3,17 +3,17 @@ import { CurrentAppContext } from '../../../contexts/currentAppContext'
 import { ProcessContext } from '../../../contexts/processContext'
 import { ActiveBullet, ArrowDiv, IconContainer, IconModel } from './styles'
 import { App } from '../../../@types/app'
-import { Process } from '../../../@types/process'
+import { createNewProcess } from '../../../services/processes/createNew'
 
 export function Icon({ url, active, label, id }: App) {
   const { setNewCurrentApp } = useContext(CurrentAppContext)
   const { addNewProcess } = useContext(ProcessContext)
 
-  const process: Process = {
+  const process = createNewProcess({
     pid: id,
+    processName: label,
     status: 'open',
-  }
-
+  })
   function handleOpenApp() {
     setNewCurrentApp(id)
     addNewProcess(process)

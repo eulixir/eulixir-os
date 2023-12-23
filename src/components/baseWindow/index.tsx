@@ -2,11 +2,11 @@ import * as S from './styles'
 import { ReactNode, useContext, useEffect, useState } from 'react'
 import { WindowControls } from './windowControls'
 import { DragContainer } from './DragContainer'
-import { motion, useDragControls } from 'framer-motion'
-import { Process } from '../../@types/process'
+import { PanInfo, motion, useDragControls } from 'framer-motion'
 import { ProcessContext } from '../../contexts/processContext'
 import { savePosition } from '../../services/processes/savePosition'
 import { getProcess } from '../../services/processes/getProcess'
+import { createNewProcess } from '../../services/processes/createNew'
 
 export enum WindowStyle {
   FullSized = 'full-sized',
@@ -21,7 +21,7 @@ export type BaseWindowType = {
   appid: number
 }
 
-const INITIAL_POSITION = { x: 10, y: 10 }
+const INITIAL_POSITION = { x: 408, y: 134 }
 
 export function BaseWindow(props: BaseWindowType) {
   const { children, appname, windowstyle, appid } = props
@@ -41,11 +41,11 @@ export function BaseWindow(props: BaseWindowType) {
     return position
   }
 
-  const process: Process = {
+  const process = createNewProcess({
     pid: appid,
     status: 'open',
-    position,
-  }
+    processName: appname,
+  })
 
   const zIndex = getZIndex(process.pid)
 
@@ -55,7 +55,10 @@ export function BaseWindow(props: BaseWindowType) {
 
   const dragControls = useDragControls()
 
-  const handleDrag = (event, info) => {
+  const handleDrag = (
+    _: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo,
+  ) => {
     setPosition({ x: info.point.x, y: info.point.y })
   }
 
