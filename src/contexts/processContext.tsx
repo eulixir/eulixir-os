@@ -1,7 +1,14 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import { Process } from '../@types/process'
 import { saveProcessLocalStorage } from '../services/processes/saveLocalStorage'
 import { getAllProcesses } from '../services/processes/getAll'
+import { CurrentAppContext } from './currentAppContext'
 
 interface ProcessContextProviderProps {
   children: ReactNode
@@ -19,6 +26,7 @@ export const ProcessContext = createContext({} as ProcessContextProviderType)
 export function ProcessContextProvider({
   children,
 }: ProcessContextProviderProps) {
+  const { setNewCurrentApp } = useContext(CurrentAppContext)
   const storageProcess = getAllProcesses()
   const [processStack, setProcessStack] = useState<Process[]>([])
 
@@ -52,8 +60,11 @@ export function ProcessContextProvider({
     const updatedProcessStack = processStack.filter(
       ({ pid }) => pid !== processPid,
     )
+    const lastProcess = updatedProcessStack[updatedProcessStack.length - 1]
 
     setProcessStack(updatedProcessStack)
+
+    setNewCurrentApp(lastProcess.pid)
   }
   function getZIndex(pid: number) {
     const index = processStack.findIndex(
