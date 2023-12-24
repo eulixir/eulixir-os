@@ -32,6 +32,15 @@ export function ProcessContextProvider({
   }, [processStack])
 
   function addNewProcess(process: Process) {
+    const stackLength = processStack.length
+
+    if (
+      stackLength > 1 &&
+      processStack[stackLength - 1].position === process.position
+    ) {
+      return
+    }
+
     const updatedProcessStack = processStack.filter(
       ({ pid }) => pid !== process.pid,
     )

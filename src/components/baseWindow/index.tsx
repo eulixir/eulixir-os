@@ -21,8 +21,6 @@ export type BaseWindowType = {
   appid: number
 }
 
-const INITIAL_POSITION = { x: 800, y: -800 }
-
 export function BaseWindow(props: BaseWindowType) {
   const { children, appname, windowstyle, appid } = props
 
@@ -33,10 +31,6 @@ export function BaseWindow(props: BaseWindowType) {
 
   function getCoords() {
     const { position } = getProcess(appid)!
-
-    if (!position) {
-      return INITIAL_POSITION
-    }
 
     return position
   }

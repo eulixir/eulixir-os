@@ -1,7 +1,7 @@
 import { Process } from '../../@types/process'
 import { getProcess } from './getProcess'
 
-const defaultPositionValue = { x: 408, y: 134 }
+const defaultPositionValue = { x: 0, y: 140 }
 
 interface CreateNewProcessProps {
   pid: number
