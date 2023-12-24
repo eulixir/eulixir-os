@@ -2,7 +2,7 @@ import * as S from './styles'
 import { ReactNode, useContext, useEffect, useState } from 'react'
 import { WindowControls } from './windowControls'
 import { DragContainer } from './DragContainer'
-import { PanInfo, motion, useDragControls } from 'framer-motion'
+import { motion, useDragControls, useMotionValue } from 'framer-motion'
 import { ProcessContext } from '../../contexts/processContext'
 import { savePosition } from '../../services/processes/savePosition'
 import { getProcess } from '../../services/processes/getProcess'
@@ -24,8 +24,11 @@ export type BaseWindowType = {
 export function BaseWindow(props: BaseWindowType) {
   const { children, appname, windowstyle, appid } = props
 
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+
   const [currentZIndex, setCurrentZIndex] = useState(0)
-  const [position, setPosition] = useState(getCoords())
+  const [position] = useState(getCoords())
 
   const { getZIndex, processStack } = useContext(ProcessContext)
 
@@ -49,15 +52,11 @@ export function BaseWindow(props: BaseWindowType) {
 
   const dragControls = useDragControls()
 
-  const handleDrag = (
-    _: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
-  ) => {
-    setPosition({ x: info.point.x, y: info.point.y })
-  }
-
   const handleDragEnd = () => {
-    savePosition(appid, position.x, position.y)
+    const xValue = x.get()
+    const yValue = y.get()
+
+    savePosition(appid, xValue, yValue)
   }
 
   return (
@@ -68,10 +67,10 @@ export function BaseWindow(props: BaseWindowType) {
       dragElastic={false}
       dragMomentum={false}
       initial={position}
-      onDrag={handleDrag}
       dragControls={dragControls}
       dragListener={false}
       onDragEnd={handleDragEnd}
+      style={{ x, y }}
     >
       <DragContainer
         process={process}
