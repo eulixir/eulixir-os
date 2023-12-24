@@ -11,6 +11,8 @@ export const Container = styled.div`
 
   padding-right: 1rem;
 
+  z-index: 999;
+
   & > main {
     height: 100%;
 
@@ -31,13 +33,16 @@ export const Container = styled.div`
 export const MenuBarButton = styled(MenuBarButtonBase)`
   &:active {
     background: ${({ theme }) => theme.colors.buttonFocus};
-    box-shadow: 10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+    box-shadow:
+      10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
       -10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -webkit-box-shadow: 10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+    -webkit-box-shadow:
+      10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
       -10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
 
-    -moz-box-shadow: 10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
+    -moz-box-shadow:
+      10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus},
       -10px 0 0 0 ${({ theme }) => theme.colors.buttonFocus};
   }
 `
