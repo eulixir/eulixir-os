@@ -1,5 +1,7 @@
 import background from '../../assets/images/macOs-ventura-light.jpg'
 import mobileBackground from '../../assets/images/Deep-Purple-iPhone-14-Stock-Pro-Wallpaper-iPhone-14-pro-max.jpg'
+import { WindowControls } from './components/windowControls'
+import { weatherColorPallet } from './apps/weatherCollorPallet'
 
 export const lightTheme = {
   title: 'light',
@@ -13,6 +15,7 @@ export const lightTheme = {
     mobileBackgroundImg: mobileBackground,
     menubar: {
       disabled: '#ffffff1f',
+      border: '#c1c1c12d',
       separator: '#ffffff1f',
     },
     dock: {
@@ -30,4 +33,8 @@ export const lightTheme = {
     loadbarProgress: '#282828',
   },
   backgroundUrl: background,
+  windowControls: WindowControls,
+  apps: {
+    weather: weatherColorPallet,
+  },
 }

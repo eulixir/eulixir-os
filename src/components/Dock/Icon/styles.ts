@@ -74,7 +74,7 @@ interface ActiveBulletProps {
 
 export const ActiveBullet = styled.div<ActiveBulletProps>`
   background-color: ${({ theme, active }) =>
-    active == 'true' ? theme.colors.secondary : 'transparent'};
+    active === 'true' ? theme.colors.secondary : 'transparent'};
 
   position: absolute;
 

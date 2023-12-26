@@ -4,6 +4,8 @@ export const DesktopContainer = styled.div`
   width: 100vw;
   height: 100vh;
 
+  overflow: none;
+
   display: flex;
   flex-direction: column;
   align-items: center;
