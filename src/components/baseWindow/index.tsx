@@ -28,7 +28,7 @@ export function BaseWindow(props: BaseWindowType) {
   const y = useMotionValue(0)
 
   const [currentZIndex, setCurrentZIndex] = useState(0)
-  const [position] = useState(getCoords())
+  const [position, setPosition] = useState(getCoords())
 
   const { getZIndex, processStack } = useContext(ProcessContext)
 
@@ -42,6 +42,7 @@ export function BaseWindow(props: BaseWindowType) {
     pid: appid,
     status: 'open',
     processName: appname,
+    position,
   })
 
   const zIndex = getZIndex(process.pid)
@@ -57,6 +58,8 @@ export function BaseWindow(props: BaseWindowType) {
     const yValue = y.get()
 
     savePosition(appid, xValue, yValue)
+
+    setPosition({ x: xValue, y: yValue })
   }
 
   return (

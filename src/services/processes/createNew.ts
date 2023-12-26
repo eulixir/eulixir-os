@@ -7,12 +7,17 @@ interface CreateNewProcessProps {
   pid: number
   processName: string
   status: string
+  position?: {
+    x: number
+    y: number
+  }
 }
 
 export function createNewProcess({
   pid,
   processName,
   status,
+  position,
 }: CreateNewProcessProps) {
   const recoveredProcess = getProcess(pid)
 
@@ -20,7 +25,7 @@ export function createNewProcess({
     pid,
     processName,
     status,
-    position: recoveredProcess?.position ?? defaultPositionValue,
+    position: recoveredProcess?.position ?? position ?? defaultPositionValue,
   }
   return process
 }

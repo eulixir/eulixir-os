@@ -27,9 +27,9 @@ export function FinderApp() {
   return (
     <>
       <BaseWindow {...configs} key={configs.appid}>
-        <S.FinderContainer onClick={() => addNewProcess(process)}>
-          <p>aa</p>Finder
-        </S.FinderContainer>
+        <S.FinderContainer
+          onClick={() => addNewProcess(process)}
+        ></S.FinderContainer>
       </BaseWindow>
     </>
   )

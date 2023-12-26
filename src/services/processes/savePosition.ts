@@ -1,6 +1,6 @@
 import { createNewProcess } from './createNew'
 import { getAllProcesses } from './getAll'
-import { getProcess } from './getProcess'
+
 import { saveProcessLocalStorage } from './saveLocalStorage'
 
 export function savePosition(pid: number, x: number, y: number) {
@@ -8,12 +8,10 @@ export function savePosition(pid: number, x: number, y: number) {
     pid,
     status: 'Open',
     processName: 'banana',
+    position: { x, y },
   })
-  const process = getProcess(pid) ?? newProcess
 
   const processes = getAllProcesses().filter((x) => x.pid !== pid)
 
-  const updatedProcess = { ...process, position: { x, y } }
-
-  return saveProcessLocalStorage([...processes, updatedProcess])
+  saveProcessLocalStorage([...processes, newProcess])
 }
