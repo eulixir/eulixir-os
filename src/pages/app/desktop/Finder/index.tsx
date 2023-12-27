@@ -25,12 +25,10 @@ export function FinderApp() {
   const { addNewProcess } = useContext(ProcessContext)
 
   return (
-    <>
-      <BaseWindow {...configs} key={configs.appid}>
-        <S.FinderContainer
-          onClick={() => addNewProcess(process)}
-        ></S.FinderContainer>
-      </BaseWindow>
-    </>
+    <BaseWindow {...configs} key={configs.appid}>
+      <S.FinderContainer
+        onClick={() => addNewProcess(process)}
+      ></S.FinderContainer>
+    </BaseWindow>
   )
 }

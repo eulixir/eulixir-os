@@ -59,24 +59,22 @@ export function WeatherApp() {
   }
 
   return (
-    <>
-      <BaseWindow {...configs} key={configs.appid}>
-        <SearchInput />
-        <S.SideBarContainer ref={sidebarRef} style={{ width: sidebarWidth }}>
-          <S.LocationsContainer>
-            {locations.map((location) => (
-              <LocationCard
-                key={location}
-                active={'true'}
-                sidebardWidth={sidebarWidth}
-              />
-            ))}
-          </S.LocationsContainer>
-          <S.ResizeContainer onMouseDown={handleMouseDown} />
-        </S.SideBarContainer>
+    <BaseWindow {...configs} key={configs.appid}>
+      <SearchInput />
+      <S.SideBarContainer ref={sidebarRef} style={{ width: sidebarWidth }}>
+        <S.LocationsContainer>
+          {locations.map((location) => (
+            <LocationCard
+              key={location}
+              active={'true'}
+              sidebardWidth={sidebarWidth}
+            />
+          ))}
+        </S.LocationsContainer>
+        <S.ResizeContainer onMouseDown={handleMouseDown} />
+      </S.SideBarContainer>
 
-        {/* <S.WeatherInfoContainer>aaa</S.WeatherInfoContainer> */}
-      </BaseWindow>
-    </>
+      {/* <S.WeatherInfoContainer>aaa</S.WeatherInfoContainer> */}
+    </BaseWindow>
   )
 }

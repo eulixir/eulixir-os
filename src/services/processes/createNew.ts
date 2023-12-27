@@ -27,5 +27,7 @@ export function createNewProcess({
     status,
     position: recoveredProcess?.position ?? position ?? defaultPositionValue,
   }
+
+  console.log(process)
   return process
 }

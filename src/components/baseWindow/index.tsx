@@ -29,6 +29,12 @@ export function BaseWindow(props: BaseWindowType) {
 
   const [currentZIndex, setCurrentZIndex] = useState(0)
   const [position, setPosition] = useState(getCoords())
+  const [containerConstraints, setContainerConstraints] = useState({
+    left: 0,
+    top: 0,
+    bottom: 0,
+    right: 0,
+  })
 
   const { getZIndex, processStack } = useContext(ProcessContext)
 
@@ -62,11 +68,39 @@ export function BaseWindow(props: BaseWindowType) {
     setPosition({ x: xValue, y: yValue })
   }
 
+  useEffect(() => {
+    const updateConstraints = () => {
+      const windowWidth = window.innerWidth
+      const windowHeight = window.innerHeight
+
+      const containerWidth = 500
+      const containerHeight = 100
+
+      const rightLimit = windowWidth - containerWidth * 0.2
+      const bottomLimit = windowHeight - containerHeight
+
+      const leftLimit = windowWidth * -1.4
+      setContainerConstraints({
+        left: leftLimit,
+        top: 0,
+        right: rightLimit,
+        bottom: bottomLimit,
+      })
+    }
+
+    updateConstraints()
+    window.addEventListener('resize', updateConstraints)
+
+    return () => {
+      window.removeEventListener('resize', updateConstraints)
+    }
+  }, [])
+
   return (
     <S.AppContainer
       drag
       as={motion.div}
-      dragConstraints={{ top: -104, left: -1800, right: 1800, bottom: 1000 }}
+      dragConstraints={containerConstraints}
       dragElastic={false}
       dragMomentum={false}
       initial={position}

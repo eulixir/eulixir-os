@@ -36,5 +36,5 @@ export const weather: App = {
   label: 'Weather',
   active: true,
   appName: 'Weather',
-  component: <WeatherApp />,
+  component: WeatherApp,
 }
