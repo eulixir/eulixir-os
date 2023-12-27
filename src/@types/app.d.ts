@@ -12,4 +12,5 @@ export interface App {
   label: string
   active: boolean
   appName: string
+  component: ReactNode
 }

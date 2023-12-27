@@ -4,8 +4,9 @@ import { GlobalStyle } from '../../styles/global'
 import { darkTheme } from '../../styles/themes/dark'
 import { lightTheme } from '../../styles/themes/light'
 
-import { Desktop } from './desktop'
 import { Mobile } from './mobile'
+import { getOsTheme } from '../../hooks/getOsTheme'
+import { Desktop } from './desktop/desktop'
 
 function App() {
   const [width, setWindowWidth] = useState<number>(window.innerWidth)
@@ -13,20 +14,6 @@ function App() {
   const [theme, setTheme] = useState(
     getOsTheme() === 'dark' ? darkTheme : lightTheme,
   )
-
-  function getOsTheme() {
-    const localTheme = localStorage.getItem('os-theme')
-
-    if (localTheme) {
-      return localTheme
-    }
-
-    const osTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light'
-
-    return osTheme
-  }
 
   function changeOsTheme() {
     const currentTheme = theme.title === 'light' ? darkTheme : lightTheme
