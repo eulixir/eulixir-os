@@ -585,5 +585,5 @@ export const finder: App = {
   label: 'Finder',
   active: true,
   appName: 'Finder',
-  component: <FinderApp />,
+  component: FinderApp,
 }

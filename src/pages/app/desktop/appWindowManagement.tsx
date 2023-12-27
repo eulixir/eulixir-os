@@ -18,9 +18,11 @@ export function AppWindowManagement() {
 
   return (
     <>
-      {runningProcess.map(
-        (process) => apps.find(({ id }) => process.pid === id)?.component,
-      )}
+      {runningProcess.map((process) => {
+        const { id, component: Component } =
+          apps.find(({ id }) => process.pid === id) || {}
+        return <div key={id}>{Component && <Component />}</div>
+      })}
     </>
   )
 }
