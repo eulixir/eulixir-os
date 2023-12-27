@@ -36,7 +36,7 @@ export function BaseWindow(props: BaseWindowType) {
     right: 0,
   })
 
-  const { getZIndex, processStack } = useContext(ProcessContext)
+  const { getZIndex, processStack, addNewProcess } = useContext(ProcessContext)
 
   function getCoords() {
     const { position } = getProcess(appid)!
@@ -67,6 +67,13 @@ export function BaseWindow(props: BaseWindowType) {
     const yValue = y.get()
 
     setPosition({ x: xValue, y: yValue })
+
+    addNewProcess({
+      pid: appid,
+      processName: appname,
+      status,
+      position: { x: xValue, y: yValue },
+    })
 
     savePosition(appid, xValue, yValue)
   }
