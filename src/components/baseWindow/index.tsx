@@ -42,7 +42,7 @@ export function BaseWindow(props: BaseWindowType) {
     const { position } = getProcess(appid)!
 
     if (!position) {
-      return { x: -1000, y: 140 }
+      return { x: '-50%', y: 140 }
     }
 
     return position
@@ -65,8 +65,6 @@ export function BaseWindow(props: BaseWindowType) {
   const handleDragEnd = () => {
     const xValue = x.get()
     const yValue = y.get()
-
-    console.log(xValue)
 
     setPosition({ x: xValue, y: yValue })
 
