@@ -8,13 +8,13 @@ interface WindowControlsProps {
 }
 
 export function WindowControls({ pid, zIndex }: WindowControlsProps) {
-  const { closeProcess } = useContext(ProcessContext)
+  const { closeProcess, minimizeProcess } = useContext(ProcessContext)
 
   return (
     <S.WindowControlsContainer style={{ zIndex }}>
       <S.Close onClick={() => closeProcess(pid)}></S.Close>
 
-      <S.Minimize></S.Minimize>
+      <S.Minimize onClick={() => minimizeProcess(pid)}></S.Minimize>
 
       <S.Maximize></S.Maximize>
     </S.WindowControlsContainer>

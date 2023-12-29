@@ -6,7 +6,7 @@ import { saveProcessLocalStorage } from './saveLocalStorage'
 export function savePosition(pid: number, x: number, y: number) {
   let newProcess = createNewProcess({
     pid,
-    status: 'Open',
+    status: 'open',
     processName: 'banana',
   })
 

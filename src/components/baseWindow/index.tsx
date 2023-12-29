@@ -3,7 +3,7 @@ import { ReactNode, useContext, useEffect, useState } from 'react'
 import { WindowControls } from './windowControls'
 import { DragContainer } from './DragContainer'
 import { motion, useDragControls, useMotionValue } from 'framer-motion'
-import { ProcessContext } from '../../contexts/processContext'
+import { ProcessContext, enumStatus } from '../../contexts/processContext'
 import { savePosition } from '../../services/processes/savePosition'
 import { getProcess } from '../../services/processes/getProcess'
 import { createNewProcess } from '../../services/processes/createNew'
@@ -71,7 +71,7 @@ export function BaseWindow(props: BaseWindowType) {
     addNewProcess({
       pid: appid,
       processName: appname,
-      status,
+      status: enumStatus.OPEN,
       position: { x: xValue, y: yValue },
     })
 

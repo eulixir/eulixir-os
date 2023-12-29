@@ -1,6 +1,8 @@
+import { enumStatus } from '../contexts/processContext'
+
 export interface Process {
   pid: number
-  status: string
+  status: enumStatus
   processName: string
   position?: {
     x: number

@@ -13,11 +13,16 @@ import { CurrentAppContext } from './currentAppContext'
 interface ProcessContextProviderProps {
   children: ReactNode
 }
+export enum enumStatus {
+  OPEN = 'open',
+  MINIMIZED = 'minimized',
+}
 
 interface ProcessContextProviderType {
   addNewProcess: (process: Process) => void
   getZIndex: (pid: number) => number
   closeProcess: (processPid: number) => void
+  minimizeProcess: (processPid: number) => void
   processStack: Process[]
 }
 
@@ -41,11 +46,9 @@ export function ProcessContextProvider({
 
   function addNewProcess(process: Process) {
     const stackLength = processStack.length
+    const lastProcess = processStack[stackLength - 1]
 
-    if (
-      stackLength > 1 &&
-      processStack[stackLength - 1].position === process.position
-    ) {
+    if (stackLength > 1 && lastProcess === process) {
       return
     }
 
@@ -54,6 +57,21 @@ export function ProcessContextProvider({
     )
 
     setProcessStack([...updatedProcessStack, process])
+  }
+
+  function minimizeProcess(processPid: number) {
+    const process = processStack.find(({ pid }) => pid === processPid)
+
+    if (!process) {
+      return
+    }
+
+    const minimizedProcess = {
+      ...process,
+      status: enumStatus.MINIMIZED,
+    }
+
+    addNewProcess(minimizedProcess)
   }
 
   function closeProcess(processPid: number) {
@@ -78,7 +96,13 @@ export function ProcessContextProvider({
 
   return (
     <ProcessContext.Provider
-      value={{ addNewProcess, getZIndex, processStack, closeProcess }}
+      value={{
+        addNewProcess,
+        getZIndex,
+        processStack,
+        closeProcess,
+        minimizeProcess,
+      }}
     >
       {children}
     </ProcessContext.Provider>
