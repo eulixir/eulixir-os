@@ -3,4 +3,5 @@ export const WindowControls = {
   minimizeButton: '#FFC12F',
   maximizeButton: '#2ACB42',
   titleColor: 'rgba(255, 255, 255, 0.55)',
+  inactiveColor: '#323232',
 }
