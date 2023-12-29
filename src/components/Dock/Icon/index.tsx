@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { CurrentAppContext } from '../../../contexts/currentAppContext'
-import { ProcessContext } from '../../../contexts/processContext'
+import { ProcessContext, enumStatus } from '../../../contexts/processContext'
 import { ActiveBullet, ArrowDiv, IconContainer, IconModel } from './styles'
 import { App } from '../../../@types/app'
 import { createNewProcess } from '../../../services/processes/createNew'
@@ -14,7 +14,7 @@ export function Icon({ url, label, id }: App) {
   const process = createNewProcess({
     pid: id,
     processName: label,
-    status: 'open',
+    status: enumStatus.OPEN,
   })
 
   function handleOpenApp() {

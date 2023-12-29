@@ -38,7 +38,6 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
             <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />
           )}
           <MenuBar changeOsTheme={changeOsTheme} />
-          {/* <WeatherApp /> */}
           <AppWindowManagement />
           <Dock />
         </DesktopContainer>

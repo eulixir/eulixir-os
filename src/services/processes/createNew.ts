@@ -1,9 +1,9 @@
-import { Process } from '../../@types/process'
+import { Process, enumStatus } from '../../@types/process'
 
 interface CreateNewProcessProps {
   pid: number
   processName: string
-  status: string
+  status: enumStatus
 }
 
 export function createNewProcess({

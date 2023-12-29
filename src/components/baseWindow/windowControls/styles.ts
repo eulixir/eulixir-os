@@ -14,12 +14,24 @@ export const WindowControlsContainer = styled.div`
 
   height: 20px;
   width: 52px;
+
+  & > button > svg {
+    color: transparent;
+    transition: 0.2s;
+  }
+
+  &:hover > button > svg {
+    color: black;
+  }
 `
 
-const WindowButton = styled.button`
+interface WindowButton {
+  active: string
+}
+
+const WindowButton = styled.button<WindowButton>`
   width: 12px;
   height: 12px;
-  flex-shrink: 0;
 
   border-radius: 50%;
   border: none;
@@ -34,19 +46,28 @@ export const Close = styled(WindowButton)`
   &:hover {
     transition: 0.3s;
   }
-  background: ${({ theme }) => theme.windowControls.closeButton};
+  background: ${({ theme, active }) =>
+    active === 'true'
+      ? theme.windowControls.closeButton
+      : theme.windowControls.inactiveColor};
 `
 
 export const Minimize = styled(WindowButton)`
   &:hover {
     transition: 0.3s;
   }
-  background: ${({ theme }) => theme.windowControls.minimizeButton};
+  background: ${({ theme, active }) =>
+    active === 'true'
+      ? theme.windowControls.minimizeButton
+      : theme.windowControls.inactiveColor};
 `
 
 export const Maximize = styled(WindowButton)`
   &:hover {
     transition: 0.3s;
   }
-  background: ${({ theme }) => theme.windowControls.maximizeButton};
+  background: ${({ theme, active }) =>
+    active === 'true'
+      ? theme.windowControls.maximizeButton
+      : theme.windowControls.inactiveColor};
 `
