@@ -7,6 +7,7 @@ import { ProcessContext, enumStatus } from '../../contexts/processContext'
 import { savePosition } from '../../services/processes/savePosition'
 import { getProcess } from '../../services/processes/getProcess'
 import { createNewProcess } from '../../services/processes/createNew'
+import { CurrentAppContext } from '../../contexts/currentAppContext'
 
 export enum WindowStyle {
   FullSized = 'full-sized',
@@ -24,6 +25,9 @@ export type BaseWindowType = {
 export function BaseWindow(props: BaseWindowType) {
   const { children, appname, windowstyle, appid } = props
 
+  const { getZIndex, processStack, addNewProcess } = useContext(ProcessContext)
+  const { setNewCurrentApp } = useContext(CurrentAppContext)
+
   const x = useMotionValue(0)
   const y = useMotionValue(0)
 
@@ -35,8 +39,6 @@ export function BaseWindow(props: BaseWindowType) {
     bottom: 0,
     right: 0,
   })
-
-  const { getZIndex, processStack, addNewProcess } = useContext(ProcessContext)
 
   function getCoords() {
     const { position } = getProcess(appid)!
@@ -76,6 +78,7 @@ export function BaseWindow(props: BaseWindowType) {
     })
 
     savePosition(appid, xValue, yValue)
+    setNewCurrentApp(appid)
   }
 
   useEffect(() => {
