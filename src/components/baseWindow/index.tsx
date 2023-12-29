@@ -64,7 +64,11 @@ export function BaseWindow(props: BaseWindowType) {
 
   const dragControls = useDragControls()
 
-  const handleDragEnd = () => {
+  function handleDrag() {
+    setNewCurrentApp(process.pid)
+  }
+
+  function handleDragEnd() {
     const xValue = x.get()
     const yValue = y.get()
 
@@ -115,6 +119,7 @@ export function BaseWindow(props: BaseWindowType) {
       as={motion.div}
       dragConstraints={containerConstraints}
       dragElastic={false}
+      onDrag={handleDrag}
       dragMomentum={false}
       initial={position}
       dragControls={dragControls}
