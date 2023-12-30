@@ -32,6 +32,8 @@ function F1(e,t){for(var n=0;n<t.length;n++){const r=t[n];if(typeof r!="string"&
   -ms-user-select: none;
   user-select: none;
   
+  overflow-y: hidden;
+  overflow-x: hidden;  
 }
 
 body {
