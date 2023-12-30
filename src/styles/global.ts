@@ -15,8 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   -ms-user-select: none;
   user-select: none;
   
-  overflow-y: hidden;
-  overflow-x: hidden;  
+
 }
 
 body {
@@ -35,5 +34,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   
+  overflow-y: hidden;
+  overflow-x: hidden;  
 }
 `
