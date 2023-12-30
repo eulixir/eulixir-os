@@ -15,6 +15,8 @@ export const GlobalStyle = createGlobalStyle`
   -ms-user-select: none;
   user-select: none;
   
+  overflow-y: hidden;
+  overflow-x: hidden;  
 }
 
 body {
