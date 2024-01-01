@@ -4,10 +4,6 @@ import styled from 'styled-components'
 export const AppContainer = styled(motion.div)`
   position: absolute;
 
-  width: 80vw;
-
-  height: 70vh;
-
   background: ${({ theme }) => theme.colors.mobileBackground};
 
   border: 0.01px solid ${({ theme }) => theme.colors.menubar.disabled};

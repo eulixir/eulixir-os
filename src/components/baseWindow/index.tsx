@@ -20,10 +20,12 @@ export type BaseWindowType = {
   appname: string
   windowstyle: WindowStyle
   appid: number
+  width?: string
+  height?: string
 }
 
 export function BaseWindow(props: BaseWindowType) {
-  const { children, appname, windowstyle, appid } = props
+  const { children, appname, windowstyle, appid, width, height } = props
 
   const { getZIndex, processStack, addNewProcess } = useContext(ProcessContext)
   const { setNewCurrentApp } = useContext(CurrentAppContext)
@@ -113,6 +115,13 @@ export function BaseWindow(props: BaseWindowType) {
     }
   }, [])
 
+  const styles = {
+    x,
+    y,
+    width: width || '80vw',
+    height: height || '70vh',
+  }
+
   return (
     <S.AppContainer
       drag
@@ -125,7 +134,7 @@ export function BaseWindow(props: BaseWindowType) {
       dragControls={dragControls}
       dragListener={false}
       onDragEnd={handleDragEnd}
-      style={{ x, y }}
+      style={{ ...styles }}
     >
       <DragContainer
         process={process}
