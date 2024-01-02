@@ -13,7 +13,7 @@ export const AppContainer = styled(motion.div)`
   -moz-box-shadow: inset 0px 0px 0px 1px
     ${({ theme }) => theme.splash.background};
   box-shadow: inset 0px 0px 0px 1px ${({ theme }) => theme.splash.background};
-  border-radius: 18px;
+  border-radius: 8px;
 `
 
 interface ControlContainerProps {

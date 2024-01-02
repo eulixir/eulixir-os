@@ -16,7 +16,7 @@ export function SystemSettingsApp() {
     windowstyle: WindowStyle.Sidebar,
     appid: pid,
     height: '80%',
-    width: '730px',
+    width: '718px',
   }
 
   // const process = getProcess(pid)!
