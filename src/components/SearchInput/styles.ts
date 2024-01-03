@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const SearchInputContainer = styled.div`
-  position: absolute;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,30 +8,17 @@ export const SearchInputContainer = styled.div`
   border-radius: 5px;
   border: none;
 
-  background: ${({ theme }) => theme.apps.weather.fonts.transluscent};
-
-  backdrop-filter: blur(90px);
-  -webkit-backdrop-filter: blur(90px);
-
-  backdrop-filter: blur(10px);
-
-  height: 25px;
-  width: 184px;
-
-  top: 10px;
-  right: 10px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
   &:hover {
-    outline: 4px solid #3be814;
+    outline: 3px solid #3be814;
   }
 
   & > div:first-child {
     height: 100%;
-    width: 24px;
+    width: 29px;
 
     display: flex;
     align-items: center;

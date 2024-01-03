@@ -3,11 +3,17 @@ import * as S from './styles'
 import { GoSearch } from 'react-icons/go'
 import { IoIosCloseCircle } from 'react-icons/io'
 
-export function SearchInput() {
+export interface SearchInputProps {
+  width: string
+  height: string
+  background: string
+}
+
+export function SearchInput({ width, height, background }: SearchInputProps) {
   const [inputValue, setInputValue] = useState('')
 
   return (
-    <S.SearchInputContainer>
+    <S.SearchInputContainer style={{ width, height, background }}>
       <S.SearchIconContainer>
         <GoSearch size={12} />
       </S.SearchIconContainer>

@@ -58,9 +58,16 @@ export function WeatherApp() {
     appid: 3,
   }
 
+  const searchInputConfigs = {
+    height: '25px',
+    width: '184px',
+    background: '#356bc1a7',
+  }
   return (
     <BaseWindow {...configs} key={configs.appid}>
-      <SearchInput />
+      <S.InputContainer>
+        <SearchInput {...searchInputConfigs} />
+      </S.InputContainer>
       <S.SideBarContainer ref={sidebarRef} style={{ width: sidebarWidth }}>
         <S.LocationsContainer>
           {locations.map((location) => (

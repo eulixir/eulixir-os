@@ -90,3 +90,8 @@ export const WeatherInfoContainer = styled.div`
   align-items: center;
   justify-content: center;
 `
+export const InputContainer = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+`

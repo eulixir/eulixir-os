@@ -2,12 +2,8 @@ import { SystemSettingsThemeType } from '../../../../@types/themes/systemSetting
 
 export const systemSettingsDarkColorPallet: SystemSettingsThemeType = {
   fonts: {
-    white: '#ffffff',
-    white100: '#cbcbcb',
-    transluscentWhite: '#ffffff9e',
     transluscent: '#356bc1a7',
-    foreground: '#b5b5b5c2',
-    label: '#92949B',
-    inactiveBackground: '#4F5159',
   },
+  sidebarBackground: '#2222227f',
+  optionsBackground: '#252426',
 }
