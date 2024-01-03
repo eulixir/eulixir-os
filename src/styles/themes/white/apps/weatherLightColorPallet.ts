@@ -1,4 +1,4 @@
-export const weatherColorPallet = {
+export const weatherLightColorPallet = {
   fonts: {
     white: '#ffffff',
     white100: '#cbcbcb',

@@ -1,3 +1,4 @@
+import * as S from './styles'
 import { useContext } from 'react'
 import {
   BaseWindow,
@@ -6,6 +7,8 @@ import {
 } from '../../../../components/baseWindow'
 import { ProcessContext } from '../../../../contexts/processContext'
 import { getProcess } from '../../../../services/processes/getProcess'
+import { SystemSettingsSidebar } from './Sidebar'
+import { SystemSettingsOptions } from './SystemSettingsOptions'
 
 const pid = 4
 
@@ -16,12 +19,19 @@ export function SystemSettingsApp() {
     windowstyle: WindowStyle.Sidebar,
     appid: pid,
     height: '80%',
-    width: '718px',
+    width: '716px',
   }
 
-  // const process = getProcess(pid)!
+  const process = getProcess(pid)!
 
-  // const { addNewProcess } = useContext(ProcessContext)
+  const { addNewProcess } = useContext(ProcessContext)
 
-  return <BaseWindow {...configs}></BaseWindow>
+  return (
+    <BaseWindow {...configs}>
+      <S.SystemSettingsContainer onClick={() => addNewProcess(process)}>
+        <SystemSettingsSidebar />
+        <SystemSettingsOptions />
+      </S.SystemSettingsContainer>
+    </BaseWindow>
+  )
 }

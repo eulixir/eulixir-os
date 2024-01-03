@@ -3,7 +3,7 @@ import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
 import * as S from './styles'
 
 import { LocationCard } from './LocationCard'
-import { SearchInput } from './searchInput'
+import { SearchInput } from '../../../../components/SearchInput'
 
 // import Wallpaper from '../../../../assets/images/Weather/cloud_wallpaper.jpg'
 import {

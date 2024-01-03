@@ -12,6 +12,7 @@ export const AppContainer = styled(motion.div)`
     ${({ theme }) => theme.splash.background};
   box-shadow: inset 0px 0px 0px 1px ${({ theme }) => theme.splash.background};
   border-radius: 8px;
+  overflow: hidden;
 `
 
 interface ControlContainerProps {
@@ -25,7 +26,6 @@ export const ControlContainer = styled.div<ControlContainerProps>`
       : theme.colors.dock.border};
 
   height: 30px;
-  border-radius: 18px 18px 0 0;
 
   display: flex;
   align-items: center;
