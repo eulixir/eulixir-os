@@ -6,7 +6,7 @@ import { Mobile } from './mobile'
 import { getOsTheme } from '../../hooks/getOsTheme'
 import { Desktop } from './desktop/desktop'
 import { darkTheme } from '../../styles/themes/dark/dark'
-import { lightTheme } from '../../styles/themes/white/light'
+import { lightTheme } from '../../styles/themes/light/light'
 
 function App() {
   const [width, setWindowWidth] = useState<number>(window.innerWidth)

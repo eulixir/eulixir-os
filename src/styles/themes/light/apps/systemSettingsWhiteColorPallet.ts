@@ -1,4 +1,6 @@
-export const weatherLightColorPallet = {
+import { SystemSettingsThemeType } from '../../../../@types/themes/systemSettings'
+
+export const systemSettingsLightColorPallet: SystemSettingsThemeType = {
   fonts: {
     white: '#ffffff',
     white100: '#cbcbcb',
@@ -7,13 +9,5 @@ export const weatherLightColorPallet = {
     foreground: '#b5b5b5c2',
     label: '#92949B',
     inactiveBackground: '#4F5159',
-  },
-  cloudy: {
-    sideBarBackground: '#1B1E28',
-    mainBackground: '#20262F',
-  },
-  mostlyCloudy: {
-    sideBarBackground: '#31669C',
-    mainBackground: '#2062B4',
   },
 }
