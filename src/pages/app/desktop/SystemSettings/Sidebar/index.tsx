@@ -6,7 +6,7 @@ import {
 import * as S from './styles'
 import { ProcessContext } from '../../../../../contexts/processContext'
 import { getProcess } from '../../../../../services/processes/getProcess'
-import { AboutOwnerCard } from '../../AboutOwnerCard'
+import { AboutOwnerCard } from './AboutOwnerCard'
 import { CurrentAppContext } from '../../../../../contexts/currentAppContext'
 
 const pid = 4
@@ -38,7 +38,9 @@ export function SystemSettingsSidebar() {
   return (
     <S.SettingsSidebarContainer onClick={handleAddnewProcess}>
       <SearchInput {...searchInputConfigs} />
-      <AboutOwnerCard />
+      <S.OptionsContainer>
+        <AboutOwnerCard />
+      </S.OptionsContainer>
     </S.SettingsSidebarContainer>
   )
 }

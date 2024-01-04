@@ -12,7 +12,7 @@ export const AboutOwnerCardContainer = styled.div`
   border-radius: 6px;
 
   &:hover {
-    background: #2564c3;
+    background: ${({ theme }) => theme.secondaryMainColor};
   }
 `
 
@@ -36,10 +36,12 @@ export const OwnerInfoContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   & > p {
     font-size: 0.775rem;
-    font-weight: 600;
+    font-weight: 700;
     color: ${({ theme }) => theme.apps.systemSettings.fonts.primary};
   }
 

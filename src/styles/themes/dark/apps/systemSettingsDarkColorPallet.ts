@@ -2,7 +2,7 @@ import { SystemSettingsThemeType } from '../../../../@types/themes/systemSetting
 
 export const systemSettingsDarkColorPallet: SystemSettingsThemeType = {
   fonts: {
-    primary: '#efefef',
+    primary: '#fefefe',
     secondary: '#cecece',
   },
   sidebarBackground: '#2222227f',
