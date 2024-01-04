@@ -3,7 +3,10 @@ import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
 import * as S from './styles'
 
 import { LocationCard } from './LocationCard'
-import { SearchInput } from '../../../../components/SearchInput'
+import {
+  SearchInput,
+  SearchInputProps,
+} from '../../../../components/SearchInput'
 
 // import Wallpaper from '../../../../assets/images/Weather/cloud_wallpaper.jpg'
 import {
@@ -16,6 +19,7 @@ export function WeatherApp() {
   const [isResizing, setIsResizing] = useState(false)
   const [resizeStartX, setResizeStartX] = useState(0)
   const [sidebarWidth, setSidebarWidth] = useState(292)
+  const [searchText, setSearchText] = useState('')
 
   const sidebarRef = useRef(null)
 
@@ -49,6 +53,10 @@ export function WeatherApp() {
     }
   }, [handleMouseMove])
 
+  function handleSearch(text: string) {
+    setSearchText(text)
+  }
+
   const locations = ['Brasilia']
 
   const configs: BaseWindowType = {
@@ -58,10 +66,11 @@ export function WeatherApp() {
     appid: 3,
   }
 
-  const searchInputConfigs = {
+  const searchInputConfigs: SearchInputProps = {
     height: '25px',
     width: '184px',
     background: '#356bc1a7',
+    searchBehaviourFunction: handleSearch,
   }
   return (
     <BaseWindow {...configs} key={configs.appid}>

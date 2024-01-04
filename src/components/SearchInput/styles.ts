@@ -12,13 +12,15 @@ export const SearchInputContainer = styled.div`
   align-items: center;
   justify-content: center;
 
+  border-bottom: 1px solid grey;
+
   &:hover {
     outline: 3px solid #3be814;
   }
 
   & > div:first-child {
     height: 100%;
-    width: 29px;
+    width: 40px;
 
     display: flex;
     align-items: center;
@@ -40,7 +42,7 @@ export const SearchInput = styled.input`
   border: none;
   width: 100%;
   outline: none;
-  color: ${({ theme }) => theme.apps.weather.fonts.white100};
+  color: grey;
 
   &::placeholder {
     color: ${({ theme }) => theme.apps.weather.fonts.white100};
@@ -51,7 +53,7 @@ export const SearchInput = styled.input`
   }
 
   &:focus {
-    caret-color: black;
+    caret-color: #3be814;
 
     color: ${({ theme }) => theme.apps.weather.fonts.white};
   }

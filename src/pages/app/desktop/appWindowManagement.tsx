@@ -25,7 +25,7 @@ export function AppWindowManagement() {
               process.pid === id && process.status === enumStatus.OPEN,
           ) || {}
 
-        return <div key={id}>{Component && <Component />}</div>
+        return <div key={id}>{Component && <Component key={id} />}</div>
       })}
     </>
   )
