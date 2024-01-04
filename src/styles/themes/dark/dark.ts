@@ -39,4 +39,5 @@ export const darkTheme = {
     weather: weatherDarkColorPallet,
     systemSettings: systemSettingsDarkColorPallet,
   },
+  secondaryMainColor: '#2564c3',
 }

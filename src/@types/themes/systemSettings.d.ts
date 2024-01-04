@@ -1,6 +1,7 @@
 export interface SystemSettingsThemeType {
   fonts: {
-    transluscent: string
+    primary: string
+    secondary: string
   }
   sidebarBackground: string
   optionsBackground: string

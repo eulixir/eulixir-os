@@ -6,14 +6,24 @@ import {
 import * as S from './styles'
 import { ProcessContext } from '../../../../../contexts/processContext'
 import { getProcess } from '../../../../../services/processes/getProcess'
+import { AboutOwnerCard } from '../../AboutOwnerCard'
+import { CurrentAppContext } from '../../../../../contexts/currentAppContext'
 
 const pid = 4
 
 export function SystemSettingsSidebar() {
   const [searchText, setSearchText] = useState('')
 
+  const { addNewProcess } = useContext(ProcessContext)
+  const { setNewCurrentApp } = useContext(CurrentAppContext)
+
   function handleSearch(text: string) {
     setSearchText(text)
+  }
+
+  function handleAddnewProcess() {
+    addNewProcess(process)
+    setNewCurrentApp(process.pid)
   }
 
   const searchInputConfigs: SearchInputProps = {
@@ -25,11 +35,10 @@ export function SystemSettingsSidebar() {
 
   const process = getProcess(pid)!
 
-  const { addNewProcess } = useContext(ProcessContext)
-
   return (
-    <S.SettingsSidebarContainer onClick={() => addNewProcess(process)}>
+    <S.SettingsSidebarContainer onClick={handleAddnewProcess}>
       <SearchInput {...searchInputConfigs} />
+      <AboutOwnerCard />
     </S.SettingsSidebarContainer>
   )
 }

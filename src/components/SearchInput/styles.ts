@@ -5,17 +5,17 @@ export const SearchInputContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  border-radius: 5px;
+  border-radius: 8px;
   border: none;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-bottom: 1px solid grey;
+  border-bottom: 0.5px solid grey;
 
   &:hover {
-    outline: 3px solid #3be814;
+    outline: 4px solid ${({ theme }) => theme.secondaryMainColor};
   }
 
   & > div:first-child {
@@ -53,7 +53,7 @@ export const SearchInput = styled.input`
   }
 
   &:focus {
-    caret-color: #3be814;
+    caret-color: ${({ theme }) => theme.secondaryMainColor};
 
     color: ${({ theme }) => theme.apps.weather.fonts.white};
   }

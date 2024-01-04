@@ -39,4 +39,5 @@ export const lightTheme = {
     weather: weatherLigthColorPallet,
     systemSettings: systemSettingsLightColorPallet,
   },
+  secondaryMainColor: '#2564c3',
 }
