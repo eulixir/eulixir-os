@@ -14,10 +14,10 @@ const pid = 4
 
 export function SystemSettingsApp() {
   const configs: BaseWindowType = {
-    windowcontrolsfullsize: 'true',
-    appname: 'System Settings',
-    windowstyle: WindowStyle.Sidebar,
-    appid: pid,
+    $windowControlsFullSize: 'true',
+    $appName: 'System Settings',
+    $windowStyle: WindowStyle.Sidebar,
+    $appId: pid,
     height: '80%',
     width: '716px',
   }

@@ -60,10 +60,10 @@ export function WeatherApp() {
   const locations = ['Brasilia']
 
   const configs: BaseWindowType = {
-    windowcontrolsfullsize: 'true',
-    appname: 'Weather',
-    windowstyle: WindowStyle.Sidebar,
-    appid: 3,
+    $windowControlsFullSize: 'true',
+    $appName: 'Weather',
+    $windowStyle: WindowStyle.Sidebar,
+    $appId: 3,
   }
 
   const searchInputConfigs: SearchInputProps = {
@@ -73,7 +73,7 @@ export function WeatherApp() {
     searchBehaviourFunction: handleSearch,
   }
   return (
-    <BaseWindow {...configs} key={configs.appid}>
+    <BaseWindow {...configs} key={configs.appId}>
       <S.InputContainer>
         <SearchInput {...searchInputConfigs} />
       </S.InputContainer>

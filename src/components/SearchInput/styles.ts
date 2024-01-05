@@ -66,6 +66,7 @@ export const EraseContainer = styled.div`
   width: 14%;
 
   & > svg {
+    margin-right: 6px;
     color: ${({ theme }) => theme.apps.weather.fonts.white};
   }
 `

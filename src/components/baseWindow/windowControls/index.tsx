@@ -42,12 +42,13 @@ export function WindowControls({ pid, zIndex }: WindowControlsProps) {
     setNewCurrentApp(lastProcess.pid)
   }
 
+  function handleClose() {
+    closeProcess(pid)
+  }
+
   return (
     <S.WindowControlsContainer style={{ zIndex }}>
-      <S.Close
-        $active={activeWindowControl.toString()}
-        onClick={() => closeProcess(pid)}
-      >
+      <S.Close $active={activeWindowControl.toString()} onClick={handleClose}>
         <IoClose size="9" />
       </S.Close>
 

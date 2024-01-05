@@ -14,10 +14,10 @@ const pid = 1
 
 export function FinderApp() {
   const configs: BaseWindowType = {
-    windowcontrolsfullsize: 'true',
-    appname: 'Finder',
-    windowstyle: WindowStyle.FullSized,
-    appid: pid,
+    $windowControlsFullSize: 'true',
+    $appName: 'Finder',
+    $windowStyle: WindowStyle.FullSized,
+    $appId: pid,
   }
 
   const process = getProcess(pid)!
@@ -25,7 +25,7 @@ export function FinderApp() {
   const { addNewProcess } = useContext(ProcessContext)
 
   return (
-    <BaseWindow {...configs} key={configs.appid}>
+    <BaseWindow {...configs} key={configs.$appId}>
       <S.FinderContainer
         onClick={() => addNewProcess(process)}
       ></S.FinderContainer>
