@@ -17,9 +17,12 @@ export function SystemSettingsSidebar() {
   const { addNewProcess } = useContext(ProcessContext)
   const { setNewCurrentApp } = useContext(CurrentAppContext)
 
+  const process = getProcess(pid)!
+
   function handleSearch(text: string) {
     setSearchText(text)
   }
+  console.log(searchText)
 
   function handleAddnewProcess() {
     addNewProcess(process)
@@ -32,8 +35,6 @@ export function SystemSettingsSidebar() {
     background: '#8484842c',
     searchBehaviourFunction: handleSearch,
   }
-
-  const process = getProcess(pid)!
 
   return (
     <S.SettingsSidebarContainer onClick={handleAddnewProcess}>

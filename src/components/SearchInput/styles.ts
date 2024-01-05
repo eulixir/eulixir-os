@@ -14,7 +14,7 @@ export const SearchInputContainer = styled.div`
 
   border-bottom: 0.5px solid grey;
 
-  &:hover {
+  &:focus-within {
     outline: 4px solid ${({ theme }) => theme.secondaryMainColor};
   }
 

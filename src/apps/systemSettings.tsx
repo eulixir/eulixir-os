@@ -1,6 +1,6 @@
 import { App, ItemDropdown } from '../@types/app'
-
-import { SystemSettingsApp } from '../pages/app/desktop/SystemSettings'
+import { SystemSettignsOption } from '../@types/systemSettings'
+import { SystemSettingsContextProvider } from '../contexts/SystemSettinsContext'
 
 const systemSettingsDropDownItems = (): ItemDropdown[] => {
   const items = [
@@ -80,5 +80,27 @@ export const systemSettings: App = {
   label: 'System Settings',
   active: true,
   appName: 'System Settings',
-  component: SystemSettingsApp,
+  component: SystemSettingsContextProvider,
 }
+
+export const systemSettingsOptions: SystemSettignsOption[] = [
+  {
+    id: 1,
+    name: 'AppleId',
+    component: '',
+  },
+  {
+    id: 2,
+    name: 'Wi-Fi',
+    iconPath:
+      'https://cdn.jim-nielsen.com/macos/1024/system-preferences-2021-06-03.png',
+    component: '',
+  },
+  {
+    id: 3,
+    name: 'Bluetooth',
+    iconPath:
+      'https://cdn.jim-nielsen.com/macos/1024/system-preferences-2021-06-03.png',
+    component: '',
+  },
+]

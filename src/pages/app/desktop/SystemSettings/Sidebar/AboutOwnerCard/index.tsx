@@ -1,8 +1,17 @@
+import { useContext } from 'react'
+import { SystemSettingsContext } from '../../../../../../contexts/SystemSettinsContext'
 import * as S from './styles'
 
+const viewId = 1
+
 export function AboutOwnerCard() {
+  const { setNewCurrentAppView } = useContext(SystemSettingsContext)
+
+  function handleSetNewApp() {
+    setNewCurrentAppView(viewId)
+  }
   return (
-    <S.AboutOwnerCardContainer>
+    <S.AboutOwnerCardContainer onClick={handleSetNewApp}>
       <S.OwnerImage>
         <img
           alt="Macos Owner"
