@@ -35,13 +35,13 @@ export function Icon({ url, label, id }: App) {
   return (
     <>
       <IconContainer onClick={handleOpenApp}>
-        <IconModel iconurl={url}>
+        <IconModel $iconurl={url}>
           <span>
             {label}
             <ArrowDiv />
           </span>
           <img src={url} alt="Icon" />
-          <ActiveBullet active={active.toString()} />
+          <ActiveBullet $active={active.toString()} />
         </IconModel>
       </IconContainer>
     </>

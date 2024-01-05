@@ -26,7 +26,7 @@ export const WindowControlsContainer = styled.div`
 `
 
 interface WindowButton {
-  active: string
+  $active: string
 }
 
 const WindowButton = styled.button<WindowButton>`
@@ -46,8 +46,8 @@ export const Close = styled(WindowButton)`
   &:hover {
     transition: 0.3s;
   }
-  background: ${({ theme, active }) =>
-    active === 'true'
+  background: ${({ theme, $active }) =>
+    $active === 'true'
       ? theme.windowControls.closeButton
       : theme.windowControls.inactiveColor};
 `
@@ -56,8 +56,8 @@ export const Minimize = styled(WindowButton)`
   &:hover {
     transition: 0.3s;
   }
-  background: ${({ theme, active }) =>
-    active === 'true'
+  background: ${({ theme, $active }) =>
+    $active === 'true'
       ? theme.windowControls.minimizeButton
       : theme.windowControls.inactiveColor};
 `
@@ -66,8 +66,8 @@ export const Maximize = styled(WindowButton)`
   &:hover {
     transition: 0.3s;
   }
-  background: ${({ theme, active }) =>
-    active === 'true'
+  background: ${({ theme, $active }) =>
+    $active === 'true'
       ? theme.windowControls.maximizeButton
       : theme.windowControls.inactiveColor};
 `

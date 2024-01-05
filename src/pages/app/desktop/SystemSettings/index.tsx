@@ -23,10 +23,6 @@ export function SystemSettingsApp() {
 
   const { currentAppView } = useContext(SystemSettingsContext)
 
-  useEffect(() => {
-    console.log(currentAppView)
-  }, [currentAppView])
-
   return (
     <BaseWindow {...configs}>
       <S.SystemSettingsContainer>

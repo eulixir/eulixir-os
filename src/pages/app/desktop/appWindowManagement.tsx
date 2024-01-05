@@ -19,13 +19,13 @@ export function AppWindowManagement() {
   return (
     <>
       {runningProcess.map((process) => {
-        const { id, component: Component } =
+        const { id, context: Context } =
           apps.find(
             ({ id }) =>
               process.pid === id && process.status === enumStatus.OPEN,
           ) || {}
 
-        return <div key={id}>{Component && <Component key={id} />}</div>
+        return <div key={id}>{Context && <Context key={id} />}</div>
       })}
     </>
   )

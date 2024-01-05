@@ -22,7 +22,6 @@ export function SystemSettingsSidebar() {
   function handleSearch(text: string) {
     setSearchText(text)
   }
-  console.log(searchText)
 
   function handleAddnewProcess() {
     addNewProcess(process)

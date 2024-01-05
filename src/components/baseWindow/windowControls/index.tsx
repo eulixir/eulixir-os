@@ -45,20 +45,20 @@ export function WindowControls({ pid, zIndex }: WindowControlsProps) {
   return (
     <S.WindowControlsContainer style={{ zIndex }}>
       <S.Close
-        active={activeWindowControl.toString()}
+        $active={activeWindowControl.toString()}
         onClick={() => closeProcess(pid)}
       >
         <IoClose size="9" />
       </S.Close>
 
       <S.Minimize
-        active={activeWindowControl.toString()}
+        $active={activeWindowControl.toString()}
         onClick={handleMinimize}
       >
         <LuMinus size="9" />
       </S.Minimize>
 
-      <S.Maximize active={activeWindowControl.toString()}>
+      <S.Maximize $active={activeWindowControl.toString()}>
         <IoMdResize size="7" />
       </S.Maximize>
     </S.WindowControlsContainer>

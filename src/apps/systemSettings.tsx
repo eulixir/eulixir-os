@@ -80,7 +80,7 @@ export const systemSettings: App = {
   label: 'System Settings',
   active: true,
   appName: 'System Settings',
-  component: SystemSettingsContextProvider,
+  context: SystemSettingsContextProvider,
 }
 
 export const systemSettingsOptions: SystemSettignsOption[] = [
