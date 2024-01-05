@@ -1,12 +1,17 @@
-import { useContext } from 'react'
+import { ComponentType, useContext } from 'react'
 import { ProcessContext } from '../../../../../contexts/processContext'
 import { getProcess } from '../../../../../services/processes/getProcess'
-import * as S from './styles'
 import { CurrentAppContext } from '../../../../../contexts/currentAppContext'
+
+import * as S from './styles'
 
 const pid = 4
 
-export function SystemSettingsOptions() {
+interface SystemSettingsOptionsProps {
+  View: ComponentType
+}
+
+export function SystemSettingsView({ View }: SystemSettingsOptionsProps) {
   const process = getProcess(pid)!
   const { addNewProcess } = useContext(ProcessContext)
   const { setNewCurrentApp } = useContext(CurrentAppContext)
@@ -17,8 +22,8 @@ export function SystemSettingsOptions() {
   }
 
   return (
-    <S.SystemSettingsOptionsContainer onClick={handleAddnewProcess}>
-      aaa
-    </S.SystemSettingsOptionsContainer>
+    <S.SystemSettingsViewContainer onClick={handleAddnewProcess}>
+      <div>{View && <View />}</div>
+    </S.SystemSettingsViewContainer>
   )
 }

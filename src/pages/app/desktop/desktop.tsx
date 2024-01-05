@@ -8,8 +8,7 @@ import { DesktopContainer } from '../styles'
 
 import { ProcessContextProvider } from '../../../contexts/processContext'
 
-import { AppWindowManagement } from './appWindowManagement'
-// import { WeatherApp } from './weather'
+import { WindowManagement } from './windowManagement'
 
 interface DesktopProps {
   changeOsTheme: () => void
@@ -38,7 +37,7 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
             <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />
           )}
           <MenuBar changeOsTheme={changeOsTheme} />
-          <AppWindowManagement />
+          <WindowManagement />
           <Dock />
         </DesktopContainer>
       </ProcessContextProvider>

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const SystemSettingsOptionsContainer = styled.div`
+export const SystemSettingsViewContainer = styled.div`
   width: 100%;
   height: 100%;
 

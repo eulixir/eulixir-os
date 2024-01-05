@@ -1,6 +1,6 @@
-export interface SystemSettignsOption {
+export interface SystemSettignsItemOption {
   id: number
   name?: string
   iconPath?: string
-  component: ReactNode
+  view: React.ComponentType
 }

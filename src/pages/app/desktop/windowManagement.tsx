@@ -5,7 +5,7 @@ import { Process } from '../../../@types/process'
 import { getAllProcesses } from '../../../services/processes/getAll'
 import { ProcessContext, enumStatus } from '../../../contexts/processContext'
 
-export function AppWindowManagement() {
+export function WindowManagement() {
   const { processStack } = useContext(ProcessContext)
 
   const processes = getAllProcesses()

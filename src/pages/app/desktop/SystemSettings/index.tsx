@@ -5,8 +5,9 @@ import {
   WindowStyle,
 } from '../../../../components/baseWindow'
 import { SystemSettingsSidebar } from './Sidebar'
-import { SystemSettingsOptions } from './SystemSettingsOptions'
+import { SystemSettingsView } from './SystemSettingsView'
 import { SystemSettingsContext } from '../../../../contexts/SystemSettinsContext'
+
 import { useContext, useEffect } from 'react'
 
 const pid = 4
@@ -23,11 +24,13 @@ export function SystemSettingsApp() {
 
   const { currentAppView } = useContext(SystemSettingsContext)
 
+  console.log()
+
   return (
     <BaseWindow {...configs}>
       <S.SystemSettingsContainer>
         <SystemSettingsSidebar />
-        <SystemSettingsOptions />
+        <SystemSettingsView View={currentAppView.view} />
       </S.SystemSettingsContainer>
     </BaseWindow>
   )

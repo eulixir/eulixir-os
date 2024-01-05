@@ -1,6 +1,7 @@
 import { App, ItemDropdown } from '../@types/app'
-import { SystemSettignsOption } from '../@types/systemSettings'
+import { SystemSettignsItemOption } from '../@types/systemSettings'
 import { SystemSettingsContextProvider } from '../contexts/SystemSettinsContext'
+import { OwnerView } from '../pages/app/desktop/SystemSettings/Views/AboutOwner'
 
 const systemSettingsDropDownItems = (): ItemDropdown[] => {
   const items = [
@@ -83,24 +84,24 @@ export const systemSettings: App = {
   context: SystemSettingsContextProvider,
 }
 
-export const systemSettingsOptions: SystemSettignsOption[] = [
+export const systemSettingsItemsOptions: SystemSettignsItemOption[] = [
   {
     id: 1,
     name: 'AppleId',
-    component: '',
+    view: OwnerView,
   },
   {
     id: 2,
     name: 'Wi-Fi',
     iconPath:
       'https://cdn.jim-nielsen.com/macos/1024/system-preferences-2021-06-03.png',
-    component: '',
+    view: OwnerView,
   },
   {
     id: 3,
     name: 'Bluetooth',
     iconPath:
       'https://cdn.jim-nielsen.com/macos/1024/system-preferences-2021-06-03.png',
-    component: '',
+    view: OwnerView,
   },
 ]
