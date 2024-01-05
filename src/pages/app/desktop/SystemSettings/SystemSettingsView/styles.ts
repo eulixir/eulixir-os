@@ -14,6 +14,7 @@ export const SystemSettingsHeader = styled.div`
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
+  margin-bottom: 13px;
 
   & > div {
     display: flex;
@@ -23,9 +24,11 @@ export const SystemSettingsHeader = styled.div`
   }
 
   & > div > svg {
-    color: white;
+    color: ${({ theme }) => theme.apps.systemSettings.inactiveHeaderButton};
 
     &:first-child {
+      color: ${({ theme }) => theme.apps.systemSettings.activeHeaderButton};
+
       margin-right: 13px;
     }
   }

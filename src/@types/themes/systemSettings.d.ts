@@ -5,4 +5,6 @@ export interface SystemSettingsThemeType {
   }
   sidebarBackground: string
   optionsBackground: string
+  activeHeaderButton: string
+  inactiveHeaderButton: string
 }
