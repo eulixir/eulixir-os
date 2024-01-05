@@ -87,7 +87,7 @@ export const systemSettings: App = {
 export const systemSettingsItemsOptions: SystemSettignsItemOption[] = [
   {
     id: 1,
-    name: 'AppleId',
+    name: 'Apple ID',
     view: OwnerView,
   },
   {
