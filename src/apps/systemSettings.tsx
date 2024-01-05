@@ -86,19 +86,19 @@ export const systemSettings: App = {
 
 export const systemSettingsItemsOptions: SystemSettignsItemOption[] = [
   {
-    id: 1,
+    viewId: 1,
     name: 'Apple ID',
     view: OwnerView,
   },
   {
-    id: 2,
+    viewId: 2,
     name: 'Wi-Fi',
     iconPath:
       'https://cdn.jim-nielsen.com/macos/1024/system-preferences-2021-06-03.png',
     view: OwnerView,
   },
   {
-    id: 3,
+    viewId: 3,
     name: 'Bluetooth',
     iconPath:
       'https://cdn.jim-nielsen.com/macos/1024/system-preferences-2021-06-03.png',
