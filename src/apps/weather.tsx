@@ -1,6 +1,6 @@
 import { App, ItemDropdown } from '../@types/app'
 import WeatherLogo from '../assets/icons/weather.png'
-import { WeatherApp } from '../pages/app/desktop/weather'
+import { WeatherContextProvider } from '../contexts/weatherContext'
 
 export const weatherDropdownItems = (): ItemDropdown[] => {
   const items = [
@@ -36,5 +36,5 @@ export const weather: App = {
   label: 'Weather',
   active: true,
   appName: 'Weather',
-  component: WeatherApp,
+  context: WeatherContextProvider,
 }

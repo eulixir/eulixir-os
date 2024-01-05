@@ -1,4 +1,5 @@
 import { createContext, ReactNode } from 'react'
+import { WeatherApp } from '../pages/app/desktop/weather'
 
 interface WeatherContextProviderProps {
   children: ReactNode
@@ -36,6 +37,7 @@ export function WeatherContextProvider({
 
   return (
     <WeatherContext.Provider value={{ location }}>
+      <WeatherApp />
       {children}
     </WeatherContext.Provider>
   )
