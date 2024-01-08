@@ -1,39 +1,26 @@
 import styled from 'styled-components'
 
 export const SearchInputContainer = styled.div`
-  position: absolute;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  border-radius: 5px;
+  border-radius: 8px;
   border: none;
-
-  background: ${({ theme }) => theme.apps.weather.fonts.transluscent};
-
-  backdrop-filter: blur(90px);
-  -webkit-backdrop-filter: blur(90px);
-
-  backdrop-filter: blur(10px);
-
-  height: 25px;
-  width: 184px;
-
-  top: 10px;
-  right: 10px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  &:hover {
-    outline: 4px solid #3be814;
+  border-bottom: 0.5px solid grey;
+
+  &:focus-within {
+    outline: 4px solid ${({ theme }) => theme.secondaryMainColor};
   }
 
   & > div:first-child {
     height: 100%;
-    width: 24px;
+    width: 40px;
 
     display: flex;
     align-items: center;
@@ -55,7 +42,7 @@ export const SearchInput = styled.input`
   border: none;
   width: 100%;
   outline: none;
-  color: ${({ theme }) => theme.apps.weather.fonts.white100};
+  color: grey;
 
   &::placeholder {
     color: ${({ theme }) => theme.apps.weather.fonts.white100};
@@ -66,7 +53,7 @@ export const SearchInput = styled.input`
   }
 
   &:focus {
-    caret-color: black;
+    caret-color: ${({ theme }) => theme.secondaryMainColor};
 
     color: ${({ theme }) => theme.apps.weather.fonts.white};
   }
@@ -79,6 +66,7 @@ export const EraseContainer = styled.div`
   width: 14%;
 
   & > svg {
+    margin-right: 6px;
     color: ${({ theme }) => theme.apps.weather.fonts.white};
   }
 `

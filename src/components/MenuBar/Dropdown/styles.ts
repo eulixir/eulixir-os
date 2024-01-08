@@ -57,7 +57,7 @@ export const MenubarItem = styled(Menubar.Item)`
   }
 
   &:hover {
-    background: green;
+    background: ${({ theme }) => theme.secondaryMainColor};
     outline: none;
     border: none;
     border-radius: 4px;

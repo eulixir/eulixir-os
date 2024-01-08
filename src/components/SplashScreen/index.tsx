@@ -34,14 +34,14 @@ export function SplashScreen({ setSplashHasLoaded }: SplashScreenProps) {
         setSplashHasLoaded()
       }, 500)
     }
-  }, [filled, isRunning])
+  }, [filled, isRunning, setSplashHasLoaded])
 
   return (
     <SplashScreenContainer>
       <AiFillApple size={150} />
 
       <ProgressBar>
-        <RunningBar progress={filled} />
+        <RunningBar $progress={filled} />
       </ProgressBar>
     </SplashScreenContainer>
   )

@@ -84,6 +84,7 @@ export function ProcessContextProvider({
 
     setNewCurrentApp(lastProcess.pid)
   }
+
   function getZIndex(pid: number) {
     const index = processStack.findIndex(
       ({ pid: processPid }) => processPid === pid,

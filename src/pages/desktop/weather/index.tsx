@@ -3,19 +3,20 @@ import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
 import * as S from './styles'
 
 import { LocationCard } from './LocationCard'
-import { SearchInput } from './searchInput'
+import { SearchInput, SearchInputProps } from '../../../components/SearchInput'
 
 // import Wallpaper from '../../../../assets/images/Weather/cloud_wallpaper.jpg'
 import {
   BaseWindow,
   BaseWindowType,
   WindowStyle,
-} from '../../../../components/baseWindow'
+} from '../../../components/baseWindow'
 
 export function WeatherApp() {
   const [isResizing, setIsResizing] = useState(false)
   const [resizeStartX, setResizeStartX] = useState(0)
   const [sidebarWidth, setSidebarWidth] = useState(292)
+  const [searchText, setSearchText] = useState('')
 
   const sidebarRef = useRef(null)
 
@@ -49,18 +50,30 @@ export function WeatherApp() {
     }
   }, [handleMouseMove])
 
+  function handleSearch(text: string) {
+    setSearchText(text)
+  }
+
   const locations = ['Brasilia']
 
   const configs: BaseWindowType = {
-    windowcontrolsfullsize: 'true',
-    appname: 'Weather',
-    windowstyle: WindowStyle.Sidebar,
-    appid: 3,
+    $windowControlsFullSize: 'true',
+    $appName: 'Weather',
+    $windowStyle: WindowStyle.Sidebar,
+    $appId: 3,
   }
 
+  const searchInputConfigs: SearchInputProps = {
+    height: '25px',
+    width: '184px',
+    background: '#356bc1a7',
+    searchBehaviourFunction: handleSearch,
+  }
   return (
-    <BaseWindow {...configs} key={configs.appid}>
-      <SearchInput />
+    <BaseWindow {...configs} key={configs.appId}>
+      <S.InputContainer>
+        <SearchInput {...searchInputConfigs} />
+      </S.InputContainer>
       <S.SideBarContainer ref={sidebarRef} style={{ width: sidebarWidth }}>
         <S.LocationsContainer>
           {locations.map((location) => (

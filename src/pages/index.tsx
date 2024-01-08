@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from '../../styles/global'
-import { darkTheme } from '../../styles/themes/dark'
-import { lightTheme } from '../../styles/themes/light'
 
 import { Mobile } from './mobile'
-import { getOsTheme } from '../../hooks/getOsTheme'
+
 import { Desktop } from './desktop/desktop'
+import { getOsTheme } from '../hooks/getOsTheme'
+import { GlobalStyle } from '../styles/global'
+import { darkTheme } from '../styles/themes/dark/dark'
+import { lightTheme } from '../styles/themes/light/light'
 
 function App() {
   const [width, setWindowWidth] = useState<number>(window.innerWidth)

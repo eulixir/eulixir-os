@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 
 interface LocationCardProps {
-  active?: string
+  $active?: string
 }
 
 export const LocationCardContainer = styled.div<LocationCardProps>`
@@ -13,8 +13,8 @@ export const LocationCardContainer = styled.div<LocationCardProps>`
   justify-content: space-between;
   flex-direction: column;
 
-  background: ${({ theme, active }) =>
-    active ? '#406537' : theme.apps.weather.fonts.inactiveBackground};
+  background: ${({ theme, $active }) =>
+    $active ? '#406537' : theme.apps.weather.fonts.inactiveBackground};
 
   border-radius: 6px;
 `
@@ -41,8 +41,8 @@ export const LocationInfoContainer = styled.div<LocationCardProps>`
     & > p {
       font-weight: 600;
       font-size: 0.6rem;
-      color: ${({ theme, active }) =>
-    active
+      color: ${({ theme, $active }) =>
+    $active
       ? theme.apps.weather.fonts.transluscentWhite
       : theme.apps.weather.fonts.foreground};
     }
@@ -51,8 +51,8 @@ export const LocationInfoContainer = styled.div<LocationCardProps>`
     font-size: 2rem;
     font-weight: 400;
 
-    color: ${({ theme, active }) =>
-    active
+    color: ${({ theme, $active }) =>
+    $active
       ? theme.apps.weather.fonts.transluscentWhite
       : theme.apps.weather.fonts.foreground};
   }
@@ -67,8 +67,8 @@ export const StatusAndPositionContainer = styled.div<LocationCardProps>`
   font-weight: 600;
   padding: 0px 7px 4px 7px;
 
-  color: ${({ theme, active }) =>
-    active
+  color: ${({ theme, $active }) =>
+    $active
       ? theme.apps.weather.fonts.transluscentWhite
       : theme.apps.weather.fonts.foreground};
 

@@ -16,14 +16,16 @@ export enum WindowStyle {
 
 export type BaseWindowType = {
   children?: ReactNode
-  windowcontrolsfullsize: string
-  appname: string
-  windowstyle: WindowStyle
-  appid: number
+  $windowControlsFullSize: string
+  $appName: string
+  $windowStyle: WindowStyle
+  $appId: number
+  width?: string
+  height?: string
 }
 
 export function BaseWindow(props: BaseWindowType) {
-  const { children, appname, windowstyle, appid } = props
+  const { children, $appName, $windowStyle, $appId, width, height } = props
 
   const { getZIndex, processStack, addNewProcess } = useContext(ProcessContext)
   const { setNewCurrentApp } = useContext(CurrentAppContext)
@@ -41,7 +43,7 @@ export function BaseWindow(props: BaseWindowType) {
   })
 
   function getCoords() {
-    const { position } = getProcess(appid)!
+    const { position } = getProcess($appId)!
 
     if (!position) {
       return { x: '-50%', y: 140 }
@@ -51,9 +53,9 @@ export function BaseWindow(props: BaseWindowType) {
   }
 
   const process = createNewProcess({
-    pid: appid,
+    pid: $appId,
     status: 'open',
-    processName: appname,
+    processName: $appName,
   })
 
   const zIndex = getZIndex(process.pid)
@@ -75,14 +77,14 @@ export function BaseWindow(props: BaseWindowType) {
     setPosition({ x: xValue, y: yValue })
 
     addNewProcess({
-      pid: appid,
-      processName: appname,
+      pid: $appId,
+      processName: $appName,
       status: enumStatus.OPEN,
       position: { x: xValue, y: yValue },
     })
 
-    savePosition(appid, xValue, yValue)
-    setNewCurrentApp(appid)
+    savePosition($appId, xValue, yValue)
+    setNewCurrentApp($appId)
   }
 
   useEffect(() => {
@@ -113,6 +115,13 @@ export function BaseWindow(props: BaseWindowType) {
     }
   }, [])
 
+  const styles = {
+    x,
+    y,
+    width: width || '80vw',
+    height: height || '70vh',
+  }
+
   return (
     <S.AppContainer
       drag
@@ -125,17 +134,17 @@ export function BaseWindow(props: BaseWindowType) {
       dragControls={dragControls}
       dragListener={false}
       onDragEnd={handleDragEnd}
-      style={{ x, y }}
+      style={{ ...styles }}
     >
       <DragContainer
         process={process}
         dragControls={dragControls}
         zIndex={currentZIndex + 1}
       />
-      {windowstyle === WindowStyle.FullSized ? (
+      {$windowStyle === WindowStyle.FullSized ? (
         <S.ControlContainer {...props}>
           <WindowControls zIndex={zIndex + 2} pid={process.pid} />
-          <p>{appname}</p>
+          <p>{$appName}</p>
         </S.ControlContainer>
       ) : (
         <WindowControls pid={process.pid} zIndex={zIndex + 2} />

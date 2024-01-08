@@ -18,7 +18,7 @@ export const IconContainer = styled.div`
   }
 `
 interface IconModelProps {
-  iconurl: string
+  $iconurl: string
 }
 
 export const IconModel = styled.button<IconModelProps>`
@@ -69,12 +69,12 @@ export const IconModel = styled.button<IconModelProps>`
 `
 
 interface ActiveBulletProps {
-  active: string
+  $active: string
 }
 
 export const ActiveBullet = styled.div<ActiveBulletProps>`
-  background-color: ${({ theme, active }) =>
-    active === 'true' ? theme.colors.secondary : 'transparent'};
+  background-color: ${({ theme, $active }) =>
+    $active === 'true' ? theme.colors.secondary : 'transparent'};
 
   position: absolute;
 
