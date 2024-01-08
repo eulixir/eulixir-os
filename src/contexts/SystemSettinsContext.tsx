@@ -24,7 +24,7 @@ export function SystemSettingsContextProvider({
 
   function setNewCurrentAppView(viewId: number) {
     const index = systemSettingsItemsOptions.findIndex(
-      ({ viewId: banana }) => banana === viewId,
+      (view) => view.viewId === viewId,
     )
 
     if (currentAppView.viewId === viewId) {

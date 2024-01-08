@@ -6,7 +6,7 @@ export const SystemSettingsViewContainer = styled.div`
 
   background: ${({ theme }) => theme.apps.systemSettings.optionsBackground};
 
-  padding: 17px 17px 0 17px;
+  padding: 17px 17px 17px 17px;
 `
 
 export const SystemSettingsHeader = styled.div`

@@ -24,8 +24,6 @@ export function SystemSettingsApp() {
 
   const { currentAppView } = useContext(SystemSettingsContext)
 
-  console.log()
-
   return (
     <BaseWindow {...configs}>
       <S.SystemSettingsContainer>
