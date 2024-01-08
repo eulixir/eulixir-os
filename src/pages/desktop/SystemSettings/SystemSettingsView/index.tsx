@@ -1,11 +1,11 @@
 import { ComponentType, useContext } from 'react'
-import { ProcessContext } from '../../../../../contexts/processContext'
-import { getProcess } from '../../../../../services/processes/getProcess'
-import { CurrentAppContext } from '../../../../../contexts/currentAppContext'
+import { ProcessContext } from '../../../../contexts/processContext'
+import { getProcess } from '../../../../services/processes/getProcess'
+import { CurrentAppContext } from '../../../../contexts/currentAppContext'
 
 import * as S from './styles'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
-import { SystemSettingsContext } from '../../../../../contexts/SystemSettinsContext'
+import { SystemSettingsContext } from '../../../../contexts/SystemSettinsContext'
 
 const pid = 4
 

@@ -3,10 +3,10 @@ import {
   BaseWindow,
   BaseWindowType,
   WindowStyle,
-} from '../../../../components/baseWindow'
+} from '../../../components/baseWindow'
 import { SystemSettingsSidebar } from './Sidebar'
 import { SystemSettingsView } from './SystemSettingsView'
-import { SystemSettingsContext } from '../../../../contexts/SystemSettinsContext'
+import { SystemSettingsContext } from '../../../contexts/SystemSettinsContext'
 
 import { useContext, useEffect } from 'react'
 

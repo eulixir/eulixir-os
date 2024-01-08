@@ -1,5 +1,5 @@
 import { createContext, ReactNode } from 'react'
-import { WeatherApp } from '../pages/app/desktop/weather'
+import { WeatherApp } from '../pages/desktop/weather'
 
 interface WeatherContextProviderProps {
   children: ReactNode

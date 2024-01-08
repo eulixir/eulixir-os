@@ -1,7 +1,7 @@
 import { App, ItemDropdown } from '../@types/app'
 import { SystemSettignsItemOption } from '../@types/systemSettings'
 import { SystemSettingsContextProvider } from '../contexts/SystemSettinsContext'
-import { OwnerView } from '../pages/app/desktop/SystemSettings/Views/AboutOwner'
+import { OwnerView } from '../pages/desktop/SystemSettings/Views/AboutOwner'
 
 const systemSettingsDropDownItems = (): ItemDropdown[] => {
   const items = [

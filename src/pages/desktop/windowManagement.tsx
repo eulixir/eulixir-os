@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from 'react'
 
-import { apps } from '../../../apps/appService'
-import { Process } from '../../../@types/process'
-import { getAllProcesses } from '../../../services/processes/getAll'
-import { ProcessContext, enumStatus } from '../../../contexts/processContext'
+import { apps } from '../../apps/appService'
+import { Process } from '../../@types/process'
+import { getAllProcesses } from '../../services/processes/getAll'
+import { ProcessContext, enumStatus } from '../../contexts/processContext'
 
 export function WindowManagement() {
   const { processStack } = useContext(ProcessContext)

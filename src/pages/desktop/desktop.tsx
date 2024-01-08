@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Dock } from '../../../components/Dock'
-import { MenuBar } from '../../../components/MenuBar'
-import { SplashScreen } from '../../../components/SplashScreen'
-import { CurrentAppContextProvider } from '../../../contexts/currentAppContext'
+import { Dock } from '../../components/Dock'
+import { MenuBar } from '../../components/MenuBar'
+import { SplashScreen } from '../../components/SplashScreen'
+import { CurrentAppContextProvider } from '../../contexts/currentAppContext'
 
 import { DesktopContainer } from '../styles'
 
-import { ProcessContextProvider } from '../../../contexts/processContext'
+import { ProcessContextProvider } from '../../contexts/processContext'
 
 import { WindowManagement } from './windowManagement'
 

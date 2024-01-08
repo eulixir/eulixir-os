@@ -3,17 +3,14 @@ import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
 import * as S from './styles'
 
 import { LocationCard } from './LocationCard'
-import {
-  SearchInput,
-  SearchInputProps,
-} from '../../../../components/SearchInput'
+import { SearchInput, SearchInputProps } from '../../../components/SearchInput'
 
 // import Wallpaper from '../../../../assets/images/Weather/cloud_wallpaper.jpg'
 import {
   BaseWindow,
   BaseWindowType,
   WindowStyle,
-} from '../../../../components/baseWindow'
+} from '../../../components/baseWindow'
 
 export function WeatherApp() {
   const [isResizing, setIsResizing] = useState(false)

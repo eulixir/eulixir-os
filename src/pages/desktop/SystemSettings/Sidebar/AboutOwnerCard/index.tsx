@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { SystemSettingsContext } from '../../../../../../contexts/SystemSettinsContext'
+import { SystemSettingsContext } from '../../../../../contexts/SystemSettinsContext'
 import * as S from './styles'
 
 const viewId = 1

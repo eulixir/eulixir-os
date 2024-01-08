@@ -2,12 +2,12 @@ import { useContext, useState } from 'react'
 import {
   SearchInput,
   SearchInputProps,
-} from '../../../../../components/SearchInput'
+} from '../../../../components/SearchInput'
 import * as S from './styles'
-import { ProcessContext } from '../../../../../contexts/processContext'
-import { getProcess } from '../../../../../services/processes/getProcess'
+import { ProcessContext } from '../../../../contexts/processContext'
+import { getProcess } from '../../../../services/processes/getProcess'
 import { AboutOwnerCard } from './AboutOwnerCard'
-import { CurrentAppContext } from '../../../../../contexts/currentAppContext'
+import { CurrentAppContext } from '../../../../contexts/currentAppContext'
 
 const pid = 4
 

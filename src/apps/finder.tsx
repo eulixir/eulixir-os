@@ -1,6 +1,6 @@
 import { App, ItemDropdown } from '../@types/app'
 
-import { FinderApp } from '../pages/app/desktop/Finder'
+import { FinderApp } from '../pages/desktop/Finder'
 
 const finderDropDownItems = (): ItemDropdown[] => {
   const items = [

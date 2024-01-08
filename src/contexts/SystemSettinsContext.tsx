@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from 'react'
 import { SystemSettignsItemOption } from '../@types/systemSettings'
 import { systemSettingsItemsOptions } from '../apps/systemSettings'
-import { SystemSettingsApp } from '../pages/app/desktop/SystemSettings'
+import { SystemSettingsApp } from '../pages/desktop/SystemSettings'
 
 interface SystemSettingsContextProviderProps {
   children: ReactNode
