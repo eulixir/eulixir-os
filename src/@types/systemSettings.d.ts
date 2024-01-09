@@ -3,4 +3,5 @@ export interface SystemSettignsItemOption {
   name?: string
   iconPath?: string
   view: React.ComponentType
+  visible: boolean
 }

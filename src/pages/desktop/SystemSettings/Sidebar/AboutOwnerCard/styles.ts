@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const AboutOwnerCardContainer = styled.div`
+interface AboutOwnerCardButtonProps {
+  $active: string
+}
+
+export const AboutOwnerCardButton = styled.button<AboutOwnerCardButtonProps>`
   margin-top: 8px;
   width: 100%;
   height: 47px;
@@ -11,7 +15,13 @@ export const AboutOwnerCardContainer = styled.div`
   flex-direction: row;
   border-radius: 6px;
 
-  &:hover {
+  outline: none;
+  border: none;
+
+  background: ${({ theme, $active }) =>
+    $active === 'true' ? theme.secondaryMainColor : 'transparent'};
+
+  &:focus {
     background: ${({ theme }) => theme.secondaryMainColor};
   }
 `

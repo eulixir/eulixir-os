@@ -8,6 +8,8 @@ import { ProcessContext } from '../../../../contexts/processContext'
 import { getProcess } from '../../../../services/processes/getProcess'
 import { AboutOwnerCard } from './AboutOwnerCard'
 import { CurrentAppContext } from '../../../../contexts/currentAppContext'
+import { systemSettingsItemsOptions } from '../../../../apps/systemSettings'
+import { SystemSettingsOption } from './Option'
 
 const pid = 4
 
@@ -40,6 +42,11 @@ export function SystemSettingsSidebar() {
       <SearchInput {...searchInputConfigs} />
       <S.OptionsContainer>
         <AboutOwnerCard />
+        {systemSettingsItemsOptions.map((option) =>
+          option.visible ? (
+            <SystemSettingsOption {...option} key={option.viewId} />
+          ) : null,
+        )}
       </S.OptionsContainer>
     </S.SettingsSidebarContainer>
   )

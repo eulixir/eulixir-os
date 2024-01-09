@@ -1,17 +1,25 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { SystemSettingsContext } from '../../../../../contexts/SystemSettinsContext'
 import * as S from './styles'
 
 const viewId = 1
 
 export function AboutOwnerCard() {
-  const { setNewCurrentAppView } = useContext(SystemSettingsContext)
+  const [isActive, setIsActive] = useState('false')
+
+  const { currentAppView, setNewCurrentAppView } = useContext(
+    SystemSettingsContext,
+  )
+
+  useEffect(() => {
+    setIsActive((currentAppView.viewId === viewId).toString())
+  }, [currentAppView])
 
   function handleSetNewApp() {
     setNewCurrentAppView(viewId)
   }
   return (
-    <S.AboutOwnerCardContainer onClick={handleSetNewApp}>
+    <S.AboutOwnerCardButton $active={isActive} onClick={handleSetNewApp}>
       <S.OwnerImage>
         <img
           alt="Macos Owner"
@@ -23,6 +31,6 @@ export function AboutOwnerCard() {
         <p>João Pedro Alves</p>
         <span>Apple ID</span>
       </S.OwnerInfoContainer>
-    </S.AboutOwnerCardContainer>
+    </S.AboutOwnerCardButton>
   )
 }
