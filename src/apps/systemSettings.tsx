@@ -3,7 +3,8 @@ import { SystemSettignsItemOption } from '../@types/systemSettings'
 import { SystemSettingsContextProvider } from '../contexts/SystemSettinsContext'
 import { OwnerView } from '../pages/desktop/SystemSettings/Views/AboutOwner'
 import WiFiIcon from '../assets/icons/wi-fi-icon.png'
-import Bluetooth from '../assets/icons/bluetooth-icon.png'
+import Bluetooth from '../assets/icons/Bluetooth icon.png'
+import { WiFiOption } from '../pages/desktop/SystemSettings/Sidebar/Option/WiFi'
 
 const systemSettingsDropDownItems = (): ItemDropdown[] => {
   const items = [
@@ -97,7 +98,7 @@ export const systemSettingsItemsOptions: SystemSettignsItemOption[] = [
     viewId: 2,
     name: 'Wi-Fi',
     iconPath: WiFiIcon,
-    view: OwnerView,
+    view: WiFiOption,
     visible: true,
   },
   {

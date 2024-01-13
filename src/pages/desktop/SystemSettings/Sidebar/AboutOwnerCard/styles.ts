@@ -18,6 +18,8 @@ export const AboutOwnerCardButton = styled.button<AboutOwnerCardButtonProps>`
   outline: none;
   border: none;
 
+  margin-bottom: 10px;
+
   background: ${({ theme, $active }) =>
     $active === 'true' ? theme.secondaryMainColor : 'transparent'};
 
