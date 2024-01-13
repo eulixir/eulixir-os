@@ -1,5 +1,6 @@
 import * as S from './styles'
 import WiFiLogo from '../../../../../../assets/icons/wi-fi-icon.png'
+import { Toggle } from '../../../../../../components/Toggle'
 
 export function WiFiOption() {
   return (
@@ -10,7 +11,7 @@ export function WiFiOption() {
             <img src={WiFiLogo} alt="Wi-fi Logo" />
             <p> Wi-Fi</p>
           </S.WiFiIconContainer>
-          Toggle
+          <Toggle />
         </S.WiFiToggleContainer>
         <S.ConnectedWiFiInfoContainer></S.ConnectedWiFiInfoContainer>
       </S.ConnectedWiFiToggleContainer>

@@ -1,4 +1,4 @@
-export const weatherLigthColorPallet = {
+export const weatherLigthColorPallete = {
   fonts: {
     white: '#ffffff',
     white100: '#cbcbcb',

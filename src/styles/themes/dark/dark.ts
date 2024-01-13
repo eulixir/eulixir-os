@@ -1,8 +1,10 @@
 import background from '../../../assets/images/macOs-ventura-dark-1480x1480.jpeg'
 import mobileBackground from '../../../assets/images/Deep-Purple-iPhone-14-Stock-Pro-Wallpaper-iPhone-14-pro-max.jpg'
 import { WindowControls } from '../components/windowControls'
-import { weatherDarkColorPallet } from './apps/weatherDarkColorPallet'
-import { systemSettingsDarkColorPallet } from './apps/systemSettingsDarkColorPallet'
+
+import { systemSettingsDarkColorPallete } from './apps/systemSettingsDarkColorPallete'
+import { ToggleColorPallete } from '../components/toggle'
+import { weatherDarkColorPallete } from './apps/weatherDarkColorPallete'
 
 export const darkTheme = {
   title: 'dark',
@@ -35,9 +37,10 @@ export const darkTheme = {
   },
   backgroundUrl: background,
   windowControls: WindowControls,
+  toggle: ToggleColorPallete,
   apps: {
-    weather: weatherDarkColorPallet,
-    systemSettings: systemSettingsDarkColorPallet,
+    weather: weatherDarkColorPallete,
+    systemSettings: systemSettingsDarkColorPallete,
   },
-  secondaryMainColor: '#2564c3',
+  secondaryMainColor: '#1662d9',
 }

@@ -1,6 +1,6 @@
 import { SystemSettingsThemeType } from '../../../../@types/themes/systemSettings'
 
-export const systemSettingsDarkColorPallet: SystemSettingsThemeType = {
+export const systemSettingsDarkColorPallete: SystemSettingsThemeType = {
   fonts: {
     primary: '#eaeaea',
     secondary: '#cecece',

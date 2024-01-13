@@ -1,8 +1,9 @@
 import background from '../../../assets/images/macOs-ventura-light.jpg'
 import mobileBackground from '../../../assets/images/Deep-Purple-iPhone-14-Stock-Pro-Wallpaper-iPhone-14-pro-max.jpg'
 import { WindowControls } from '../components/windowControls'
-import { systemSettingsLightColorPallet } from './apps/systemSettingsWhiteColorPallet'
-import { weatherLigthColorPallet } from './apps/weatherLightColorPallet'
+import { systemSettingsLightColorPallete } from './apps/systemSettingsWhiteColorPallete'
+import { weatherLigthColorPallete } from './apps/weatherLightColorPallete'
+import { ToggleColorPallete } from '../components/toggle'
 
 export const lightTheme = {
   title: 'light',
@@ -35,9 +36,10 @@ export const lightTheme = {
   },
   backgroundUrl: background,
   windowControls: WindowControls,
+  toggle: ToggleColorPallete,
   apps: {
-    weather: weatherLigthColorPallet,
-    systemSettings: systemSettingsLightColorPallet,
+    weather: weatherLigthColorPallete,
+    systemSettings: systemSettingsLightColorPallete,
   },
   secondaryMainColor: '#2564c3',
 }
