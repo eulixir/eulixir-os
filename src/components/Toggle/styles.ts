@@ -10,7 +10,7 @@ export const SwitchRoot = styled(Root)`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   outline: none;
-  border: none;
+  border: 1px solid ${({ theme }) => theme.toggle.rootBorder};
 
   &[data-state='checked'] {
     background-color: ${({ theme }) => theme.secondaryMainColor};
