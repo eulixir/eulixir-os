@@ -1,7 +1,6 @@
 import { createContext, ReactNode, useState } from 'react'
 import { SystemSettignsItemOption } from '../@types/systemSettings'
 import { systemSettingsItemsOptions } from '../apps/systemSettings'
-import { SystemSettingsApp } from '../pages/desktop/SystemSettings'
 
 interface SystemSettingsContextProviderProps {
   children: ReactNode
@@ -38,7 +37,6 @@ export function SystemSettingsContextProvider({
     <SystemSettingsContext.Provider
       value={{ setNewCurrentAppView, currentAppView }}
     >
-      <SystemSettingsApp />
       {children}
     </SystemSettingsContext.Provider>
   )

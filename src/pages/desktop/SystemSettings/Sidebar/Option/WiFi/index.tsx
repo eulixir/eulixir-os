@@ -1,5 +1,5 @@
 import * as S from './styles'
-import WiFiLogo from '../../../../../../assets/icons/wi-fi-icon.png'
+import WiFiLogo from '../../../../../../assets/icons/Wifi-icon.png'
 import { Toggle } from '../../../../../../components/Toggle'
 
 export function WiFiOption() {

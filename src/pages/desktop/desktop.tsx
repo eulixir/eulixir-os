@@ -9,6 +9,7 @@ import { DesktopContainer } from '../styles'
 import { ProcessContextProvider } from '../../contexts/processContext'
 
 import { WindowManagement } from './windowManagement'
+import { SystemSettingsContextProvider } from '../../contexts/SystemSettinsContext'
 
 interface DesktopProps {
   changeOsTheme: () => void
@@ -31,16 +32,18 @@ export function Desktop({ changeOsTheme }: DesktopProps) {
 
   return (
     <CurrentAppContextProvider>
-      <ProcessContextProvider>
-        <DesktopContainer>
-          {!hasLoaded && (
-            <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />
-          )}
-          <MenuBar changeOsTheme={changeOsTheme} />
-          <WindowManagement />
-          <Dock />
-        </DesktopContainer>
-      </ProcessContextProvider>
+      <SystemSettingsContextProvider>
+        <ProcessContextProvider>
+          <DesktopContainer>
+            {!hasLoaded && (
+              <SplashScreen setSplashHasLoaded={setSplashHasLoaded} />
+            )}
+            <MenuBar changeOsTheme={changeOsTheme} />
+            <WindowManagement />
+            <Dock />
+          </DesktopContainer>
+        </ProcessContextProvider>
+      </SystemSettingsContextProvider>
     </CurrentAppContextProvider>
   )
 }

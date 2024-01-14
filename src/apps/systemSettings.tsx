@@ -1,10 +1,18 @@
 import { App, ItemDropdown } from '../@types/app'
 import { SystemSettignsItemOption } from '../@types/systemSettings'
-import { SystemSettingsContextProvider } from '../contexts/SystemSettinsContext'
 import { OwnerView } from '../pages/desktop/SystemSettings/Views/AboutOwner'
-import WiFiIcon from '../assets/icons/wi-fi-icon.png'
-import Bluetooth from '../assets/icons/Bluetooth icon.png'
 import { WiFiOption } from '../pages/desktop/SystemSettings/Sidebar/Option/WiFi'
+import { SystemSettingsApp } from '../pages/desktop/SystemSettings'
+
+import WiFiIcon from '../assets/icons/Wifi-icon.png'
+import BluetoothIcon from '../assets/icons/Bluetooth icon.png'
+import NetworkIcon from '../assets/icons/Network-icon.png'
+import NotificationsIcon from '../assets/icons/Notification-icon.png'
+import SoundIcon from '../assets/icons/Sound-icon.png'
+import FocusIcon from '../assets/icons/Focus-icon.png'
+import AccessibilityIcon from '../assets/icons/Acessibility-icon.png'
+import ControlCenter from '../assets/icons/Control-center-icon.png'
+import PrivacyAndSecurity from '../assets/icons/Privacy-and-Security-icon.png'
 
 const systemSettingsDropDownItems = (): ItemDropdown[] => {
   const items = [
@@ -84,7 +92,7 @@ export const systemSettings: App = {
   label: 'System Settings',
   active: true,
   appName: 'System Settings',
-  context: SystemSettingsContextProvider,
+  context: SystemSettingsApp,
 }
 
 export const systemSettingsItemsOptions: SystemSettignsItemOption[] = [
@@ -104,7 +112,56 @@ export const systemSettingsItemsOptions: SystemSettignsItemOption[] = [
   {
     viewId: 3,
     name: 'Bluetooth',
-    iconPath: Bluetooth,
+    iconPath: BluetoothIcon,
+    view: OwnerView,
+    visible: true,
+  },
+  {
+    viewId: 4,
+    name: 'Network',
+    iconPath: NetworkIcon,
+    view: OwnerView,
+    visible: true,
+  },
+  {
+    viewId: 5,
+    name: 'Notifications',
+    iconPath: NotificationsIcon,
+    view: OwnerView,
+    visible: true,
+  },
+  {
+    viewId: 6,
+    name: 'Sound',
+    iconPath: SoundIcon,
+    view: OwnerView,
+    visible: true,
+  },
+  {
+    viewId: 7,
+    name: 'Focus',
+    iconPath: FocusIcon,
+    view: OwnerView,
+    visible: true,
+  },
+  {
+    viewId: 8,
+    name: 'Accessibility',
+    iconPath: AccessibilityIcon,
+    view: OwnerView,
+    visible: true,
+  },
+  {
+    viewId: 9,
+    name: 'Control Center',
+    iconPath: ControlCenter,
+    view: OwnerView,
+    visible: true,
+  },
+  {
+    viewId: 10,
+    name: 'Privacy & Security',
+    iconPath: PrivacyAndSecurity,
     view: OwnerView,
     visible: true,
   },
