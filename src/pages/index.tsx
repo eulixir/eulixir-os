@@ -8,7 +8,7 @@ import { Desktop } from './desktop/desktop'
 import { GlobalStyle } from '../styles/global'
 import { darkTheme } from '../styles/themes/dark/dark'
 import { lightTheme } from '../styles/themes/light/light'
-import { getGlobalConfigs } from '../services/globalConfigs/get'
+import { getGlobalConfigs } from '../services/globalConfigs/getGlobalConfigs'
 import { updateConfig } from '../services/globalConfigs/updateConfig'
 
 function App() {

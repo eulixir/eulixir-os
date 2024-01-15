@@ -1,3 +1,4 @@
+import { getGlobalConfigs } from './getGlobalConfigs'
 import { getOsTheme } from './theme/getOsTheme'
 
 interface SystemSettingsConfig {
@@ -10,6 +11,12 @@ export interface GlobalConfigs {
 }
 
 export function setupConfigService() {
+  const oldConfigs = getGlobalConfigs()
+
+  if (!oldConfigs) {
+    return
+  }
+
   const baseConfigs: GlobalConfigs = {
     theme: getOsTheme(),
     systemSettingsConfig: { wifiStatus: true },

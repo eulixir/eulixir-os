@@ -1,8 +1,8 @@
 import { createContext, ReactNode, useState } from 'react'
 import { SystemSettignsItemOption } from '../@types/systemSettings'
 import { systemSettingsItemsOptions } from '../apps/systemSettings'
-import { getGlobalConfigs } from '../services/globalConfigs/get'
 import { updateConfig } from '../services/globalConfigs/updateConfig'
+import { getGlobalConfigs } from '../services/globalConfigs/getGlobalConfigs'
 
 interface SystemSettingsContextProviderProps {
   children: ReactNode

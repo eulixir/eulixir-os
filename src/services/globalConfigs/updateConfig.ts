@@ -1,4 +1,4 @@
-import { getGlobalConfigs } from './get'
+import { getGlobalConfigs } from './getGlobalConfigs'
 import { GlobalConfigs } from './setup'
 
 // eslint-disable-next-line prettier/prettier

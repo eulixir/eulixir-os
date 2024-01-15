@@ -1,4 +1,4 @@
-import { getGlobalConfigs } from '../get'
+import { getGlobalConfigs } from '../getGlobalConfigs'
 
 export function getOsTheme() {
   const localTheme = getGlobalConfigs().theme
