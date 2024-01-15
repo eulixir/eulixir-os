@@ -1,5 +1,7 @@
+import { getGlobalConfigs } from '../get'
+
 export function getOsTheme() {
-  const localTheme = localStorage.getItem('os-theme')
+  const localTheme = getGlobalConfigs().theme
 
   if (localTheme) {
     return localTheme
