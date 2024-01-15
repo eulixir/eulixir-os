@@ -1,7 +1,5 @@
 import { App, ItemDropdown } from '../@types/app'
 import { SystemSettignsItemOption } from '../@types/systemSettings'
-import { OwnerView } from '../pages/desktop/SystemSettings/Views/AboutOwner'
-import { WiFiOption } from '../pages/desktop/SystemSettings/Views/WiFi'
 import { SystemSettingsApp } from '../pages/desktop/SystemSettings'
 
 import WiFiIcon from '../assets/icons/Wifi-icon.png'
@@ -12,7 +10,13 @@ import SoundIcon from '../assets/icons/Sound-icon.png'
 import FocusIcon from '../assets/icons/Focus-icon.png'
 import AccessibilityIcon from '../assets/icons/Acessibility-icon.png'
 import ControlCenter from '../assets/icons/Control-center-icon.png'
-import PrivacyAndSecurity from '../assets/icons/Privacy-and-Security-icon.png'
+import PrivacyAndSecurityIcon from '../assets/icons/Privacy-and-Security-icon.png'
+import GeneralIcon from '../assets/icons/General-icon.png'
+import AppearanceIcon from '../assets/icons/Appearance-icon.png'
+
+import { AppearanceView } from '../pages/desktop/SystemSettings/Views/Appearance'
+import { OwnerView } from '../pages/desktop/SystemSettings/Views/AboutOwner'
+import { WiFiView } from '../pages/desktop/SystemSettings/Views/WiFi'
 
 const systemSettingsDropDownItems = (): ItemDropdown[] => {
   const items = [
@@ -106,7 +110,7 @@ export const systemSettingsItemsOptions: SystemSettignsItemOption[] = [
     viewId: 2,
     name: 'Wi-Fi',
     iconPath: WiFiIcon,
-    view: WiFiOption,
+    view: WiFiView,
     visible: true,
   },
   {
@@ -161,8 +165,22 @@ export const systemSettingsItemsOptions: SystemSettignsItemOption[] = [
   {
     viewId: 10,
     name: 'Privacy & Security',
-    iconPath: PrivacyAndSecurity,
+    iconPath: PrivacyAndSecurityIcon,
     view: OwnerView,
+    visible: true,
+  },
+  {
+    viewId: 11,
+    name: 'General',
+    iconPath: GeneralIcon,
+    view: OwnerView,
+    visible: true,
+  },
+  {
+    viewId: 12,
+    name: 'Apperance',
+    iconPath: AppearanceIcon,
+    view: AppearanceView,
     visible: true,
   },
 ]

@@ -4,7 +4,7 @@ import { Toggle } from '../../../../../components/Toggle'
 import { useContext, useEffect, useState } from 'react'
 import { SystemSettingsContext } from '../../../../../contexts/SystemSettinsContext'
 
-export function WiFiOption() {
+export function WiFiView() {
   const { wifiState, toggleWifi } = useContext(SystemSettingsContext)
 
   const [wifiIconState, setWifiIconState] = useState(wifiState)
