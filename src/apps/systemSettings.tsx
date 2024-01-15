@@ -1,7 +1,7 @@
 import { App, ItemDropdown } from '../@types/app'
 import { SystemSettignsItemOption } from '../@types/systemSettings'
 import { OwnerView } from '../pages/desktop/SystemSettings/Views/AboutOwner'
-import { WiFiOption } from '../pages/desktop/SystemSettings/Sidebar/Option/WiFi'
+import { WiFiOption } from '../pages/desktop/SystemSettings/Views/WiFi'
 import { SystemSettingsApp } from '../pages/desktop/SystemSettings'
 
 import WiFiIcon from '../assets/icons/Wifi-icon.png'

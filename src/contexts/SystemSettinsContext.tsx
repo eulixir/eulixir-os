@@ -1,12 +1,16 @@
 import { createContext, ReactNode, useState } from 'react'
 import { SystemSettignsItemOption } from '../@types/systemSettings'
 import { systemSettingsItemsOptions } from '../apps/systemSettings'
+import { getGlobalConfigs } from '../services/globalConfigs/get'
+import { updateConfig } from '../services/globalConfigs/updateConfig'
 
 interface SystemSettingsContextProviderProps {
   children: ReactNode
 }
 
 interface SystemSettingsContextProviderType {
+  wifiState: boolean
+  toggleWifi: (action: boolean) => void
   setNewCurrentAppView: (viewId: number) => void
   currentAppView: SystemSettignsItemOption
 }
@@ -20,6 +24,15 @@ export function SystemSettingsContextProvider({
 }: SystemSettingsContextProviderProps) {
   const [currentAppView, setCurrentAppView] =
     useState<SystemSettignsItemOption>(systemSettingsItemsOptions[1])
+
+  const { systemSettingsConfig } = getGlobalConfigs()
+
+  const [wifiState, setWifiState] = useState(systemSettingsConfig.wifiStatus)
+
+  function toggleWifi(action: boolean) {
+    setWifiState(action)
+    updateConfig({ systemSettingsConfig: { wifiStatus: action } })
+  }
 
   function setNewCurrentAppView(viewId: number) {
     const index = systemSettingsItemsOptions.findIndex(
@@ -35,7 +48,7 @@ export function SystemSettingsContextProvider({
 
   return (
     <SystemSettingsContext.Provider
-      value={{ setNewCurrentAppView, currentAppView }}
+      value={{ setNewCurrentAppView, currentAppView, wifiState, toggleWifi }}
     >
       {children}
     </SystemSettingsContext.Provider>

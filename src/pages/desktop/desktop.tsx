@@ -10,12 +10,15 @@ import { ProcessContextProvider } from '../../contexts/processContext'
 
 import { WindowManagement } from './windowManagement'
 import { SystemSettingsContextProvider } from '../../contexts/SystemSettinsContext'
+import { setupConfigService } from '../../services/globalConfigs/setup'
 
 interface DesktopProps {
   changeOsTheme: () => void
 }
 
 export function Desktop({ changeOsTheme }: DesktopProps) {
+  setupConfigService()
+
   const [hasLoaded, setHasLoaded] = useState(false)
 
   function setSplashHasLoaded() {

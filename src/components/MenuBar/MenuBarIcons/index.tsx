@@ -7,12 +7,23 @@ import {
   IoIosMoon,
 } from 'react-icons/io'
 import { Container, MenuBarButton } from './styles'
+import { useContext, useEffect, useState } from 'react'
+import { SystemSettingsContext } from '../../../contexts/SystemSettinsContext'
+import { CiWifiOff } from 'react-icons/ci'
 
 interface MenuBarIconsProps {
   changeOsTheme: () => void
 }
 
 export function MenuBarIcons({ changeOsTheme }: MenuBarIconsProps) {
+  const { wifiState, toggleWifi } = useContext(SystemSettingsContext)
+
+  const [wifiIconState, setWifiIconState] = useState(wifiState)
+
+  useEffect(() => {
+    setWifiIconState(wifiState)
+  }, [wifiState, wifiIconState])
+
   return (
     <Container>
       <main>
@@ -24,7 +35,11 @@ export function MenuBarIcons({ changeOsTheme }: MenuBarIconsProps) {
         </MenuBarButton>
 
         <MenuBarButton>
-          <IoIosWifi size={19} />
+          {wifiIconState ? (
+            <IoIosWifi size={19} onClick={() => toggleWifi(false)} />
+          ) : (
+            <CiWifiOff size={19} onClick={() => toggleWifi(true)} />
+          )}
         </MenuBarButton>
 
         <MenuBarButton>

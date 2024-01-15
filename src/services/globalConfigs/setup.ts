@@ -1,7 +1,7 @@
 import { getOsTheme } from './theme/getOsTheme'
 
 interface SystemSettingsConfig {
-  activeWifi: boolean
+  wifiStatus: boolean
 }
 
 export interface GlobalConfigs {
@@ -12,7 +12,7 @@ export interface GlobalConfigs {
 export function setupConfigService() {
   const baseConfigs: GlobalConfigs = {
     theme: getOsTheme(),
-    systemSettingsConfig: { activeWifi: true },
+    systemSettingsConfig: { wifiStatus: true },
   }
 
   localStorage.setItem('globalConfigs', JSON.stringify(baseConfigs))

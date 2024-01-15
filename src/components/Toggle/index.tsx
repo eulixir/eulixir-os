@@ -1,13 +1,24 @@
 import { useState } from 'react'
 import * as S from './styles'
 
-export function Toggle() {
-  const [checked, setChecked] = useState(true)
+export interface ToggleProps {
+  initState: boolean
+  onClickFunction: (state: boolean) => void
+}
 
-  // useEffect(() => { }, [checked])
+export function Toggle({ initState, onClickFunction }: ToggleProps) {
+  const [checked, setChecked] = useState(initState)
+
+  function handleToggle(state: boolean) {
+    setChecked(state)
+    onClickFunction(state)
+  }
 
   return (
-    <S.SwitchRoot defaultChecked={checked} onCheckedChange={setChecked}>
+    <S.SwitchRoot
+      defaultChecked={checked}
+      onCheckedChange={(state) => handleToggle(state)}
+    >
       <S.RootThumb />
     </S.SwitchRoot>
   )
