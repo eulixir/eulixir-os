@@ -10,4 +10,5 @@ export interface SystemSettingsThemeType {
   sectionBackground: string
   sectionBorder: string
   secondarySectionBorder: string
+  sidebarBorder: string
 }

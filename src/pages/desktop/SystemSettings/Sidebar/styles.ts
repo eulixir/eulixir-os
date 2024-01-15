@@ -5,7 +5,8 @@ export const SettingsSidebarContainer = styled.div`
   width: 309px;
   height: 100%;
 
-  border-right: 1.5px solid black;
+  border-right: 1.5px solid
+    ${({ theme }) => theme.apps.systemSettings.sidebarBorder};
 
   background: ${({ theme }) => theme.apps.systemSettings.sidebarBackground};
 

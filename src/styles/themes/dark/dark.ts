@@ -3,8 +3,8 @@ import mobileBackground from '../../../assets/images/Deep-Purple-iPhone-14-Stock
 import { WindowControls } from '../components/windowControls'
 
 import { systemSettingsDarkColorPallete } from './apps/systemSettingsDarkColorPallete'
-import { ToggleColorPallete } from '../components/toggle'
 import { weatherDarkColorPallete } from './apps/weatherDarkColorPallete'
+import { ToggleDarkColorPallete } from './components/toggleDark'
 
 export const darkTheme = {
   title: 'dark',
@@ -37,7 +37,7 @@ export const darkTheme = {
   },
   backgroundUrl: background,
   windowControls: WindowControls,
-  toggle: ToggleColorPallete,
+  toggle: ToggleDarkColorPallete,
   apps: {
     weather: weatherDarkColorPallete,
     systemSettings: systemSettingsDarkColorPallete,

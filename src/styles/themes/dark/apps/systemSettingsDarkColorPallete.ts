@@ -12,4 +12,5 @@ export const systemSettingsDarkColorPallete: SystemSettingsThemeType = {
   sectionBackground: '#343333',
   sectionBorder: '#535252',
   secondarySectionBorder: '#3e3d3d',
+  sidebarBorder: '#000',
 }
