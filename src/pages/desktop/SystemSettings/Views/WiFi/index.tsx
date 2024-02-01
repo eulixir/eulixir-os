@@ -30,17 +30,34 @@ export function WiFiView() {
         </S.WiFiToggleContainer>
         <S.ConnectedWiFiInfoContainer>
           <S.ConnectedWiFiStatus>
-            <p>Eulixir Os Network</p>
-            <span>
-              <FaCircle color="#37d74b" size={12} />
-              <p>Conected</p>
-            </span>
+            {wifiIconState ? <p>Eulixir Os Network</p> : <></>}
+
+            {wifiIconState ? (
+              <span>
+                <FaCircle color="#37d74b" size={12} />
+                <p>Conected</p>
+              </span>
+            ) : (
+              <span style={{ paddingTop: '6px' }}>
+                <FaCircle color="#ff453a" size={12} />
+                <p>Wi-Fi is off</p>
+              </span>
+            )}
           </S.ConnectedWiFiStatus>
-          <S.WiFiDetails>
-            <ImLock size={14} />
-            <BiWifi />
-            <Button text="Details..." width={63} height={20} />
-          </S.WiFiDetails>
+
+          {wifiIconState ? (
+            <S.ActiveWiFiDetails>
+              <ImLock size={14} />
+              <BiWifi />
+              <Button text="Details..." width={63} height={20} />
+            </S.ActiveWiFiDetails>
+          ) : (
+            <S.ActiveWiFiDetails
+              style={{ justifyContent: 'flex-end', paddingTop: '6px' }}
+            >
+              <Button text="Details..." width={63} height={20} />
+            </S.ActiveWiFiDetails>
+          )}
         </S.ConnectedWiFiInfoContainer>
       </S.ConnectedWiFiToggleContainer>
     </S.WiFiOptionContainer>

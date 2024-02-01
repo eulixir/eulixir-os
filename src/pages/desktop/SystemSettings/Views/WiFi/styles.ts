@@ -76,7 +76,7 @@ export const ConnectedWiFiStatus = styled.div`
     }
   }
 `
-export const WiFiDetails = styled.div`
+export const ActiveWiFiDetails = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
