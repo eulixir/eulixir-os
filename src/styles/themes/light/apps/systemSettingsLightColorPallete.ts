@@ -4,9 +4,11 @@ export const systemSettingsLightColorPallete: SystemSettingsThemeType = {
   fonts: {
     primary: '#000',
     secondary: '#000',
+    label: '#878787',
   },
   sidebarBackground: '#d7dedee1',
   optionsBackground: '#f0eff0',
+  primaryIcon: '#e0e0e0',
   activeHeaderButton: '#b2b1b2',
   inactiveHeaderButton: '#565556',
   sectionBackground: '#edecec',

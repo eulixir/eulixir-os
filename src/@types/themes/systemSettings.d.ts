@@ -2,8 +2,10 @@ export interface SystemSettingsThemeType {
   fonts: {
     primary: string
     secondary: string
+    label: string
   }
   sidebarBackground: string
+  primaryIcon: string
   optionsBackground: string
   activeHeaderButton: string
   inactiveHeaderButton: string

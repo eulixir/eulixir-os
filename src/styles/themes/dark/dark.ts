@@ -5,6 +5,7 @@ import { WindowControls } from '../components/windowControls'
 import { systemSettingsDarkColorPallete } from './apps/systemSettingsDarkColorPallete'
 import { weatherDarkColorPallete } from './apps/weatherDarkColorPallete'
 import { ToggleDarkColorPallete } from './components/toggleDark'
+import { ButtonDarkColorPallete } from './components/buttonDark'
 
 export const darkTheme = {
   title: 'dark',
@@ -38,6 +39,7 @@ export const darkTheme = {
   backgroundUrl: background,
   windowControls: WindowControls,
   toggle: ToggleDarkColorPallete,
+  button: ButtonDarkColorPallete,
   apps: {
     weather: weatherDarkColorPallete,
     systemSettings: systemSettingsDarkColorPallete,

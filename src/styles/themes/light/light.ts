@@ -4,6 +4,7 @@ import { WindowControls } from '../components/windowControls'
 import { systemSettingsLightColorPallete } from './apps/systemSettingsLightColorPallete'
 import { weatherLigthColorPallete } from './apps/weatherLightColorPallete'
 import { ToggleLightColorPallete } from './components/toggleLight'
+import { ButtonLightColorPallete } from './components/buttonLight'
 
 export const lightTheme = {
   title: 'light',
@@ -37,6 +38,7 @@ export const lightTheme = {
   backgroundUrl: background,
   windowControls: WindowControls,
   toggle: ToggleLightColorPallete,
+  button: ButtonLightColorPallete,
   apps: {
     weather: weatherLigthColorPallete,
     systemSettings: systemSettingsLightColorPallete,

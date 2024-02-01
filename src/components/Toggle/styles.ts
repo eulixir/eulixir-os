@@ -23,7 +23,7 @@ export const RootThumb = styled(Thumb)`
   height: 21px;
   background-color: ${({ theme }) => theme.toggle.thumbColor};
   border-radius: 9999px;
-  transition: transform 100ms;
+  transition: transform 350ms;
   transform: translateX(2px);
   will-change: transform;
 

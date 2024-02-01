@@ -1,6 +1,5 @@
 import { SystemHour } from '../SystemHour'
 import {
-  IoIosWifi,
   IoIosBatteryCharging,
   IoIosSwitch,
   IoIosSearch,
@@ -10,6 +9,7 @@ import { Container, MenuBarButton } from './styles'
 import { useContext, useEffect, useState } from 'react'
 import { SystemSettingsContext } from '../../../contexts/SystemSettinsContext'
 import { CiWifiOff } from 'react-icons/ci'
+import { BiWifi } from 'react-icons/bi'
 
 interface MenuBarIconsProps {
   changeOsTheme: () => void
@@ -36,7 +36,7 @@ export function MenuBarIcons({ changeOsTheme }: MenuBarIconsProps) {
 
         <MenuBarButton>
           {wifiIconState ? (
-            <IoIosWifi size={19} onClick={() => toggleWifi(false)} />
+            <BiWifi size={19} onClick={() => toggleWifi(false)} />
           ) : (
             <CiWifiOff size={19} onClick={() => toggleWifi(true)} />
           )}

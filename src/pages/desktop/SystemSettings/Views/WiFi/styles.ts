@@ -41,10 +41,48 @@ export const WiFiIconContainer = styled.div`
 
     color: ${({ theme }) => theme.apps.systemSettings.fonts.primary};
     font-size: 0.875rem;
+    font-weight: 500;
   }
 
   & > img {
     width: 25px;
   }
 `
-export const ConnectedWiFiInfoContainer = styled.div``
+export const ConnectedWiFiInfoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px 0 10px;
+`
+
+export const ConnectedWiFiStatus = styled.div`
+  & > p {
+    color: ${({ theme }) => theme.apps.systemSettings.fonts.primary};
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  & > span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+
+    & > p {
+      padding-left: 5px;
+      color: ${({ theme }) => theme.apps.systemSettings.fonts.label};
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+  }
+`
+export const WiFiDetails = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+
+  & > svg {
+    color: ${({ theme }) => theme.apps.systemSettings.primaryIcon};
+  }
+`
