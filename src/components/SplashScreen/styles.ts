@@ -28,12 +28,12 @@ export const ProgressBar = styled.div`
 `
 
 interface ProgressProps {
-  progress: number
+  $progress: number
 }
 
 export const RunningBar = styled.div<ProgressProps>`
   height: 100%;
-  width: ${(props) => props.progress}%;
+  width: ${(props) => props.$progress}%;
   background-color: ${({ theme }) => theme.splash.loadbarProgress};
 
   transition: width 0.5s;

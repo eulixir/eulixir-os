@@ -4,12 +4,6 @@ import styled from 'styled-components'
 export const AppContainer = styled(motion.div)`
   position: absolute;
 
-  width: 80vw;
-
-  height: 70vh;
-
-  background: ${({ theme }) => theme.colors.mobileBackground};
-
   border: 0.01px solid ${({ theme }) => theme.colors.menubar.disabled};
 
   -webkit-box-shadow: inset 0px 0px 0px 1px
@@ -17,21 +11,21 @@ export const AppContainer = styled(motion.div)`
   -moz-box-shadow: inset 0px 0px 0px 1px
     ${({ theme }) => theme.splash.background};
   box-shadow: inset 0px 0px 0px 1px ${({ theme }) => theme.splash.background};
-  border-radius: 18px;
+  border-radius: 8px;
+  overflow: hidden;
 `
 
 interface ControlContainerProps {
-  windowcontrolsfullsize: string
+  $windowControlsFullSize: string
 }
 
 export const ControlContainer = styled.div<ControlContainerProps>`
-  background-color: ${({ theme, windowcontrolsfullsize }) =>
-    windowcontrolsfullsize === 'true'
+  background-color: ${({ theme, $windowControlsFullSize }) =>
+    $windowControlsFullSize === 'true'
       ? 'transparent'
       : theme.colors.dock.border};
 
   height: 30px;
-  border-radius: 18px 18px 0 0;
 
   display: flex;
   align-items: center;
