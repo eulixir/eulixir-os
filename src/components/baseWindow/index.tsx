@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { ReactNode, useContext, useEffect, useState } from 'react'
+import { ReactNode, useContext, useEffect, useRef, useState } from 'react'
 import { WindowControls } from './windowControls'
 import { DragContainer } from './DragContainer'
 import { motion, useDragControls, useMotionValue } from 'framer-motion'
@@ -8,6 +8,7 @@ import { savePosition } from '../../services/processes/savePosition'
 import { getProcess } from '../../services/processes/getProcess'
 import { createNewProcess } from '../../services/processes/createNew'
 import { CurrentAppContext } from '../../contexts/currentAppContext'
+import { EventDirection, ResizebleBar } from './ResizebleBars'
 
 export enum WindowStyle {
   FullSized = 'full-sized',
@@ -20,15 +21,31 @@ export type BaseWindowType = {
   $appName: string
   $windowStyle: WindowStyle
   $appId: number
-  width?: string
-  height?: string
+  width?: number
+  height?: number
 }
+
+const defaultWidth = Math.round(window.innerWidth * 0.8)
+const defaultHeight = Math.round(window.innerHeight * 0.7)
 
 export function BaseWindow(props: BaseWindowType) {
   const { children, $appName, $windowStyle, $appId, width, height } = props
 
   const { getZIndex, processStack, addNewProcess } = useContext(ProcessContext)
   const { setNewCurrentApp } = useContext(CurrentAppContext)
+
+  const [windowWidth, setWindowWidth] = useState(width || defaultWidth)
+  const [windowHeight, setWindowHeight] = useState(height || defaultHeight)
+
+  function handleSetWidth(value: number) {
+    setWindowWidth((prevWidth) => prevWidth + value)
+  }
+
+  function handleSetHeigth(value: number) {
+    setWindowHeight((prevWidth) => prevWidth + value)
+  }
+
+  const sidebarRef = useRef(null)
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -118,8 +135,8 @@ export function BaseWindow(props: BaseWindowType) {
   const styles = {
     x,
     y,
-    width: width || '80vw',
-    height: height || '70vh',
+    width: windowWidth,
+    height: windowHeight,
   }
 
   return (
@@ -135,12 +152,36 @@ export function BaseWindow(props: BaseWindowType) {
       dragListener={false}
       onDragEnd={handleDragEnd}
       style={{ ...styles }}
+      ref={sidebarRef}
     >
       <DragContainer
         process={process}
         dragControls={dragControls}
         zIndex={currentZIndex + 1}
       />
+
+      <ResizebleBar
+        zIndex={zIndex}
+        handleFunction={handleSetHeigth}
+        eventDirection={EventDirection.Top}
+      />
+      <ResizebleBar
+        zIndex={zIndex}
+        handleFunction={handleSetHeigth}
+        eventDirection={EventDirection.Bottom}
+      />
+
+      <ResizebleBar
+        zIndex={zIndex}
+        handleFunction={handleSetWidth}
+        eventDirection={EventDirection.Right}
+      />
+      <ResizebleBar
+        zIndex={zIndex}
+        handleFunction={handleSetWidth}
+        eventDirection={EventDirection.Left}
+      />
+
       {$windowStyle === WindowStyle.FullSized ? (
         <S.ControlContainer {...props}>
           <WindowControls zIndex={zIndex + 2} pid={process.pid} />

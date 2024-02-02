@@ -70,7 +70,7 @@ export function WeatherApp() {
     searchBehaviourFunction: handleSearch,
   }
   return (
-    <BaseWindow {...configs} key={configs.appId}>
+    <BaseWindow {...configs} key={configs.$appId}>
       <S.InputContainer>
         <SearchInput {...searchInputConfigs} />
       </S.InputContainer>

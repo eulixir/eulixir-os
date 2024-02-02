@@ -42,3 +42,49 @@ export const ControlContainer = styled.div<ControlContainerProps>`
     line-height: normal;
   }
 `
+
+export const TopResizebleBar = styled.div`
+  background: red;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+
+  &:hover {
+    cursor: col-resize;
+  }
+`
+
+export const BottomResizebleBar = styled.div`
+  background: red;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+
+  &:hover {
+    cursor: col-resize;
+  }
+`
+
+export const LeftResizebleBar = styled.div`
+  background: red;
+  position: absolute;
+  width: 1px;
+  height: 100%;
+
+  &:hover {
+    cursor: col-resize;
+  }
+`
+
+export const RightResizebleBar = styled.div`
+  background: red;
+  position: absolute;
+  right: 0;
+  width: 1px;
+  height: 100%;
+
+  &:hover {
+    cursor: col-resize;
+  }
+`

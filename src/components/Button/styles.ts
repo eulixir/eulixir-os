@@ -19,4 +19,7 @@ export const Button = styled.button`
   &:active {
     background: ${({ theme }) => theme.button.backgroundFocus};
   }
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(99, 97, 99, 1);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(99, 97, 99, 1);
+  box-shadow: 0px 1px 1px 0px rgba(99, 97, 99, 1);
 `

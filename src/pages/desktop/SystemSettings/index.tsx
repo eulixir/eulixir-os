@@ -8,7 +8,7 @@ import { SystemSettingsSidebar } from './Sidebar'
 import { SystemSettingsView } from './SystemSettingsView'
 import { SystemSettingsContext } from '../../../contexts/SystemSettinsContext'
 
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 
 const pid = 4
 
@@ -18,8 +18,8 @@ export function SystemSettingsApp() {
     $appName: 'System Settings',
     $windowStyle: WindowStyle.Sidebar,
     $appId: pid,
-    height: '80%',
-    width: '716px',
+    height: 650,
+    width: 716,
   }
 
   const { currentAppView } = useContext(SystemSettingsContext)
