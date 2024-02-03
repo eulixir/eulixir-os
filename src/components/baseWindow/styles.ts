@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
 import styled from 'styled-components'
+import { Rnd } from 'react-rnd'
 
-export const AppContainer = styled(motion.div)`
+export const AppContainer = styled(Rnd)`
   position: absolute;
 
   border: 0.01px solid ${({ theme }) => theme.colors.menubar.disabled};
@@ -43,48 +43,44 @@ export const ControlContainer = styled.div<ControlContainerProps>`
   }
 `
 
-export const TopResizebleBar = styled.div`
-  background: red;
+export const TopResizableBar = styled.div`
   position: absolute;
   width: 100%;
   height: 1px;
 
   &:hover {
-    cursor: col-resize;
+    cursor: n-resize;
   }
 `
 
-export const BottomResizebleBar = styled.div`
-  background: red;
+export const BottomResizableBar = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 1px;
 
   &:hover {
-    cursor: col-resize;
+    cursor: s-resize;
   }
 `
 
-export const LeftResizebleBar = styled.div`
-  background: red;
+export const LeftResizableBar = styled.div`
   position: absolute;
   width: 1px;
   height: 100%;
 
   &:hover {
-    cursor: col-resize;
+    cursor: w-resize;
   }
 `
 
-export const RightResizebleBar = styled.div`
-  background: red;
+export const RightResizableBar = styled.div`
   position: absolute;
   right: 0;
   width: 1px;
   height: 100%;
 
   &:hover {
-    cursor: col-resize;
+    cursor: e-resize;
   }
 `
