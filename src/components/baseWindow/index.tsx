@@ -6,7 +6,7 @@ import { ProcessContext, enumStatus } from '../../contexts/processContext'
 import { savePosition } from '../../services/processes/savePosition'
 import { createNewProcess } from '../../services/processes/createNew'
 import { CurrentAppContext } from '../../contexts/currentAppContext'
-import { getCoords } from '../../services/processes/getPosition'
+import { getPosition } from '../../services/processes/getPosition'
 import { RndDragEvent, DraggableData } from 'react-rnd'
 
 export enum WindowStyle {
@@ -44,15 +44,12 @@ export function BaseWindow(props: BaseWindowType) {
   const { getZIndex, processStack, addNewProcess } = useContext(ProcessContext)
   const { setNewCurrentApp } = useContext(CurrentAppContext)
 
-  const [windowWidth, setWindowWidth] = useState(width || defaultWidth)
-  const [windowHeight, setWindowHeight] = useState(height || defaultHeight)
-
   const [currentZIndex, setCurrentZIndex] = useState(0)
-  const [position, setPosition] = useState(getCoords($appId))
+  const [position, setPosition] = useState(getPosition($appId))
 
   const process = createNewProcess({
     pid: $appId,
-    status: 'open',
+    status: enumStatus.OPEN,
     processName: $appName,
   })
 
@@ -62,28 +59,25 @@ export function BaseWindow(props: BaseWindowType) {
     setCurrentZIndex(zIndex)
   }, [processStack, zIndex])
 
-  function handleDragEnd(e: RndDragEvent, d: DraggableData) {
-    const xValue = d.x
-    const yValue = d.y
-
-    setPosition({ x: xValue, y: yValue })
+  function handleDragEnd(_: RndDragEvent, { x, y }: DraggableData) {
+    setPosition({ x, y })
 
     addNewProcess({
       pid: $appId,
       processName: $appName,
       status: enumStatus.OPEN,
-      position: { x: xValue, y: yValue },
+      position: { x, y },
     })
 
-    savePosition($appId, xValue, yValue)
+    savePosition($appId, x, y, process.processName)
     setNewCurrentApp($appId)
   }
 
   const defaultStyles = {
     y: position.y,
     x: position.x,
-    width: windowHeight,
-    height: windowWidth,
+    width: width || defaultWidth,
+    height: height || defaultHeight,
   }
 
   return (

@@ -9,6 +9,7 @@ import { Process } from '../@types/process'
 import { saveProcessLocalStorage } from '../services/processes/saveLocalStorage'
 import { getAllProcesses } from '../services/processes/getAll'
 import { CurrentAppContext } from './currentAppContext'
+import { createNewProcess } from '../services/processes/createNew'
 
 interface ProcessContextProviderProps {
   children: ReactNode
@@ -26,6 +27,12 @@ interface ProcessContextProviderType {
   processStack: Process[]
 }
 
+const finderApp = createNewProcess({
+  pid: 1,
+  processName: 'Finder',
+  status: enumStatus.MINIMIZED,
+})
+
 export const ProcessContext = createContext({} as ProcessContextProviderType)
 
 export function ProcessContextProvider({
@@ -33,7 +40,7 @@ export function ProcessContextProvider({
 }: ProcessContextProviderProps) {
   const { setNewCurrentApp } = useContext(CurrentAppContext)
   const storageProcess = getAllProcesses()
-  const [processStack, setProcessStack] = useState<Process[]>([])
+  const [processStack, setProcessStack] = useState<Process[]>([finderApp])
 
   useEffect(() => {
     setProcessStack(storageProcess)
@@ -45,6 +52,7 @@ export function ProcessContextProvider({
   }, [processStack])
 
   function addNewProcess(process: Process) {
+    console.log(process)
     const stackLength = processStack.length
     const lastProcess = processStack[stackLength - 1]
 

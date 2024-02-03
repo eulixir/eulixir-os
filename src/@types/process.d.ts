@@ -4,7 +4,7 @@ export interface Process {
   pid: number
   status: enumStatus
   processName: string
-  position?: {
+  position: {
     x: number
     y: number
   }

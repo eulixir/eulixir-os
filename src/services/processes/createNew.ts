@@ -1,4 +1,6 @@
-import { Process, enumStatus } from '../../@types/process'
+import { Process } from '../../@types/process'
+import { enumStatus } from '../../contexts/processContext'
+import { getPosition } from './getPosition'
 
 interface CreateNewProcessProps {
   pid: number
@@ -11,10 +13,13 @@ export function createNewProcess({
   processName,
   status,
 }: CreateNewProcessProps) {
+  const position = getPosition(pid)
+
   const process: Process = {
     pid,
     processName,
     status,
+    position,
   }
 
   return process
