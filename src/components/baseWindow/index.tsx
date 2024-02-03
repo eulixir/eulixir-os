@@ -4,9 +4,10 @@ import { WindowControls } from './windowControls'
 import { DragContainer } from './DragContainer'
 import { ProcessContext, enumStatus } from '../../contexts/processContext'
 import { savePosition } from '../../services/processes/savePosition'
-import { getProcess } from '../../services/processes/getProcess'
 import { createNewProcess } from '../../services/processes/createNew'
 import { CurrentAppContext } from '../../contexts/currentAppContext'
+import { getCoords } from '../../services/processes/getPosition'
+import { RndDragEvent, DraggableData } from 'react-rnd'
 
 export enum WindowStyle {
   FullSized = 'full-sized',
@@ -23,6 +24,17 @@ export type BaseWindowType = {
   height?: number
 }
 
+const handlerStyles = {
+  top: { cursor: 'n-resize' },
+  right: { cursor: 'e-resize' },
+  bottom: { cursor: 's-resize' },
+  left: { cursor: 'w-resize' },
+  topRight: { cursor: 'ne-resize' },
+  bottomRight: { cursor: 'se-resize' },
+  bottomLeft: { cursor: 'sw-resize' },
+  topLeft: { cursor: 'nw-resize' },
+}
+
 const defaultWidth = Math.round(window.innerWidth * 0.8)
 const defaultHeight = Math.round(window.innerHeight * 0.7)
 
@@ -36,17 +48,7 @@ export function BaseWindow(props: BaseWindowType) {
   const [windowHeight, setWindowHeight] = useState(height || defaultHeight)
 
   const [currentZIndex, setCurrentZIndex] = useState(0)
-  const [position, setPosition] = useState(getCoords())
-
-  function getCoords() {
-    const { position } = getProcess($appId)!
-
-    if (!position) {
-      return { x: -500, y: 140 }
-    }
-
-    return position
-  }
+  const [position, setPosition] = useState(getCoords($appId))
 
   const process = createNewProcess({
     pid: $appId,
@@ -60,7 +62,7 @@ export function BaseWindow(props: BaseWindowType) {
     setCurrentZIndex(zIndex)
   }, [processStack, zIndex])
 
-  function handleDragEnd(e, d) {
+  function handleDragEnd(e: RndDragEvent, d: DraggableData) {
     const xValue = d.x
     const yValue = d.y
 
@@ -82,17 +84,6 @@ export function BaseWindow(props: BaseWindowType) {
     x: position.x,
     width: windowHeight,
     height: windowWidth,
-  }
-
-  const handlerStyles = {
-    top: { cursor: 'n-resize' },
-    right: { cursor: 'e-resize' },
-    bottom: { cursor: 's-resize' },
-    left: { cursor: 'w-resize' },
-    topRight: { cursor: 'ne-resize' },
-    bottomRight: { cursor: 'se-resize' },
-    bottomLeft: { cursor: 'sw-resize' },
-    topLeft: { cursor: 'nw-resize' },
   }
 
   return (
