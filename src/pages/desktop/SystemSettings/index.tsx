@@ -20,6 +20,11 @@ export function SystemSettingsApp() {
     $appId: pid,
     height: 650,
     width: 716,
+    minHeight: 480,
+    resizableOptions: {
+      top: true,
+      bottom: true,
+    },
   }
 
   const { currentAppView } = useContext(SystemSettingsContext)

@@ -2,8 +2,9 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const DragContainer = styled(motion.div)`
+
   position: absolute;
-  top: 0;
+  top: 2px;
 
   z-index: 1;
 

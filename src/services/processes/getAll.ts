@@ -13,7 +13,6 @@ export function getAllProcesses() {
     localStorage.getItem('process') ?? '[]',
   )
 
-  console.log(processes)
   if (processes.length === 0) {
     return [finderApp]
   }

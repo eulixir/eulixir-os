@@ -17,7 +17,14 @@ export function WindowManagement() {
   }, [processStack])
 
   return (
-    <>
+    <div
+      style={{
+        background: 'red',
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+      }}
+    >
       {runningProcess.map((process) => {
         const { id, context: Context } =
           apps.find(
@@ -27,6 +34,6 @@ export function WindowManagement() {
 
         return <div key={id}>{Context && <Context key={id} />}</div>
       })}
-    </>
+    </div>
   )
 }

@@ -14,6 +14,17 @@ export enum WindowStyle {
   Sidebar = 'sidebar',
 }
 
+interface ResizingsOptions {
+  top?: boolean
+  right?: boolean
+  bottom?: boolean
+  left?: boolean
+  topRight?: boolean
+  bottomRight?: boolean
+  bottomLeft?: boolean
+  topLeft?: boolean
+}
+
 export type BaseWindowType = {
   children?: ReactNode
   $windowControlsFullSize: string
@@ -22,6 +33,8 @@ export type BaseWindowType = {
   $appId: number
   width?: number
   height?: number
+  minHeight?: number
+  resizableOptions?: ResizingsOptions
 }
 
 const handlerStyles = {
@@ -35,11 +48,31 @@ const handlerStyles = {
   topLeft: { cursor: 'nw-resize' },
 }
 
+const defaultResizableOptions = {
+  top: true,
+  right: true,
+  bottom: true,
+  left: true,
+  topRight: true,
+  bottomRight: true,
+  bottomLeft: true,
+  topLeft: true,
+}
+
 const defaultWidth = Math.round(window.innerWidth * 0.8)
 const defaultHeight = Math.round(window.innerHeight * 0.7)
 
 export function BaseWindow(props: BaseWindowType) {
-  const { children, $appName, $windowStyle, $appId, width, height } = props
+  const {
+    children,
+    $appName,
+    $windowStyle,
+    $appId,
+    width,
+    height,
+    minHeight,
+    resizableOptions,
+  } = props
 
   const { getZIndex, processStack, addNewProcess } = useContext(ProcessContext)
   const { setNewCurrentApp } = useContext(CurrentAppContext)
@@ -78,15 +111,18 @@ export function BaseWindow(props: BaseWindowType) {
     x: position.x,
     width: width || defaultWidth,
     height: height || defaultHeight,
+    minHeight,
   }
 
   return (
     <S.AppContainer
       onDragStop={handleDragEnd}
-      bounds="window"
+      bounds="parent"
+      enableResizing={resizableOptions ?? defaultResizableOptions}
       resizeHandleStyles={handlerStyles}
       dragHandleClassName="drag-handle"
       default={defaultStyles}
+      minHeight={minHeight}
     >
       <DragContainer process={process} zIndex={currentZIndex + 1} />
 

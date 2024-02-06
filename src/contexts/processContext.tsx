@@ -52,7 +52,6 @@ export function ProcessContextProvider({
   }, [processStack])
 
   function addNewProcess(process: Process) {
-    console.log(process)
     const stackLength = processStack.length
     const lastProcess = processStack[stackLength - 1]
 
